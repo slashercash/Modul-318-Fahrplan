@@ -33,28 +33,28 @@
             this.BtnStrecke = new System.Windows.Forms.Button();
             this.BtnFahrplan = new System.Windows.Forms.Button();
             this.PnlStrecke = new System.Windows.Forms.Panel();
+            this.BtnVerbindungenAnzeigen = new System.Windows.Forms.Button();
+            this.TpnlNach = new System.Windows.Forms.TableLayoutPanel();
+            this.TbxNach = new System.Windows.Forms.TextBox();
+            this.BtnNachStandortAnzeigen = new System.Windows.Forms.Button();
+            this.BtnNachMeinStandort = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.TpnlVon = new System.Windows.Forms.TableLayoutPanel();
             this.TbxVon = new System.Windows.Forms.TextBox();
-            this.BtnVon = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.BtnVonStandortAnzeigen = new System.Windows.Forms.Button();
+            this.BtnVonMeinStandort = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PnlFahrplan = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.PnlVerbindungen = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.TpnlNach = new System.Windows.Forms.TableLayoutPanel();
-            this.TbxNach = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
             this.TpnlHeadButtons.SuspendLayout();
             this.PnlStrecke.SuspendLayout();
+            this.TpnlNach.SuspendLayout();
             this.TpnlVon.SuspendLayout();
             this.PnlFahrplan.SuspendLayout();
             this.PnlVerbindungen.SuspendLayout();
-            this.TpnlNach.SuspendLayout();
             this.SuspendLayout();
             // 
             // TpnlHeadButtons
@@ -141,7 +141,7 @@
             // PnlStrecke
             // 
             this.PnlStrecke.BackColor = System.Drawing.Color.Honeydew;
-            this.PnlStrecke.Controls.Add(this.button5);
+            this.PnlStrecke.Controls.Add(this.BtnVerbindungenAnzeigen);
             this.PnlStrecke.Controls.Add(this.TpnlNach);
             this.PnlStrecke.Controls.Add(this.TpnlVon);
             this.PnlStrecke.Controls.Add(this.label1);
@@ -150,6 +150,95 @@
             this.PnlStrecke.Name = "PnlStrecke";
             this.PnlStrecke.Size = new System.Drawing.Size(816, 388);
             this.PnlStrecke.TabIndex = 1;
+            // 
+            // BtnVerbindungenAnzeigen
+            // 
+            this.BtnVerbindungenAnzeigen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnVerbindungenAnzeigen.BackColor = System.Drawing.Color.LightGreen;
+            this.BtnVerbindungenAnzeigen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnVerbindungenAnzeigen.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnVerbindungenAnzeigen.ForeColor = System.Drawing.Color.DarkGreen;
+            this.BtnVerbindungenAnzeigen.Location = new System.Drawing.Point(60, 264);
+            this.BtnVerbindungenAnzeigen.Margin = new System.Windows.Forms.Padding(60, 60, 60, 0);
+            this.BtnVerbindungenAnzeigen.Name = "BtnVerbindungenAnzeigen";
+            this.BtnVerbindungenAnzeigen.Size = new System.Drawing.Size(696, 90);
+            this.BtnVerbindungenAnzeigen.TabIndex = 12;
+            this.BtnVerbindungenAnzeigen.Text = "Verbindungen Anzeigen";
+            this.BtnVerbindungenAnzeigen.UseVisualStyleBackColor = false;
+            // 
+            // TpnlNach
+            // 
+            this.TpnlNach.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TpnlNach.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.TpnlNach.ColumnCount = 4;
+            this.TpnlNach.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.TpnlNach.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.TpnlNach.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.TpnlNach.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.TpnlNach.Controls.Add(this.TbxNach, 1, 0);
+            this.TpnlNach.Controls.Add(this.BtnNachStandortAnzeigen, 3, 0);
+            this.TpnlNach.Controls.Add(this.BtnNachMeinStandort, 2, 0);
+            this.TpnlNach.Controls.Add(this.label5, 0, 0);
+            this.TpnlNach.Location = new System.Drawing.Point(50, 152);
+            this.TpnlNach.Margin = new System.Windows.Forms.Padding(50, 50, 60, 0);
+            this.TpnlNach.Name = "TpnlNach";
+            this.TpnlNach.RowCount = 1;
+            this.TpnlNach.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
+            this.TpnlNach.Size = new System.Drawing.Size(706, 52);
+            this.TpnlNach.TabIndex = 11;
+            // 
+            // TbxNach
+            // 
+            this.TbxNach.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.TbxNach.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.TbxNach.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TbxNach.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbxNach.Location = new System.Drawing.Point(100, 0);
+            this.TbxNach.Margin = new System.Windows.Forms.Padding(0);
+            this.TbxNach.Name = "TbxNach";
+            this.TbxNach.Size = new System.Drawing.Size(506, 47);
+            this.TbxNach.TabIndex = 3;
+            this.TbxNach.TextChanged += new System.EventHandler(this.TbxNach_TextChanged);
+            // 
+            // BtnNachStandortAnzeigen
+            // 
+            this.BtnNachStandortAnzeigen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BtnNachStandortAnzeigen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnNachStandortAnzeigen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnNachStandortAnzeigen.Location = new System.Drawing.Point(656, 0);
+            this.BtnNachStandortAnzeigen.Margin = new System.Windows.Forms.Padding(0);
+            this.BtnNachStandortAnzeigen.Name = "BtnNachStandortAnzeigen";
+            this.BtnNachStandortAnzeigen.Size = new System.Drawing.Size(50, 52);
+            this.BtnNachStandortAnzeigen.TabIndex = 7;
+            this.BtnNachStandortAnzeigen.Text = "button2";
+            this.BtnNachStandortAnzeigen.UseVisualStyleBackColor = true;
+            // 
+            // BtnNachMeinStandort
+            // 
+            this.BtnNachMeinStandort.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BtnNachMeinStandort.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnNachMeinStandort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnNachMeinStandort.Location = new System.Drawing.Point(606, 0);
+            this.BtnNachMeinStandort.Margin = new System.Windows.Forms.Padding(0);
+            this.BtnNachMeinStandort.Name = "BtnNachMeinStandort";
+            this.BtnNachMeinStandort.Size = new System.Drawing.Size(50, 52);
+            this.BtnNachMeinStandort.TabIndex = 5;
+            this.BtnNachMeinStandort.Text = "button4";
+            this.BtnNachMeinStandort.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label5.Location = new System.Drawing.Point(0, 0);
+            this.label5.Margin = new System.Windows.Forms.Padding(0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(100, 52);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Nach";
             // 
             // TpnlVon
             // 
@@ -162,8 +251,8 @@
             this.TpnlVon.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.TpnlVon.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.TpnlVon.Controls.Add(this.TbxVon, 1, 0);
-            this.TpnlVon.Controls.Add(this.button3, 3, 0);
-            this.TpnlVon.Controls.Add(this.BtnVon, 2, 0);
+            this.TpnlVon.Controls.Add(this.BtnVonStandortAnzeigen, 3, 0);
+            this.TpnlVon.Controls.Add(this.BtnVonMeinStandort, 2, 0);
             this.TpnlVon.Controls.Add(this.label4, 0, 0);
             this.TpnlVon.Location = new System.Drawing.Point(50, 50);
             this.TpnlVon.Margin = new System.Windows.Forms.Padding(50, 50, 60, 0);
@@ -180,7 +269,7 @@
             "Davidiud",
             "Hans",
             "Hansruedi"});
-            this.TbxVon.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.TbxVon.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.TbxVon.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.TbxVon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TbxVon.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -189,32 +278,33 @@
             this.TbxVon.Name = "TbxVon";
             this.TbxVon.Size = new System.Drawing.Size(506, 47);
             this.TbxVon.TabIndex = 3;
+            this.TbxVon.TextChanged += new System.EventHandler(this.TbxVon_TextChanged);
             // 
-            // BtnVon
+            // BtnVonStandortAnzeigen
             // 
-            this.BtnVon.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BtnVon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnVon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVon.Location = new System.Drawing.Point(606, 0);
-            this.BtnVon.Margin = new System.Windows.Forms.Padding(0);
-            this.BtnVon.Name = "BtnVon";
-            this.BtnVon.Size = new System.Drawing.Size(50, 52);
-            this.BtnVon.TabIndex = 5;
-            this.BtnVon.Text = "button1";
-            this.BtnVon.UseVisualStyleBackColor = true;
+            this.BtnVonStandortAnzeigen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BtnVonStandortAnzeigen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnVonStandortAnzeigen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnVonStandortAnzeigen.Location = new System.Drawing.Point(656, 0);
+            this.BtnVonStandortAnzeigen.Margin = new System.Windows.Forms.Padding(0);
+            this.BtnVonStandortAnzeigen.Name = "BtnVonStandortAnzeigen";
+            this.BtnVonStandortAnzeigen.Size = new System.Drawing.Size(50, 52);
+            this.BtnVonStandortAnzeigen.TabIndex = 7;
+            this.BtnVonStandortAnzeigen.Text = "button3";
+            this.BtnVonStandortAnzeigen.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // BtnVonMeinStandort
             // 
-            this.button3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(656, 0);
-            this.button3.Margin = new System.Windows.Forms.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(50, 52);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.BtnVonMeinStandort.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BtnVonMeinStandort.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnVonMeinStandort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnVonMeinStandort.Location = new System.Drawing.Point(606, 0);
+            this.BtnVonMeinStandort.Margin = new System.Windows.Forms.Padding(0);
+            this.BtnVonMeinStandort.Name = "BtnVonMeinStandort";
+            this.BtnVonMeinStandort.Size = new System.Drawing.Size(50, 52);
+            this.BtnVonMeinStandort.TabIndex = 5;
+            this.BtnVonMeinStandort.Text = "button1";
+            this.BtnVonMeinStandort.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -278,92 +368,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Verbindungen";
             // 
-            // TpnlNach
-            // 
-            this.TpnlNach.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TpnlNach.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.TpnlNach.ColumnCount = 4;
-            this.TpnlNach.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.TpnlNach.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TpnlNach.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.TpnlNach.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.TpnlNach.Controls.Add(this.TbxNach, 1, 0);
-            this.TpnlNach.Controls.Add(this.button2, 3, 0);
-            this.TpnlNach.Controls.Add(this.button4, 2, 0);
-            this.TpnlNach.Controls.Add(this.label5, 0, 0);
-            this.TpnlNach.Location = new System.Drawing.Point(50, 152);
-            this.TpnlNach.Margin = new System.Windows.Forms.Padding(50, 50, 60, 0);
-            this.TpnlNach.Name = "TpnlNach";
-            this.TpnlNach.RowCount = 1;
-            this.TpnlNach.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
-            this.TpnlNach.Size = new System.Drawing.Size(706, 52);
-            this.TpnlNach.TabIndex = 11;
-            // 
-            // TbxNach
-            // 
-            this.TbxNach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TbxNach.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbxNach.Location = new System.Drawing.Point(100, 0);
-            this.TbxNach.Margin = new System.Windows.Forms.Padding(0);
-            this.TbxNach.Name = "TbxNach";
-            this.TbxNach.Size = new System.Drawing.Size(506, 47);
-            this.TbxNach.TabIndex = 3;
-            // 
-            // button2
-            // 
-            this.button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(656, 0);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(50, 52);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(606, 0);
-            this.button4.Margin = new System.Windows.Forms.Padding(0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(50, 52);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Margin = new System.Windows.Forms.Padding(0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 52);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Nach";
-            // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.Color.LightGreen;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.DarkGreen;
-            this.button5.Location = new System.Drawing.Point(60, 264);
-            this.button5.Margin = new System.Windows.Forms.Padding(60, 60, 60, 0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(696, 90);
-            this.button5.TabIndex = 12;
-            this.button5.Text = "Verbindung Anzeigen";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -379,14 +383,14 @@
             this.TpnlHeadButtons.ResumeLayout(false);
             this.PnlStrecke.ResumeLayout(false);
             this.PnlStrecke.PerformLayout();
+            this.TpnlNach.ResumeLayout(false);
+            this.TpnlNach.PerformLayout();
             this.TpnlVon.ResumeLayout(false);
             this.TpnlVon.PerformLayout();
             this.PnlFahrplan.ResumeLayout(false);
             this.PnlFahrplan.PerformLayout();
             this.PnlVerbindungen.ResumeLayout(false);
             this.PnlVerbindungen.PerformLayout();
-            this.TpnlNach.ResumeLayout(false);
-            this.TpnlNach.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -403,17 +407,17 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button BtnVon;
+        private System.Windows.Forms.Button BtnVonStandortAnzeigen;
+        private System.Windows.Forms.Button BtnVonMeinStandort;
         private System.Windows.Forms.TextBox TbxVon;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TableLayoutPanel TpnlVon;
         private System.Windows.Forms.TableLayoutPanel TpnlNach;
         private System.Windows.Forms.TextBox TbxNach;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button BtnNachStandortAnzeigen;
+        private System.Windows.Forms.Button BtnNachMeinStandort;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button BtnVerbindungenAnzeigen;
     }
 }
 

@@ -17,7 +17,7 @@ namespace Fahrplan
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            strecke = new Strecke(PnlStrecke);
+            strecke = new Strecke(PnlStrecke, TbxVon, TbxNach);
             fahrplan = new Fahrplan(PnlFahrplan);
             verbindungen = new Verbindungen(PnlVerbindungen);
             HilightButton(BtnStrecke);
@@ -42,6 +42,16 @@ namespace Fahrplan
             verbindungen.LoadPanel();
         }
 
+        private void TbxVon_TextChanged(object sender, EventArgs e)
+        {
+            OnTextChanged(TbxVon);
+        }
+
+        private void TbxNach_TextChanged(object sender, EventArgs e)
+        {
+            OnTextChanged(TbxNach);
+        }
+
         private void HilightButton(Button hilightButton)
         {
             foreach (Button button in TpnlHeadButtons.Controls)
@@ -56,6 +66,18 @@ namespace Fahrplan
                     button.BackColor = Color.LightGreen;
                     button.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 255, 192);
                 }
+            }
+        }
+
+        private void OnTextChanged(TextBox textBox)
+        {
+            if (textBox.TextLength == 3)
+            {
+                strecke.LoadStations(textBox);
+            }
+            else if (textBox.TextLength < 3)
+            {
+                strecke.ClearStations(textBox);
             }
         }
     }
