@@ -8,17 +8,13 @@ namespace Fahrplan
     class Strecke
     {
         readonly Panel streckePanel;
-        TextBox fromTextbox;
-        TextBox toTextbox;
         Transport transport = new Transport();
         Stations stations = new Stations();
         List<string> stationNames = new List<string>();
 
-        public Strecke(Panel panel, TextBox tbxVon, TextBox tbxNach)
+        public Strecke(Panel panel)
         {
             streckePanel = panel;
-            fromTextbox = tbxVon;
-            toTextbox = tbxNach;
             streckePanel.Dock = DockStyle.Fill;
         }
 
@@ -29,7 +25,7 @@ namespace Fahrplan
 
         internal void LoadStations(TextBox textBoxLoad)
         {
-            stations = transport.GetStations(textBoxLoad.Text);
+            stations.StationList = transport.GetStations(textBoxLoad.Text).StationList;
             foreach (Station station in stations.StationList)
             {
                 stationNames.Add(station.Name);

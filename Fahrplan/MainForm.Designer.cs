@@ -264,11 +264,6 @@
             // 
             // TbxVon
             // 
-            this.TbxVon.AutoCompleteCustomSource.AddRange(new string[] {
-            "David",
-            "Davidiud",
-            "Hans",
-            "Hansruedi"});
             this.TbxVon.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.TbxVon.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.TbxVon.Dock = System.Windows.Forms.DockStyle.Fill;
