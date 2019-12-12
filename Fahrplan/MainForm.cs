@@ -44,7 +44,7 @@ namespace Fahrplan
 
         private void HilightButton(Button hilightButton)
         {
-            foreach (Button button in TableLayoutPanelHead.Controls)
+            foreach (Button button in TpnlHeadButtons.Controls)
             {
                 if (button.Name.Equals(hilightButton.Name))
                 {
