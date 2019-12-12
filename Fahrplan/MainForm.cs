@@ -15,23 +15,28 @@ namespace Fahrplan
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            mainFormMethods = new MainFormMethods(TpnlHeadButtons, PnlStrecke, PnlFahrplan, PnlVerbindungen);
-            mainFormMethods.OnBtnStreckeClick(BtnStrecke);
+            mainFormMethods = new MainFormMethods(TpnlHeadButtons, PnlStrecke, PnlFahrplan, PnlVerbindungen, BtnStrecke, BtnFahrplan, BtnVerbindung, lvConnections);
+            mainFormMethods.LoadStrecke();
         }
 
         private void BtnStrecke_Click(object sender, EventArgs e)
         {
-            mainFormMethods.OnBtnStreckeClick(BtnStrecke);
+            mainFormMethods.LoadStrecke();
         }
 
         private void BtnFahrplan_Click(object sender, EventArgs e)
         {
-            mainFormMethods.OnBtnFahrplanClick(BtnFahrplan);
+            mainFormMethods.LoadFahrplan();
         }
 
         private void BtnVerbindung_Click(object sender, EventArgs e)
         {
-            mainFormMethods.OnBtnVernindungClick(BtnVerbindung);
+            mainFormMethods.LoadVerbindung();
+        }
+
+        private void BtnVerbindungenAnzeigen_Click(object sender, EventArgs e)
+        {
+            mainFormMethods.OnBtnVerbindungenAnzeigenClick(TbxVon.Text, TbxNach.Text);
         }
 
         private void TbxVon_TextChanged(object sender, EventArgs e)
@@ -43,9 +48,6 @@ namespace Fahrplan
         {
             mainFormMethods.OnTextChanged(TbxNach);
         }
-
-
-
 
     }
 }

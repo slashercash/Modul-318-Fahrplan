@@ -10,10 +10,13 @@ namespace Fahrplan
         readonly Panel streckePanel;
         Transport transport = new Transport();
         Stations stations = new Stations();
+        Connections connections = new Connections();
         List<string> stationNames = new List<string>();
+        MainFormMethods mainFormMethods;
 
-        public Strecke(Panel panel)
+        public Strecke(Panel panel, MainFormMethods _mainFormMethods)
         {
+            mainFormMethods = _mainFormMethods;
             streckePanel = panel;
             streckePanel.Dock = DockStyle.Fill;
         }
@@ -23,19 +26,42 @@ namespace Fahrplan
             streckePanel.BringToFront();
         }
 
-        internal void LoadStations(TextBox textBoxLoad)
+        public void LoadStations(TextBox textBoxLoad)
         {
-            stations.StationList = transport.GetStations(textBoxLoad.Text).StationList;
-            foreach (Station station in stations.StationList)
+            try
             {
-                stationNames.Add(station.Name);
+                stations.StationList = transport.GetStations(textBoxLoad.Text).StationList;
+
+                foreach (Station station in stations.StationList)
+                {
+                    stationNames.Add(station.Name);
+                }
+
+                textBoxLoad.AutoCompleteCustomSource.AddRange(stationNames.ToArray());
             }
-            textBoxLoad.AutoCompleteCustomSource.AddRange(stationNames.ToArray());
+            catch (Exception)
+            {
+                throw new System.AccessViolationException("there was error in method LoadStations()");
+            }
         }
 
-        internal void ClearStations(TextBox textBoxClear)
+        public void ClearStations(TextBox textBoxClear)
         {
-            textBoxClear.AutoCompleteCustomSource.Clear();
+            try
+            {
+                textBoxClear.AutoCompleteCustomSource.Clear();
+            }
+            catch (Exception)
+            {
+
+                throw new System.AccessViolationException("there was error in method ClearStations()");
+            }
+        }
+
+        public void LoadConnections(string from, string to)
+        {
+            connections = transport.GetConnections(from, to);
+            mainFormMethods.LoadFahrplan(connections);
         }
     }
 }
