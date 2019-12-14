@@ -9,31 +9,38 @@ namespace Fahrplan
 {
     class Fahrplan
     {
-        readonly Button btnStreckeEingeben;
-        readonly Panel fahrplanPanel;
-        readonly Label lbFromTo;
-        readonly Label[] connectionTable;
+        readonly Transport transport = new Transport();
+        List<Connection> connections = new List<Connection>();
+
+        readonly Panel pnlFahrplan;
         readonly TableLayoutPanel tlpConnectionTable;
         readonly TableLayoutPanel tlpConnectionTableHeader;
+        readonly Button btnStreckeEingeben;
+        readonly Label lbFromTo;
+        readonly Label lbGleisKante;
+        readonly Label[] lbConnectionTable;
 
-        public Fahrplan(Panel panel, Label _lbFromTo, Label[] _connectionTable, TableLayoutPanel _tlpConnectionTable, TableLayoutPanel _tlpConnectionTableHeader, Button _btnStreckeEingeben)
+        public Fahrplan(Panel _pnlFahrplan, TableLayoutPanel _tlpConnectionTable, TableLayoutPanel _tlpConnectionTableHeader, Button _btnStreckeEingeben, Label _lbFromTo, Label _lbGleisKante, Label[] _lbConnectionTable)
         {
-            btnStreckeEingeben = _btnStreckeEingeben;
-            fahrplanPanel = panel;
-            lbFromTo = _lbFromTo;
-            connectionTable = _connectionTable;
-            tlpConnectionTable = _tlpConnectionTable;
+            pnlFahrplan              = _pnlFahrplan;
+            tlpConnectionTable       = _tlpConnectionTable;
             tlpConnectionTableHeader = _tlpConnectionTableHeader;
-            fahrplanPanel.Dock = DockStyle.Fill;
+            btnStreckeEingeben       = _btnStreckeEingeben;
+            lbFromTo                 = _lbFromTo;
+            lbGleisKante             = _lbGleisKante;
+            lbConnectionTable        = _lbConnectionTable;
+
+            pnlFahrplan.Dock = DockStyle.Fill;
         }
 
-        internal void LoadConnections(List<Connection> connections)
+        public void LoadPanel()
         {
-            lbFromTo.Text = String.Format("{0}  🡺  {1}", connections.First().From.Station.Name, connections.First().To.Station.Name);
-            tlpConnectionTable.Visible = true;
-            tlpConnectionTableHeader.Visible = true;
-            btnStreckeEingeben.Visible = false;
+            pnlFahrplan.BringToFront();
+        }
 
+        public void LoadConnections(string from, string to)
+        {
+            connections = transport.GetConnections(from, to).ConnectionList;
 
             int pointer = 0;
             foreach (Connection connection in connections)
@@ -52,25 +59,29 @@ namespace Fahrplan
                     duration = String.Format("{0} Std, {1} Min", dtDuration.Hour.ToString(), dtDuration.Minute.ToString());
                 }
 
-                connectionTable[pointer].Text = departure;
+                lbConnectionTable[pointer].Text = departure;
                 pointer++;
-                connectionTable[pointer].Text = String.IsNullOrEmpty(connection.From.Platform) ? "-" : connection.From.Platform;
+                lbConnectionTable[pointer].Text = String.IsNullOrEmpty(connection.From.Platform) ? "-" : connection.From.Platform;
                 pointer++;
-                connectionTable[pointer].Text = arival;
+                lbConnectionTable[pointer].Text = arival;
                 pointer++;
-                connectionTable[pointer].Text = duration;
+                lbConnectionTable[pointer].Text = duration;
                 pointer++;
             }
 
-            for (int i = pointer; i < connectionTable.Length; i++)
+            for (int i = pointer; i < lbConnectionTable.Length; i++)
             {
-                connectionTable[i].Text = "";
+                lbConnectionTable[i].Text = "";
             }
-        }
 
-        public void LoadPanel()
-        {
-            fahrplanPanel.BringToFront();
+            Connection firstConnection = connections.First();
+            lbGleisKante.Text = int.TryParse(firstConnection.From.Platform, out _) ? "Gleis" : "Kante";
+            lbFromTo.Text = String.Format("{0}  🡺  {1}", firstConnection.From.Station.Name, firstConnection.To.Station.Name);
+            tlpConnectionTable.Visible = true;
+            tlpConnectionTableHeader.Visible = true;
+            btnStreckeEingeben.Visible = false;
+
+            LoadPanel();
         }
     }
 }

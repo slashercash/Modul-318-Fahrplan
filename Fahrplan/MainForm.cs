@@ -6,7 +6,9 @@ namespace Fahrplan
 {
     public partial class MainForm : Form
     {
-        MainFormMethods mainFormMethods;
+        Strecke strecke;
+        Fahrplan fahrplan;
+        Verbindungen verbindungen;
 
         public MainForm()
         {
@@ -15,49 +17,75 @@ namespace Fahrplan
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            Label[] connectionTable = new Label[] { lb1A, lb1B, lb1C, lb1D, lb2A, lb2B, lb2C, lb2D, lb3A, lb3B, lb3C, lb3D, lb4A, lb4B, lb4C, lb4D, lb5A, lb5B, lb5C, lb5D, lb6A, lb6B, lb6C, lb6D };
-            mainFormMethods = new MainFormMethods(TpnlHeadButtons, PnlStrecke, PnlFahrplan, PnlVerbindungen, BtnStrecke, BtnFahrplan, BtnVerbindung, lbVonNach, connectionTable, tlpConnectionTable, tlpConnectionTableHeader, btnStreckeEingeben, btnVonDurchsuchen, btnNachDurchsuchen);
-            mainFormMethods.LoadStrecke();
+            Label[] lbConnectionTable = new Label[] { lb1A, lb1B, lb1C, lb1D, lb2A, lb2B, lb2C, lb2D, lb3A, lb3B, lb3C, lb3D, lb4A, lb4B, lb4C, lb4D, lb5A, lb5B, lb5C, lb5D, lb6A, lb6B, lb6C, lb6D };
+
+            strecke = new Strecke(pnlStrecke, tbxVon, tbxNach, btnVonDurchsuchen, btnNachDurchsuchen);
+            fahrplan = new Fahrplan(pnlFahrplan, tlpConnectionTable, tlpConnectionTableHeader, btnStreckeEingeben, lbVonNach, lbGleisKante, lbConnectionTable);
+            verbindungen = new Verbindungen(pnlVerbindungen);
+
+            HilightButton(btnStrecke);
+            strecke.LoadPanel();
         }
 
         private void BtnStrecke_Click(object sender, EventArgs e)
         {
-            mainFormMethods.LoadStrecke();
+            HilightButton(btnStrecke);
+            strecke.LoadPanel();
         }
 
         private void BtnFahrplan_Click(object sender, EventArgs e)
         {
-            mainFormMethods.LoadFahrplan();
+            HilightButton(btnFahrplan);
+            fahrplan.LoadPanel();
         }
 
         private void BtnVerbindung_Click(object sender, EventArgs e)
         {
-            mainFormMethods.LoadVerbindung();
+            HilightButton(btnVerbindung);
+            verbindungen.LoadPanel();
         }
 
         private void BtnVerbindungenAnzeigen_Click(object sender, EventArgs e)
         {
-            mainFormMethods.OnBtnVerbindungenAnzeigenClick(TbxVon.Text, TbxNach.Text);
+            HilightButton(btnFahrplan);
+            fahrplan.LoadConnections(tbxVon.Text, tbxNach.Text);
         }
 
         private void BtnVonDurchsuchen_Click(object sender, EventArgs e)
         {
-            mainFormMethods.OnDurchsuchen(TbxVon);
+            strecke.LoadStations(tbxVon);
         }
 
         private void BtnNachDurchsuchen_Click(object sender, EventArgs e)
         {
-            mainFormMethods.OnDurchsuchen(TbxNach);
+            strecke.LoadStations(tbxNach);
         }
 
         private void TbxVon_TextChanged(object sender, EventArgs e)
         {
-            mainFormMethods.OnVonTextChanged((TextBox)sender);
+            strecke.VonTextChanged((TextBox)sender);
         }
 
         private void TbxNach_TextChanged(object sender, EventArgs e)
         {
-            mainFormMethods.OnNachTextChanged((TextBox)sender);
+            strecke.NachTextChanged((TextBox)sender);
+        }
+
+        private void HilightButton(Button hilightButton)
+        {
+            foreach (Button button in tlpHeadButtons.Controls)
+            {
+                if (button.Name.Equals(hilightButton.Name))
+                {
+                    button.BackColor = Color.Honeydew;
+                    button.FlatAppearance.MouseOverBackColor = Color.Honeydew;
+                }
+                else
+                {
+                    button.BackColor = Color.LightGreen;
+                    button.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 255, 192);
+                }
+            }
         }
     }
 }
