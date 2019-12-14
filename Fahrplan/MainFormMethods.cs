@@ -18,15 +18,14 @@ namespace Fahrplan
         readonly Button BtnStrecke;
         readonly Button BtnFahrplan;
         readonly Button BtnVerbindung;
-        bool stationsLoaded = false;
 
-        public MainFormMethods(TableLayoutPanel tableLayoutPanel, Panel pnlStrecke, Panel pnlFahrplan, Panel pnlVerbindungen, Button _BtnStrecke, Button _BtnFahrplan, Button _BtnVerbindung, Label lbFromTo, Label[] connectionTable, TableLayoutPanel tlpConnectionTable, TableLayoutPanel tlpConnectionTableHeader, Button btnStreckeEingeben)
+        public MainFormMethods(TableLayoutPanel tableLayoutPanel, Panel pnlStrecke, Panel pnlFahrplan, Panel pnlVerbindungen, Button _BtnStrecke, Button _BtnFahrplan, Button _BtnVerbindung, Label lbFromTo, Label[] connectionTable, TableLayoutPanel tlpConnectionTable, TableLayoutPanel tlpConnectionTableHeader, Button btnStreckeEingeben, Button btnVonDurchsuchen, Button btnNachDurchsuchen)
         {
             TpnlHeadButtons = tableLayoutPanel;
             BtnStrecke = _BtnStrecke;
             BtnFahrplan = _BtnFahrplan;
             BtnVerbindung = _BtnVerbindung;
-            strecke = new Strecke(pnlStrecke, this);
+            strecke = new Strecke(pnlStrecke, this, btnVonDurchsuchen, btnNachDurchsuchen);
             fahrplan = new Fahrplan(pnlFahrplan, lbFromTo, connectionTable, tlpConnectionTable, tlpConnectionTableHeader, btnStreckeEingeben);
             verbindungen = new Verbindungen(pnlVerbindungen);
         }
@@ -61,6 +60,21 @@ namespace Fahrplan
             strecke.LoadConnections(from, to);
         }
 
+        internal void OnVonTextChanged(TextBox textBox)
+        {
+            strecke.VonTextChanged(textBox);
+        }
+
+        internal void OnNachTextChanged(TextBox textBox)
+        {
+            strecke.NachTextChanged(textBox);
+        }
+
+        public void OnDurchsuchen(TextBox textBox)
+        {
+            strecke.LoadStations(textBox);
+        }
+
         private void HilightButton(Button hilightButton)
         {
             foreach (Button button in TpnlHeadButtons.Controls)
@@ -75,20 +89,6 @@ namespace Fahrplan
                     button.BackColor = Color.LightGreen;
                     button.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 255, 192);
                 }
-            }
-        }
-
-        public void OnTextChanged(TextBox textBox)
-        {
-            if (textBox.TextLength >= 3 && !stationsLoaded)
-            {
-                //strecke.LoadStations(textBox);
-                stationsLoaded = true;
-            }
-            else if (textBox.TextLength <= 2 && stationsLoaded)
-            {
-                //strecke.ClearStations(textBox);
-                stationsLoaded = false;
             }
         }
     }

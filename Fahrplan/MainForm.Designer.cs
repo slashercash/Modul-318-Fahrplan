@@ -37,58 +37,58 @@
             this.TpnlNach = new System.Windows.Forms.TableLayoutPanel();
             this.TbxNach = new System.Windows.Forms.TextBox();
             this.BtnNachStandortAnzeigen = new System.Windows.Forms.Button();
-            this.BtnNachMeinStandort = new System.Windows.Forms.Button();
+            this.btnNachDurchsuchen = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.TpnlVon = new System.Windows.Forms.TableLayoutPanel();
             this.TbxVon = new System.Windows.Forms.TextBox();
             this.BtnVonStandortAnzeigen = new System.Windows.Forms.Button();
-            this.BtnVonMeinStandort = new System.Windows.Forms.Button();
+            this.btnVonDurchsuchen = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PnlFahrplan = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.PnlVerbindungen = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbVonNach = new System.Windows.Forms.Label();
-            this.tlpConnectionTableHeader = new System.Windows.Forms.TableLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.btnStreckeEingeben = new System.Windows.Forms.Button();
             this.tlpConnectionTable = new System.Windows.Forms.TableLayoutPanel();
+            this.lb6A = new System.Windows.Forms.Label();
+            this.lb6D = new System.Windows.Forms.Label();
+            this.lb6C = new System.Windows.Forms.Label();
+            this.lb6B = new System.Windows.Forms.Label();
             this.lb1A = new System.Windows.Forms.Label();
             this.lb1B = new System.Windows.Forms.Label();
-            this.lb2C = new System.Windows.Forms.Label();
-            this.lb2B = new System.Windows.Forms.Label();
-            this.lb2D = new System.Windows.Forms.Label();
             this.lb1C = new System.Windows.Forms.Label();
             this.lb1D = new System.Windows.Forms.Label();
             this.lb2A = new System.Windows.Forms.Label();
-            this.lb3C = new System.Windows.Forms.Label();
-            this.lb3B = new System.Windows.Forms.Label();
+            this.lb2B = new System.Windows.Forms.Label();
+            this.lb2C = new System.Windows.Forms.Label();
+            this.lb2D = new System.Windows.Forms.Label();
             this.lb3A = new System.Windows.Forms.Label();
+            this.lb3B = new System.Windows.Forms.Label();
+            this.lb3C = new System.Windows.Forms.Label();
             this.lb3D = new System.Windows.Forms.Label();
-            this.lb4C = new System.Windows.Forms.Label();
             this.lb4D = new System.Windows.Forms.Label();
+            this.lb4C = new System.Windows.Forms.Label();
             this.lb4B = new System.Windows.Forms.Label();
             this.lb4A = new System.Windows.Forms.Label();
+            this.lb5D = new System.Windows.Forms.Label();
             this.lb5C = new System.Windows.Forms.Label();
             this.lb5B = new System.Windows.Forms.Label();
-            this.lb5D = new System.Windows.Forms.Label();
             this.lb5A = new System.Windows.Forms.Label();
-            this.lb6B = new System.Windows.Forms.Label();
-            this.lb6C = new System.Windows.Forms.Label();
-            this.lb6D = new System.Windows.Forms.Label();
-            this.lb6A = new System.Windows.Forms.Label();
-            this.btnStreckeEingeben = new System.Windows.Forms.Button();
+            this.tlpConnectionTableHeader = new System.Windows.Forms.TableLayoutPanel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lbVonNach = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.PnlVerbindungen = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.TpnlHeadButtons.SuspendLayout();
             this.PnlStrecke.SuspendLayout();
             this.TpnlNach.SuspendLayout();
             this.TpnlVon.SuspendLayout();
             this.PnlFahrplan.SuspendLayout();
-            this.PnlVerbindungen.SuspendLayout();
-            this.tlpConnectionTableHeader.SuspendLayout();
             this.tlpConnectionTable.SuspendLayout();
+            this.tlpConnectionTableHeader.SuspendLayout();
+            this.PnlVerbindungen.SuspendLayout();
             this.SuspendLayout();
             // 
             // TpnlHeadButtons
@@ -215,7 +215,7 @@
             this.TpnlNach.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.TpnlNach.Controls.Add(this.TbxNach, 1, 0);
             this.TpnlNach.Controls.Add(this.BtnNachStandortAnzeigen, 3, 0);
-            this.TpnlNach.Controls.Add(this.BtnNachMeinStandort, 2, 0);
+            this.TpnlNach.Controls.Add(this.btnNachDurchsuchen, 2, 0);
             this.TpnlNach.Controls.Add(this.label5, 0, 0);
             this.TpnlNach.Location = new System.Drawing.Point(33, 99);
             this.TpnlNach.Margin = new System.Windows.Forms.Padding(33, 32, 40, 0);
@@ -236,7 +236,6 @@
             this.TbxNach.Name = "TbxNach";
             this.TbxNach.Size = new System.Drawing.Size(338, 34);
             this.TbxNach.TabIndex = 3;
-            this.TbxNach.Text = "Luzern Bahnhof";
             this.TbxNach.TextChanged += new System.EventHandler(this.TbxNach_TextChanged);
             // 
             // BtnNachStandortAnzeigen
@@ -252,18 +251,20 @@
             this.BtnNachStandortAnzeigen.Text = "button2";
             this.BtnNachStandortAnzeigen.UseVisualStyleBackColor = true;
             // 
-            // BtnNachMeinStandort
+            // btnNachDurchsuchen
             // 
-            this.BtnNachMeinStandort.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BtnNachMeinStandort.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnNachMeinStandort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnNachMeinStandort.Location = new System.Drawing.Point(405, 0);
-            this.BtnNachMeinStandort.Margin = new System.Windows.Forms.Padding(0);
-            this.BtnNachMeinStandort.Name = "BtnNachMeinStandort";
-            this.BtnNachMeinStandort.Size = new System.Drawing.Size(33, 34);
-            this.BtnNachMeinStandort.TabIndex = 5;
-            this.BtnNachMeinStandort.Text = "button4";
-            this.BtnNachMeinStandort.UseVisualStyleBackColor = true;
+            this.btnNachDurchsuchen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnNachDurchsuchen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNachDurchsuchen.Enabled = false;
+            this.btnNachDurchsuchen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNachDurchsuchen.Location = new System.Drawing.Point(405, 0);
+            this.btnNachDurchsuchen.Margin = new System.Windows.Forms.Padding(0);
+            this.btnNachDurchsuchen.Name = "btnNachDurchsuchen";
+            this.btnNachDurchsuchen.Size = new System.Drawing.Size(33, 34);
+            this.btnNachDurchsuchen.TabIndex = 5;
+            this.btnNachDurchsuchen.Text = "button4";
+            this.btnNachDurchsuchen.UseVisualStyleBackColor = true;
+            this.btnNachDurchsuchen.Click += new System.EventHandler(this.BtnNachDurchsuchen_Click);
             // 
             // label5
             // 
@@ -289,7 +290,7 @@
             this.TpnlVon.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.TpnlVon.Controls.Add(this.TbxVon, 1, 0);
             this.TpnlVon.Controls.Add(this.BtnVonStandortAnzeigen, 3, 0);
-            this.TpnlVon.Controls.Add(this.BtnVonMeinStandort, 2, 0);
+            this.TpnlVon.Controls.Add(this.btnVonDurchsuchen, 2, 0);
             this.TpnlVon.Controls.Add(this.label4, 0, 0);
             this.TpnlVon.Location = new System.Drawing.Point(33, 32);
             this.TpnlVon.Margin = new System.Windows.Forms.Padding(33, 32, 40, 0);
@@ -310,7 +311,6 @@
             this.TbxVon.Name = "TbxVon";
             this.TbxVon.Size = new System.Drawing.Size(338, 34);
             this.TbxVon.TabIndex = 3;
-            this.TbxVon.Text = "Horw Zentrum";
             this.TbxVon.TextChanged += new System.EventHandler(this.TbxVon_TextChanged);
             // 
             // BtnVonStandortAnzeigen
@@ -326,18 +326,20 @@
             this.BtnVonStandortAnzeigen.Text = "button3";
             this.BtnVonStandortAnzeigen.UseVisualStyleBackColor = true;
             // 
-            // BtnVonMeinStandort
+            // btnVonDurchsuchen
             // 
-            this.BtnVonMeinStandort.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BtnVonMeinStandort.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnVonMeinStandort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVonMeinStandort.Location = new System.Drawing.Point(405, 0);
-            this.BtnVonMeinStandort.Margin = new System.Windows.Forms.Padding(0);
-            this.BtnVonMeinStandort.Name = "BtnVonMeinStandort";
-            this.BtnVonMeinStandort.Size = new System.Drawing.Size(33, 34);
-            this.BtnVonMeinStandort.TabIndex = 5;
-            this.BtnVonMeinStandort.Text = "button1";
-            this.BtnVonMeinStandort.UseVisualStyleBackColor = true;
+            this.btnVonDurchsuchen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnVonDurchsuchen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnVonDurchsuchen.Enabled = false;
+            this.btnVonDurchsuchen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVonDurchsuchen.Location = new System.Drawing.Point(405, 0);
+            this.btnVonDurchsuchen.Margin = new System.Windows.Forms.Padding(0);
+            this.btnVonDurchsuchen.Name = "btnVonDurchsuchen";
+            this.btnVonDurchsuchen.Size = new System.Drawing.Size(33, 34);
+            this.btnVonDurchsuchen.TabIndex = 5;
+            this.btnVonDurchsuchen.Text = "button1";
+            this.btnVonDurchsuchen.UseVisualStyleBackColor = true;
+            this.btnVonDurchsuchen.Click += new System.EventHandler(this.BtnVonDurchsuchen_Click);
             // 
             // label4
             // 
@@ -376,126 +378,23 @@
             this.PnlFahrplan.Size = new System.Drawing.Size(544, 444);
             this.PnlFahrplan.TabIndex = 2;
             // 
-            // label2
+            // btnStreckeEingeben
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(496, 431);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Fahrplan";
-            // 
-            // PnlVerbindungen
-            // 
-            this.PnlVerbindungen.BackColor = System.Drawing.Color.Honeydew;
-            this.PnlVerbindungen.Controls.Add(this.label3);
-            this.PnlVerbindungen.Location = new System.Drawing.Point(438, 836);
-            this.PnlVerbindungen.Margin = new System.Windows.Forms.Padding(0);
-            this.PnlVerbindungen.Name = "PnlVerbindungen";
-            this.PnlVerbindungen.Size = new System.Drawing.Size(107, 31);
-            this.PnlVerbindungen.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(34, 18);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Verbindungen";
-            // 
-            // lbVonNach
-            // 
-            this.lbVonNach.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnStreckeEingeben.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbVonNach.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbVonNach.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lbVonNach.Location = new System.Drawing.Point(40, 40);
-            this.lbVonNach.Margin = new System.Windows.Forms.Padding(40, 40, 40, 0);
-            this.lbVonNach.Name = "lbVonNach";
-            this.lbVonNach.Size = new System.Drawing.Size(464, 61);
-            this.lbVonNach.TabIndex = 3;
-            this.lbVonNach.Text = "Geben Sie die gewünschte Strecke ein!";
-            this.lbVonNach.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // tlpConnectionTableHeader
-            // 
-            this.tlpConnectionTableHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpConnectionTableHeader.ColumnCount = 4;
-            this.tlpConnectionTableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpConnectionTableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpConnectionTableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpConnectionTableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpConnectionTableHeader.Controls.Add(this.label9, 3, 0);
-            this.tlpConnectionTableHeader.Controls.Add(this.label8, 2, 0);
-            this.tlpConnectionTableHeader.Controls.Add(this.label6, 0, 0);
-            this.tlpConnectionTableHeader.Controls.Add(this.label7, 1, 0);
-            this.tlpConnectionTableHeader.Location = new System.Drawing.Point(40, 101);
-            this.tlpConnectionTableHeader.Margin = new System.Windows.Forms.Padding(40, 0, 40, 0);
-            this.tlpConnectionTableHeader.Name = "tlpConnectionTableHeader";
-            this.tlpConnectionTableHeader.RowCount = 1;
-            this.tlpConnectionTableHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpConnectionTableHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpConnectionTableHeader.Size = new System.Drawing.Size(462, 37);
-            this.tlpConnectionTableHeader.TabIndex = 4;
-            this.tlpConnectionTableHeader.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label6.Location = new System.Drawing.Point(3, 3);
-            this.label6.Margin = new System.Windows.Forms.Padding(3);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(109, 31);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Abfahrt";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label7
-            // 
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label7.Location = new System.Drawing.Point(118, 3);
-            this.label7.Margin = new System.Windows.Forms.Padding(3);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(109, 31);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Gleis - Kante";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label8
-            // 
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label8.Location = new System.Drawing.Point(233, 3);
-            this.label8.Margin = new System.Windows.Forms.Padding(3);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(109, 31);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Ankunft";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label9
-            // 
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label9.Location = new System.Drawing.Point(348, 3);
-            this.label9.Margin = new System.Windows.Forms.Padding(3);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(111, 31);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Dauer";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnStreckeEingeben.BackColor = System.Drawing.Color.LightGreen;
+            this.btnStreckeEingeben.FlatAppearance.BorderSize = 0;
+            this.btnStreckeEingeben.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStreckeEingeben.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStreckeEingeben.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnStreckeEingeben.Location = new System.Drawing.Point(40, 115);
+            this.btnStreckeEingeben.Margin = new System.Windows.Forms.Padding(40, 39, 40, 0);
+            this.btnStreckeEingeben.Name = "btnStreckeEingeben";
+            this.btnStreckeEingeben.Size = new System.Drawing.Size(462, 58);
+            this.btnStreckeEingeben.TabIndex = 13;
+            this.btnStreckeEingeben.Text = "Strecke eingeben";
+            this.btnStreckeEingeben.UseVisualStyleBackColor = false;
+            this.btnStreckeEingeben.Click += new System.EventHandler(this.BtnStrecke_Click);
             // 
             // tlpConnectionTable
             // 
@@ -545,6 +444,58 @@
             this.tlpConnectionTable.TabIndex = 5;
             this.tlpConnectionTable.Visible = false;
             // 
+            // lb6A
+            // 
+            this.lb6A.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb6A.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb6A.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lb6A.Location = new System.Drawing.Point(3, 153);
+            this.lb6A.Margin = new System.Windows.Forms.Padding(3);
+            this.lb6A.Name = "lb6A";
+            this.lb6A.Size = new System.Drawing.Size(109, 25);
+            this.lb6A.TabIndex = 29;
+            this.lb6A.Text = "x";
+            this.lb6A.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb6D
+            // 
+            this.lb6D.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb6D.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb6D.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lb6D.Location = new System.Drawing.Point(348, 153);
+            this.lb6D.Margin = new System.Windows.Forms.Padding(3);
+            this.lb6D.Name = "lb6D";
+            this.lb6D.Size = new System.Drawing.Size(111, 25);
+            this.lb6D.TabIndex = 28;
+            this.lb6D.Text = "x";
+            this.lb6D.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb6C
+            // 
+            this.lb6C.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb6C.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb6C.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lb6C.Location = new System.Drawing.Point(233, 153);
+            this.lb6C.Margin = new System.Windows.Forms.Padding(3);
+            this.lb6C.Name = "lb6C";
+            this.lb6C.Size = new System.Drawing.Size(109, 25);
+            this.lb6C.TabIndex = 27;
+            this.lb6C.Text = "x";
+            this.lb6C.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb6B
+            // 
+            this.lb6B.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb6B.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb6B.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lb6B.Location = new System.Drawing.Point(118, 153);
+            this.lb6B.Margin = new System.Windows.Forms.Padding(3);
+            this.lb6B.Name = "lb6B";
+            this.lb6B.Size = new System.Drawing.Size(109, 25);
+            this.lb6B.TabIndex = 26;
+            this.lb6B.Text = "x";
+            this.lb6B.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lb1A
             // 
             this.lb1A.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -570,45 +521,6 @@
             this.lb1B.TabIndex = 7;
             this.lb1B.Text = "x";
             this.lb1B.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb2C
-            // 
-            this.lb2C.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb2C.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb2C.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lb2C.Location = new System.Drawing.Point(233, 33);
-            this.lb2C.Margin = new System.Windows.Forms.Padding(3);
-            this.lb2C.Name = "lb2C";
-            this.lb2C.Size = new System.Drawing.Size(109, 24);
-            this.lb2C.TabIndex = 8;
-            this.lb2C.Text = "x";
-            this.lb2C.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb2B
-            // 
-            this.lb2B.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb2B.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb2B.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lb2B.Location = new System.Drawing.Point(118, 33);
-            this.lb2B.Margin = new System.Windows.Forms.Padding(3);
-            this.lb2B.Name = "lb2B";
-            this.lb2B.Size = new System.Drawing.Size(109, 24);
-            this.lb2B.TabIndex = 9;
-            this.lb2B.Text = "x";
-            this.lb2B.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb2D
-            // 
-            this.lb2D.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb2D.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb2D.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lb2D.Location = new System.Drawing.Point(348, 33);
-            this.lb2D.Margin = new System.Windows.Forms.Padding(3);
-            this.lb2D.Name = "lb2D";
-            this.lb2D.Size = new System.Drawing.Size(111, 24);
-            this.lb2D.TabIndex = 10;
-            this.lb2D.Text = "x";
-            this.lb2D.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lb1C
             // 
@@ -649,31 +561,44 @@
             this.lb2A.Text = "x";
             this.lb2A.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lb3C
+            // lb2B
             // 
-            this.lb3C.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb3C.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb3C.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lb3C.Location = new System.Drawing.Point(233, 63);
-            this.lb3C.Margin = new System.Windows.Forms.Padding(3);
-            this.lb3C.Name = "lb3C";
-            this.lb3C.Size = new System.Drawing.Size(109, 24);
-            this.lb3C.TabIndex = 14;
-            this.lb3C.Text = "x";
-            this.lb3C.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lb2B.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb2B.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb2B.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lb2B.Location = new System.Drawing.Point(118, 33);
+            this.lb2B.Margin = new System.Windows.Forms.Padding(3);
+            this.lb2B.Name = "lb2B";
+            this.lb2B.Size = new System.Drawing.Size(109, 24);
+            this.lb2B.TabIndex = 9;
+            this.lb2B.Text = "x";
+            this.lb2B.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lb3B
+            // lb2C
             // 
-            this.lb3B.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb3B.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb3B.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lb3B.Location = new System.Drawing.Point(118, 63);
-            this.lb3B.Margin = new System.Windows.Forms.Padding(3);
-            this.lb3B.Name = "lb3B";
-            this.lb3B.Size = new System.Drawing.Size(109, 24);
-            this.lb3B.TabIndex = 15;
-            this.lb3B.Text = "x";
-            this.lb3B.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lb2C.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb2C.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb2C.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lb2C.Location = new System.Drawing.Point(233, 33);
+            this.lb2C.Margin = new System.Windows.Forms.Padding(3);
+            this.lb2C.Name = "lb2C";
+            this.lb2C.Size = new System.Drawing.Size(109, 24);
+            this.lb2C.TabIndex = 8;
+            this.lb2C.Text = "x";
+            this.lb2C.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb2D
+            // 
+            this.lb2D.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb2D.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb2D.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lb2D.Location = new System.Drawing.Point(348, 33);
+            this.lb2D.Margin = new System.Windows.Forms.Padding(3);
+            this.lb2D.Name = "lb2D";
+            this.lb2D.Size = new System.Drawing.Size(111, 24);
+            this.lb2D.TabIndex = 10;
+            this.lb2D.Text = "x";
+            this.lb2D.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lb3A
             // 
@@ -688,6 +613,32 @@
             this.lb3A.Text = "x";
             this.lb3A.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lb3B
+            // 
+            this.lb3B.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb3B.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb3B.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lb3B.Location = new System.Drawing.Point(118, 63);
+            this.lb3B.Margin = new System.Windows.Forms.Padding(3);
+            this.lb3B.Name = "lb3B";
+            this.lb3B.Size = new System.Drawing.Size(109, 24);
+            this.lb3B.TabIndex = 15;
+            this.lb3B.Text = "x";
+            this.lb3B.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb3C
+            // 
+            this.lb3C.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb3C.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb3C.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lb3C.Location = new System.Drawing.Point(233, 63);
+            this.lb3C.Margin = new System.Windows.Forms.Padding(3);
+            this.lb3C.Name = "lb3C";
+            this.lb3C.Size = new System.Drawing.Size(109, 24);
+            this.lb3C.TabIndex = 14;
+            this.lb3C.Text = "x";
+            this.lb3C.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lb3D
             // 
             this.lb3D.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -701,19 +652,6 @@
             this.lb3D.Text = "x";
             this.lb3D.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lb4C
-            // 
-            this.lb4C.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb4C.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb4C.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lb4C.Location = new System.Drawing.Point(233, 93);
-            this.lb4C.Margin = new System.Windows.Forms.Padding(3);
-            this.lb4C.Name = "lb4C";
-            this.lb4C.Size = new System.Drawing.Size(109, 24);
-            this.lb4C.TabIndex = 18;
-            this.lb4C.Text = "x";
-            this.lb4C.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lb4D
             // 
             this.lb4D.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -726,6 +664,19 @@
             this.lb4D.TabIndex = 19;
             this.lb4D.Text = "x";
             this.lb4D.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb4C
+            // 
+            this.lb4C.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb4C.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb4C.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lb4C.Location = new System.Drawing.Point(233, 93);
+            this.lb4C.Margin = new System.Windows.Forms.Padding(3);
+            this.lb4C.Name = "lb4C";
+            this.lb4C.Size = new System.Drawing.Size(109, 24);
+            this.lb4C.TabIndex = 18;
+            this.lb4C.Text = "x";
+            this.lb4C.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lb4B
             // 
@@ -753,6 +704,19 @@
             this.lb4A.Text = "x";
             this.lb4A.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lb5D
+            // 
+            this.lb5D.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb5D.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb5D.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lb5D.Location = new System.Drawing.Point(348, 123);
+            this.lb5D.Margin = new System.Windows.Forms.Padding(3);
+            this.lb5D.Name = "lb5D";
+            this.lb5D.Size = new System.Drawing.Size(111, 24);
+            this.lb5D.TabIndex = 24;
+            this.lb5D.Text = "x";
+            this.lb5D.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lb5C
             // 
             this.lb5C.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -779,19 +743,6 @@
             this.lb5B.Text = "x";
             this.lb5B.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lb5D
-            // 
-            this.lb5D.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb5D.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb5D.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lb5D.Location = new System.Drawing.Point(348, 123);
-            this.lb5D.Margin = new System.Windows.Forms.Padding(3);
-            this.lb5D.Name = "lb5D";
-            this.lb5D.Size = new System.Drawing.Size(111, 24);
-            this.lb5D.TabIndex = 24;
-            this.lb5D.Text = "x";
-            this.lb5D.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lb5A
             // 
             this.lb5A.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -805,75 +756,126 @@
             this.lb5A.Text = "x";
             this.lb5A.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lb6B
+            // tlpConnectionTableHeader
             // 
-            this.lb6B.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb6B.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb6B.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lb6B.Location = new System.Drawing.Point(118, 153);
-            this.lb6B.Margin = new System.Windows.Forms.Padding(3);
-            this.lb6B.Name = "lb6B";
-            this.lb6B.Size = new System.Drawing.Size(109, 25);
-            this.lb6B.TabIndex = 26;
-            this.lb6B.Text = "x";
-            this.lb6B.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb6C
-            // 
-            this.lb6C.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb6C.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb6C.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lb6C.Location = new System.Drawing.Point(233, 153);
-            this.lb6C.Margin = new System.Windows.Forms.Padding(3);
-            this.lb6C.Name = "lb6C";
-            this.lb6C.Size = new System.Drawing.Size(109, 25);
-            this.lb6C.TabIndex = 27;
-            this.lb6C.Text = "x";
-            this.lb6C.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb6D
-            // 
-            this.lb6D.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb6D.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb6D.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lb6D.Location = new System.Drawing.Point(348, 153);
-            this.lb6D.Margin = new System.Windows.Forms.Padding(3);
-            this.lb6D.Name = "lb6D";
-            this.lb6D.Size = new System.Drawing.Size(111, 25);
-            this.lb6D.TabIndex = 28;
-            this.lb6D.Text = "x";
-            this.lb6D.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb6A
-            // 
-            this.lb6A.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb6A.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb6A.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lb6A.Location = new System.Drawing.Point(3, 153);
-            this.lb6A.Margin = new System.Windows.Forms.Padding(3);
-            this.lb6A.Name = "lb6A";
-            this.lb6A.Size = new System.Drawing.Size(109, 25);
-            this.lb6A.TabIndex = 29;
-            this.lb6A.Text = "x";
-            this.lb6A.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnStreckeEingeben
-            // 
-            this.btnStreckeEingeben.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tlpConnectionTableHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStreckeEingeben.BackColor = System.Drawing.Color.LightGreen;
-            this.btnStreckeEingeben.FlatAppearance.BorderSize = 0;
-            this.btnStreckeEingeben.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStreckeEingeben.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStreckeEingeben.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnStreckeEingeben.Location = new System.Drawing.Point(40, 115);
-            this.btnStreckeEingeben.Margin = new System.Windows.Forms.Padding(40, 39, 40, 0);
-            this.btnStreckeEingeben.Name = "btnStreckeEingeben";
-            this.btnStreckeEingeben.Size = new System.Drawing.Size(462, 58);
-            this.btnStreckeEingeben.TabIndex = 13;
-            this.btnStreckeEingeben.Text = "Strecke eingeben";
-            this.btnStreckeEingeben.UseVisualStyleBackColor = false;
-            this.btnStreckeEingeben.Click += new System.EventHandler(this.BtnStrecke_Click);
+            this.tlpConnectionTableHeader.ColumnCount = 4;
+            this.tlpConnectionTableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpConnectionTableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpConnectionTableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpConnectionTableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpConnectionTableHeader.Controls.Add(this.label9, 3, 0);
+            this.tlpConnectionTableHeader.Controls.Add(this.label8, 2, 0);
+            this.tlpConnectionTableHeader.Controls.Add(this.label6, 0, 0);
+            this.tlpConnectionTableHeader.Controls.Add(this.label7, 1, 0);
+            this.tlpConnectionTableHeader.Location = new System.Drawing.Point(40, 101);
+            this.tlpConnectionTableHeader.Margin = new System.Windows.Forms.Padding(40, 0, 40, 0);
+            this.tlpConnectionTableHeader.Name = "tlpConnectionTableHeader";
+            this.tlpConnectionTableHeader.RowCount = 1;
+            this.tlpConnectionTableHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpConnectionTableHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tlpConnectionTableHeader.Size = new System.Drawing.Size(462, 37);
+            this.tlpConnectionTableHeader.TabIndex = 4;
+            this.tlpConnectionTableHeader.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label9.Location = new System.Drawing.Point(348, 3);
+            this.label9.Margin = new System.Windows.Forms.Padding(3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(111, 31);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Dauer";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label8
+            // 
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label8.Location = new System.Drawing.Point(233, 3);
+            this.label8.Margin = new System.Windows.Forms.Padding(3);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(109, 31);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Ankunft";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label6
+            // 
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label6.Location = new System.Drawing.Point(3, 3);
+            this.label6.Margin = new System.Windows.Forms.Padding(3);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(109, 31);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Abfahrt";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label7
+            // 
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label7.Location = new System.Drawing.Point(118, 3);
+            this.label7.Margin = new System.Windows.Forms.Padding(3);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(109, 31);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Gleis - Kante";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lbVonNach
+            // 
+            this.lbVonNach.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbVonNach.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVonNach.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lbVonNach.Location = new System.Drawing.Point(40, 40);
+            this.lbVonNach.Margin = new System.Windows.Forms.Padding(40, 40, 40, 0);
+            this.lbVonNach.Name = "lbVonNach";
+            this.lbVonNach.Size = new System.Drawing.Size(464, 61);
+            this.lbVonNach.TabIndex = 3;
+            this.lbVonNach.Text = "Geben Sie die gewünschte Strecke ein!";
+            this.lbVonNach.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(496, 431);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Fahrplan";
+            // 
+            // PnlVerbindungen
+            // 
+            this.PnlVerbindungen.BackColor = System.Drawing.Color.Honeydew;
+            this.PnlVerbindungen.Controls.Add(this.label3);
+            this.PnlVerbindungen.Location = new System.Drawing.Point(438, 836);
+            this.PnlVerbindungen.Margin = new System.Windows.Forms.Padding(0);
+            this.PnlVerbindungen.Name = "PnlVerbindungen";
+            this.PnlVerbindungen.Size = new System.Drawing.Size(107, 31);
+            this.PnlVerbindungen.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(34, 18);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Verbindungen";
             // 
             // MainForm
             // 
@@ -897,10 +899,10 @@
             this.TpnlVon.PerformLayout();
             this.PnlFahrplan.ResumeLayout(false);
             this.PnlFahrplan.PerformLayout();
+            this.tlpConnectionTable.ResumeLayout(false);
+            this.tlpConnectionTableHeader.ResumeLayout(false);
             this.PnlVerbindungen.ResumeLayout(false);
             this.PnlVerbindungen.PerformLayout();
-            this.tlpConnectionTableHeader.ResumeLayout(false);
-            this.tlpConnectionTable.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -918,14 +920,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BtnVonStandortAnzeigen;
-        private System.Windows.Forms.Button BtnVonMeinStandort;
+        private System.Windows.Forms.Button btnVonDurchsuchen;
         private System.Windows.Forms.TextBox TbxVon;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TableLayoutPanel TpnlVon;
         private System.Windows.Forms.TableLayoutPanel TpnlNach;
         private System.Windows.Forms.TextBox TbxNach;
         private System.Windows.Forms.Button BtnNachStandortAnzeigen;
-        private System.Windows.Forms.Button BtnNachMeinStandort;
+        private System.Windows.Forms.Button btnNachDurchsuchen;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button BtnVerbindungenAnzeigen;
         private System.Windows.Forms.Label lbVonNach;

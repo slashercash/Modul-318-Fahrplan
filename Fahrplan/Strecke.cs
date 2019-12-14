@@ -14,11 +14,15 @@ namespace Fahrplan
         List<Connection> connections = new List<Connection>();
         List<string> stationNames = new List<string>();
         MainFormMethods mainFormMethods;
+        Button btnVonDurchsuchen;
+        Button btnNachDurchsuchen;
 
-        public Strecke(Panel panel, MainFormMethods _mainFormMethods)
+        public Strecke(Panel panel, MainFormMethods _mainFormMethods, Button _btnVonDurchsuchen, Button _btnNachDurchsuchen)
         {
             mainFormMethods = _mainFormMethods;
             streckePanel = panel;
+            btnVonDurchsuchen = _btnVonDurchsuchen;
+            btnNachDurchsuchen = _btnNachDurchsuchen;
             streckePanel.Dock = DockStyle.Fill;
         }
 
@@ -27,41 +31,42 @@ namespace Fahrplan
             streckePanel.BringToFront();
         }
 
-        public void LoadStations(TextBox textBoxLoad)
+        public void LoadStations(TextBox textBox)
         {
-            try
-            {
-                stations.StationList = transport.GetStations(textBoxLoad.Text).StationList;
+            stations.StationList = transport.GetStations(textBox.Text).StationList;
 
-                foreach (Station station in stations.StationList)
-                {
-                    stationNames.Add(station.Name);
-                }
+            foreach (Station station in stations.StationList)
+            {
+                stationNames.Add(station.Name);
+            }
+            textBox.AutoCompleteCustomSource.AddRange(stationNames.ToArray());
 
-                textBoxLoad.AutoCompleteCustomSource.AddRange(stationNames.ToArray());
-            }
-            catch (Exception)
-            {
-                throw new System.AccessViolationException("there was error in method LoadStations()");
-            }
-        }
-
-        public void ClearStations(TextBox textBoxClear)
-        {
-            try
-            {
-                textBoxClear.AutoCompleteCustomSource.Clear();
-            }
-            catch (Exception)
-            {
-                throw new System.AccessViolationException("there was error in method ClearStations()");
-            }
+            string text = textBox.Text;
+            textBox.Text = "";
+            textBox.Focus();
+            SendKeys.Send(text);
         }
 
         public void LoadConnections(string from, string to)
         {
             connections = transport.GetConnections(from, to).ConnectionList;
             mainFormMethods.LoadFahrplan(connections);
+        }
+
+        internal void VonTextChanged(TextBox textBox)
+        {
+            if (textBox.TextLength > 0)
+            {
+                btnVonDurchsuchen.Enabled = true;
+            }
+        }
+
+        internal void NachTextChanged(TextBox textBox)
+        {
+            if (textBox.TextLength > 0)
+            {
+                btnNachDurchsuchen.Enabled = true;
+            }
         }
     }
 }
