@@ -20,14 +20,14 @@ namespace Fahrplan
         readonly Button BtnVerbindung;
         bool stationsLoaded = false;
 
-        public MainFormMethods(TableLayoutPanel tableLayoutPanel, Panel pnlStrecke, Panel pnlFahrplan, Panel pnlVerbindungen, Button _BtnStrecke, Button _BtnFahrplan, Button _BtnVerbindung, ListView lvConnections)
+        public MainFormMethods(TableLayoutPanel tableLayoutPanel, Panel pnlStrecke, Panel pnlFahrplan, Panel pnlVerbindungen, Button _BtnStrecke, Button _BtnFahrplan, Button _BtnVerbindung, Label lbFromTo, Label[] connectionTable, TableLayoutPanel tlpConnectionTable, TableLayoutPanel tlpConnectionTableHeader, Button btnStreckeEingeben)
         {
             TpnlHeadButtons = tableLayoutPanel;
             BtnStrecke = _BtnStrecke;
             BtnFahrplan = _BtnFahrplan;
             BtnVerbindung = _BtnVerbindung;
             strecke = new Strecke(pnlStrecke, this);
-            fahrplan = new Fahrplan(pnlFahrplan, lvConnections);
+            fahrplan = new Fahrplan(pnlFahrplan, lbFromTo, connectionTable, tlpConnectionTable, tlpConnectionTableHeader, btnStreckeEingeben);
             verbindungen = new Verbindungen(pnlVerbindungen);
         }
 
@@ -43,7 +43,7 @@ namespace Fahrplan
             fahrplan.LoadPanel();
         }
 
-        internal void LoadFahrplan(Connections connections)
+        internal void LoadFahrplan(List<Connection> connections)
         {
             HilightButton(BtnFahrplan);
             fahrplan.LoadConnections(connections);

@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Net;
 using Newtonsoft.Json;
 
@@ -60,6 +61,11 @@ namespace SwissTransport
             }
 
             return null;
+        }
+
+        public void GetStationBoard(object p)
+        {
+            throw new NotImplementedException();
         }
 
         private static WebRequest CreateWebRequest(string url)

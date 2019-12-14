@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
 using SwissTransport;
 
@@ -7,29 +9,41 @@ namespace Fahrplan
 {
     class Fahrplan
     {
+        readonly Button btnStreckeEingeben;
         readonly Panel fahrplanPanel;
-        readonly ListView lvConnections;
+        readonly Label lbFromTo;
+        readonly Label[] connectionTable;
+        readonly TableLayoutPanel tlpConnectionTable;
+        readonly TableLayoutPanel tlpConnectionTableHeader;
 
-        public Fahrplan(Panel panel, ListView _lvConnections)
+        public Fahrplan(Panel panel, Label _lbFromTo, Label[] _connectionTable, TableLayoutPanel _tlpConnectionTable, TableLayoutPanel _tlpConnectionTableHeader, Button _btnStreckeEingeben)
         {
+            btnStreckeEingeben = _btnStreckeEingeben;
             fahrplanPanel = panel;
-            lvConnections = _lvConnections;
+            lbFromTo = _lbFromTo;
+            connectionTable = _connectionTable;
+            tlpConnectionTable = _tlpConnectionTable;
+            tlpConnectionTableHeader = _tlpConnectionTableHeader;
             fahrplanPanel.Dock = DockStyle.Fill;
         }
 
-        internal void LoadConnections(Connections connections)
+        internal void LoadConnections(List<Connection> connections)
         {
-            lvConnections.Items.Clear();
+            lbFromTo.Text = String.Format("{0}  🡺  {1}", connections.First().From.Station.Name, connections.First().To.Station.Name);
+            tlpConnectionTable.Visible = true;
+            tlpConnectionTableHeader.Visible = true;
+            btnStreckeEingeben.Visible = false;
 
-            foreach (Connection connection in connections.ConnectionList)
+
+            int pointer = 0;
+            foreach (Connection connection in connections)
             {
                 string departure = Convert.ToDateTime(connection.From.Departure).ToString("HH:mm");
                 string arival = Convert.ToDateTime(connection.To.Arrival).ToString("HH:mm");
-
                 string duration;
                 string durationUnformatted = connection.Duration.Substring(connection.Duration.IndexOf('d') + 1);
                 DateTime dtDuration = Convert.ToDateTime(durationUnformatted);
-                if(dtDuration.Hour == 0)
+                if (dtDuration.Hour == 0)
                 {
                     duration = String.Format("{0} Min", dtDuration.Minute.ToString());
                 }
@@ -38,16 +52,19 @@ namespace Fahrplan
                     duration = String.Format("{0} Std, {1} Min", dtDuration.Hour.ToString(), dtDuration.Minute.ToString());
                 }
 
-                string[] connectionArray = new string[] 
-                {
-                    departure,
-                    connection.From.Platform,
-                    arival,
-                    duration
-                };
+                connectionTable[pointer].Text = departure;
+                pointer++;
+                connectionTable[pointer].Text = String.IsNullOrEmpty(connection.From.Platform) ? "-" : connection.From.Platform;
+                pointer++;
+                connectionTable[pointer].Text = arival;
+                pointer++;
+                connectionTable[pointer].Text = duration;
+                pointer++;
+            }
 
-                ListViewItem listViewItem = new ListViewItem(connectionArray);
-                lvConnections.Items.Add(listViewItem);
+            for (int i = pointer; i < connectionTable.Length; i++)
+            {
+                connectionTable[i].Text = "";
             }
         }
 

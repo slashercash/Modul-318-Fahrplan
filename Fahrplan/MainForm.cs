@@ -15,7 +15,8 @@ namespace Fahrplan
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            mainFormMethods = new MainFormMethods(TpnlHeadButtons, PnlStrecke, PnlFahrplan, PnlVerbindungen, BtnStrecke, BtnFahrplan, BtnVerbindung, lvConnections);
+            Label[] connectionTable = new Label[] { lb1A, lb1B, lb1C, lb1D, lb2A, lb2B, lb2C, lb2D, lb3A, lb3B, lb3C, lb3D, lb4A, lb4B, lb4C, lb4D, lb5A, lb5B, lb5C, lb5D, lb6A, lb6B, lb6C, lb6D };
+            mainFormMethods = new MainFormMethods(TpnlHeadButtons, PnlStrecke, PnlFahrplan, PnlVerbindungen, BtnStrecke, BtnFahrplan, BtnVerbindung, lbVonNach, connectionTable, tlpConnectionTable, tlpConnectionTableHeader, btnStreckeEingeben);
             mainFormMethods.LoadStrecke();
         }
 
