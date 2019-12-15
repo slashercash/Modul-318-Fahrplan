@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tlpHeadButtons = new System.Windows.Forms.TableLayoutPanel();
             this.btnVerbindung = new System.Windows.Forms.Button();
             this.btnStrecke = new System.Windows.Forms.Button();
@@ -40,9 +41,9 @@
             this.btnNachDurchsuchen = new System.Windows.Forms.Button();
             this.lbNach = new System.Windows.Forms.Label();
             this.tlpVon = new System.Windows.Forms.TableLayoutPanel();
+            this.btnVonDurchsuchen = new System.Windows.Forms.Button();
             this.tbxVon = new System.Windows.Forms.TextBox();
             this.btnVonStandortAnzeigen = new System.Windows.Forms.Button();
-            this.btnVonDurchsuchen = new System.Windows.Forms.Button();
             this.lbVon = new System.Windows.Forms.Label();
             this.pnlFahrplan = new System.Windows.Forms.Panel();
             this.btnStreckeEingeben = new System.Windows.Forms.Button();
@@ -237,29 +238,37 @@
             // btnNachStandortAnzeigen
             // 
             this.btnNachStandortAnzeigen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnNachStandortAnzeigen.BackColor = System.Drawing.Color.LightGray;
+            this.btnNachStandortAnzeigen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNachStandortAnzeigen.BackgroundImage")));
+            this.btnNachStandortAnzeigen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNachStandortAnzeigen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNachStandortAnzeigen.Enabled = false;
+            this.btnNachStandortAnzeigen.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.btnNachStandortAnzeigen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNachStandortAnzeigen.Location = new System.Drawing.Point(438, 0);
             this.btnNachStandortAnzeigen.Margin = new System.Windows.Forms.Padding(0);
             this.btnNachStandortAnzeigen.Name = "btnNachStandortAnzeigen";
             this.btnNachStandortAnzeigen.Size = new System.Drawing.Size(33, 34);
             this.btnNachStandortAnzeigen.TabIndex = 7;
-            this.btnNachStandortAnzeigen.Text = "button2";
-            this.btnNachStandortAnzeigen.UseVisualStyleBackColor = true;
+            this.btnNachStandortAnzeigen.UseVisualStyleBackColor = false;
+            this.btnNachStandortAnzeigen.Click += new System.EventHandler(this.BtnNachStandortAnzeigen_Click);
             // 
             // btnNachDurchsuchen
             // 
             this.btnNachDurchsuchen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnNachDurchsuchen.BackColor = System.Drawing.Color.LightGray;
+            this.btnNachDurchsuchen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNachDurchsuchen.BackgroundImage")));
+            this.btnNachDurchsuchen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNachDurchsuchen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnNachDurchsuchen.Enabled = false;
+            this.btnNachDurchsuchen.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.btnNachDurchsuchen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNachDurchsuchen.Location = new System.Drawing.Point(405, 0);
             this.btnNachDurchsuchen.Margin = new System.Windows.Forms.Padding(0);
             this.btnNachDurchsuchen.Name = "btnNachDurchsuchen";
             this.btnNachDurchsuchen.Size = new System.Drawing.Size(33, 34);
             this.btnNachDurchsuchen.TabIndex = 5;
-            this.btnNachDurchsuchen.Text = "button4";
-            this.btnNachDurchsuchen.UseVisualStyleBackColor = true;
+            this.btnNachDurchsuchen.UseVisualStyleBackColor = false;
             this.btnNachDurchsuchen.Click += new System.EventHandler(this.BtnNachDurchsuchen_Click);
             // 
             // lbNach
@@ -284,9 +293,9 @@
             this.tlpVon.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpVon.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tlpVon.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tlpVon.Controls.Add(this.btnVonDurchsuchen, 2, 0);
             this.tlpVon.Controls.Add(this.tbxVon, 1, 0);
             this.tlpVon.Controls.Add(this.btnVonStandortAnzeigen, 3, 0);
-            this.tlpVon.Controls.Add(this.btnVonDurchsuchen, 2, 0);
             this.tlpVon.Controls.Add(this.lbVon, 0, 0);
             this.tlpVon.Location = new System.Drawing.Point(33, 32);
             this.tlpVon.Margin = new System.Windows.Forms.Padding(33, 32, 40, 0);
@@ -295,6 +304,24 @@
             this.tlpVon.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tlpVon.Size = new System.Drawing.Size(471, 34);
             this.tlpVon.TabIndex = 1;
+            // 
+            // btnVonDurchsuchen
+            // 
+            this.btnVonDurchsuchen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnVonDurchsuchen.BackColor = System.Drawing.Color.LightGray;
+            this.btnVonDurchsuchen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVonDurchsuchen.BackgroundImage")));
+            this.btnVonDurchsuchen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVonDurchsuchen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnVonDurchsuchen.Enabled = false;
+            this.btnVonDurchsuchen.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnVonDurchsuchen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVonDurchsuchen.Location = new System.Drawing.Point(405, 0);
+            this.btnVonDurchsuchen.Margin = new System.Windows.Forms.Padding(0);
+            this.btnVonDurchsuchen.Name = "btnVonDurchsuchen";
+            this.btnVonDurchsuchen.Size = new System.Drawing.Size(33, 34);
+            this.btnVonDurchsuchen.TabIndex = 5;
+            this.btnVonDurchsuchen.UseVisualStyleBackColor = false;
+            this.btnVonDurchsuchen.Click += new System.EventHandler(this.BtnVonDurchsuchen_Click);
             // 
             // tbxVon
             // 
@@ -313,30 +340,20 @@
             // btnVonStandortAnzeigen
             // 
             this.btnVonStandortAnzeigen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnVonStandortAnzeigen.BackColor = System.Drawing.Color.LightGray;
+            this.btnVonStandortAnzeigen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVonStandortAnzeigen.BackgroundImage")));
+            this.btnVonStandortAnzeigen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVonStandortAnzeigen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnVonStandortAnzeigen.Enabled = false;
+            this.btnVonStandortAnzeigen.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.btnVonStandortAnzeigen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVonStandortAnzeigen.Location = new System.Drawing.Point(438, 0);
             this.btnVonStandortAnzeigen.Margin = new System.Windows.Forms.Padding(0);
             this.btnVonStandortAnzeigen.Name = "btnVonStandortAnzeigen";
             this.btnVonStandortAnzeigen.Size = new System.Drawing.Size(33, 34);
             this.btnVonStandortAnzeigen.TabIndex = 7;
-            this.btnVonStandortAnzeigen.Text = "button3";
-            this.btnVonStandortAnzeigen.UseVisualStyleBackColor = true;
-            // 
-            // btnVonDurchsuchen
-            // 
-            this.btnVonDurchsuchen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnVonDurchsuchen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnVonDurchsuchen.Enabled = false;
-            this.btnVonDurchsuchen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVonDurchsuchen.Location = new System.Drawing.Point(405, 0);
-            this.btnVonDurchsuchen.Margin = new System.Windows.Forms.Padding(0);
-            this.btnVonDurchsuchen.Name = "btnVonDurchsuchen";
-            this.btnVonDurchsuchen.Size = new System.Drawing.Size(33, 34);
-            this.btnVonDurchsuchen.TabIndex = 5;
-            this.btnVonDurchsuchen.Text = "button1";
-            this.btnVonDurchsuchen.UseVisualStyleBackColor = true;
-            this.btnVonDurchsuchen.Click += new System.EventHandler(this.BtnVonDurchsuchen_Click);
+            this.btnVonStandortAnzeigen.UseVisualStyleBackColor = false;
+            this.btnVonStandortAnzeigen.Click += new System.EventHandler(this.BtnVonStandortAnzeigen_Click);
             // 
             // lbVon
             // 

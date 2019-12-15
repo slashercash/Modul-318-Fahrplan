@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using SwissTransport;
@@ -38,9 +39,22 @@ namespace Fahrplan
             }
         }
 
-        public void VonNachTextChanged(TextBox textBox, Button button)
+        public void VonNachTextChanged(TextBox textBox, Button btnDurchsuchen, Button btnStandortAnzeigen)
         {
-            button.Enabled = textBox.TextLength == 0 ? false : true;
+            if (textBox.TextLength == 0)
+            {
+                btnDurchsuchen.Enabled = false;
+                btnDurchsuchen.BackColor = Color.LightGray;
+                btnStandortAnzeigen.Enabled = false;
+                btnStandortAnzeigen.BackColor = Color.LightGray;
+            }
+            else
+            {
+                btnDurchsuchen.Enabled = true;
+                btnDurchsuchen.BackColor = Color.LightGreen;
+                btnStandortAnzeigen.Enabled = true;
+                btnStandortAnzeigen.BackColor = Color.LightGreen;
+            }
         }
 
         public void LoadStations(TextBox textBox)
@@ -58,6 +72,16 @@ namespace Fahrplan
             textBox.Text = "";
             textBox.Focus();
             SendKeys.Send(text);
+        }
+
+        internal void LoadLocation(TextBox textBox)
+        {
+            Station station = transport.GetStations(textBox.Text).StationList.First();
+            textBox.Text = station.Name;
+            string xCoordinate = station.Coordinate.XCoordinate.ToString().Replace(",", ".");
+            string yCoordinate = station.Coordinate.YCoordinate.ToString().Replace(",", ".");
+            string webAdress = String.Format("http://maps.google.com/?q={0},{1}&zoom=21", xCoordinate, yCoordinate);
+            System.Diagnostics.Process.Start(webAdress);
         }
     }
 }

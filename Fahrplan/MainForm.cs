@@ -68,12 +68,22 @@ namespace Fahrplan
 
         private void TbxVon_TextChanged(object sender, EventArgs e)
         {
-            strecke.VonNachTextChanged((TextBox)sender, btnVonDurchsuchen);
+            strecke.VonNachTextChanged((TextBox)sender, btnVonDurchsuchen, btnVonStandortAnzeigen);
         }
 
         private void TbxNach_TextChanged(object sender, EventArgs e)
         {
-            strecke.VonNachTextChanged((TextBox)sender, btnNachDurchsuchen);
+            strecke.VonNachTextChanged((TextBox)sender, btnNachDurchsuchen, btnNachStandortAnzeigen);
+        }
+
+        private void BtnVonStandortAnzeigen_Click(object sender, EventArgs e)
+        {
+            strecke.LoadLocation(tbxVon);
+        }
+
+        private void BtnNachStandortAnzeigen_Click(object sender, EventArgs e)
+        {
+            strecke.LoadLocation(tbxNach);
         }
 
         private void HilightButton(Button hilightButton)
