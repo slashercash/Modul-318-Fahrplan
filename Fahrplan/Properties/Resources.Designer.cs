@@ -63,6 +63,26 @@ namespace Fahrplan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ab {
+            get {
+                object obj = ResourceManager.GetObject("Ab", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap An {
+            get {
+                object obj = ResourceManager.GetObject("An", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LocationIcon {
             get {
                 object obj = ResourceManager.GetObject("LocationIcon", resourceCulture);

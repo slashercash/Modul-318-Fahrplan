@@ -89,12 +89,17 @@
       <Name>SwissTransport</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Ab.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\LocationIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SearchIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\An.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
@@ -11,6 +12,7 @@ namespace Fahrplan
     {
         readonly Transport transport = new Transport();
         List<Connection> connections = new List<Connection>();
+        bool isArivalTime = false;
 
         readonly Panel pnlFahrplan;
         readonly TableLayoutPanel tlpConnectionTable;
@@ -38,9 +40,18 @@ namespace Fahrplan
             pnlFahrplan.BringToFront();
         }
 
-        public void LoadConnections(string from, string to)
+        internal void SetArrivalDeparture(Button btnActivate, Button btnDeactivate, bool _isArivalTime)
         {
-            connections = transport.GetConnections(from, to).ConnectionList;
+            isArivalTime = _isArivalTime;
+            btnActivate.FlatAppearance.BorderColor = Color.Gray;
+            btnDeactivate.FlatAppearance.BorderColor = Color.LightGreen;
+        }
+
+        public void LoadConnections(string from, string to, DateTime date, DateTime time)
+        {
+            DateTime departureTime = new DateTime(date.Year, date.Month, date.Day, time.Hour, time.Minute, time.Second);
+
+            connections = transport.GetConnections(from, to, 5, departureTime, isArivalTime).ConnectionList;
 
             int pointer = 0;
             foreach (Connection connection in connections)

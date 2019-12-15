@@ -63,6 +63,32 @@ namespace SwissTransport
             return null;
         }
 
+
+        public Connections GetConnections(string fromStation, string toStation, int connectionsCount, DateTime departureDateTime, bool isArrivalTime = false)
+        {
+            fromStation = System.Uri.EscapeDataString(fromStation);
+            toStation = System.Uri.EscapeDataString(toStation);
+            var request = CreateWebRequest(
+                    "http://transport.opendata.ch/v1/connections?" +
+                    $"from={fromStation}&to={toStation}" +
+                    $"&limit={connectionsCount}" +
+                    $"&date={departureDateTime:yyyy-MM-dd}" +
+                    $"&time={departureDateTime:HH:mm}" +
+                    $"&isArrivalTime={(isArrivalTime ? "1" : "0")}");
+            var response = request.GetResponse();
+            var responseStream = response.GetResponseStream();
+
+            if (responseStream != null)
+            {
+                var readToEnd = new StreamReader(responseStream).ReadToEnd();
+                var connections =
+                    JsonConvert.DeserializeObject<Connections>(readToEnd);
+                return connections;
+            }
+
+            return null;
+        }
+
         public void GetStationBoard(object p)
         {
             throw new NotImplementedException();

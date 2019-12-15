@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tlpHeadButtons = new System.Windows.Forms.TableLayoutPanel();
             this.btnVerbindung = new System.Windows.Forms.Button();
@@ -37,13 +38,9 @@
             this.btnVerbindungenAnzeigen = new System.Windows.Forms.Button();
             this.tlpNach = new System.Windows.Forms.TableLayoutPanel();
             this.tbxNach = new System.Windows.Forms.TextBox();
-            this.btnNachStandortAnzeigen = new System.Windows.Forms.Button();
-            this.btnNachDurchsuchen = new System.Windows.Forms.Button();
             this.lbNach = new System.Windows.Forms.Label();
             this.tlpVon = new System.Windows.Forms.TableLayoutPanel();
-            this.btnVonDurchsuchen = new System.Windows.Forms.Button();
             this.tbxVon = new System.Windows.Forms.TextBox();
-            this.btnVonStandortAnzeigen = new System.Windows.Forms.Button();
             this.lbVon = new System.Windows.Forms.Label();
             this.pnlFahrplan = new System.Windows.Forms.Panel();
             this.btnStreckeEingeben = new System.Windows.Forms.Button();
@@ -79,6 +76,17 @@
             this.lbGleisKante = new System.Windows.Forms.Label();
             this.lbVonNach = new System.Windows.Forms.Label();
             this.pnlVerbindungen = new System.Windows.Forms.Panel();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
+            this.timePicker = new System.Windows.Forms.DateTimePicker();
+            this.tlpZeit = new System.Windows.Forms.TableLayoutPanel();
+            this.lbZeit = new System.Windows.Forms.Label();
+            this.btnAnkunftsZeit = new System.Windows.Forms.Button();
+            this.btnAbfahrtsZeit = new System.Windows.Forms.Button();
+            this.btnNachStandortAnzeigen = new System.Windows.Forms.Button();
+            this.btnNachDurchsuchen = new System.Windows.Forms.Button();
+            this.btnVonDurchsuchen = new System.Windows.Forms.Button();
+            this.btnVonStandortAnzeigen = new System.Windows.Forms.Button();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tlpHeadButtons.SuspendLayout();
             this.pnlStrecke.SuspendLayout();
             this.tlpNach.SuspendLayout();
@@ -86,6 +94,7 @@
             this.pnlFahrplan.SuspendLayout();
             this.tlpConnectionTable.SuspendLayout();
             this.tlpConnectionTableHeader.SuspendLayout();
+            this.tlpZeit.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpHeadButtons
@@ -172,13 +181,14 @@
             // pnlStrecke
             // 
             this.pnlStrecke.BackColor = System.Drawing.Color.Honeydew;
+            this.pnlStrecke.Controls.Add(this.tlpZeit);
             this.pnlStrecke.Controls.Add(this.btnVerbindungenAnzeigen);
             this.pnlStrecke.Controls.Add(this.tlpNach);
             this.pnlStrecke.Controls.Add(this.tlpVon);
             this.pnlStrecke.Location = new System.Drawing.Point(0, 62);
             this.pnlStrecke.Margin = new System.Windows.Forms.Padding(0);
             this.pnlStrecke.Name = "pnlStrecke";
-            this.pnlStrecke.Size = new System.Drawing.Size(544, 252);
+            this.pnlStrecke.Size = new System.Drawing.Size(544, 339);
             this.pnlStrecke.TabIndex = 1;
             // 
             // btnVerbindungenAnzeigen
@@ -190,10 +200,10 @@
             this.btnVerbindungenAnzeigen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerbindungenAnzeigen.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerbindungenAnzeigen.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnVerbindungenAnzeigen.Location = new System.Drawing.Point(40, 172);
-            this.btnVerbindungenAnzeigen.Margin = new System.Windows.Forms.Padding(40, 39, 40, 0);
+            this.btnVerbindungenAnzeigen.Location = new System.Drawing.Point(33, 231);
+            this.btnVerbindungenAnzeigen.Margin = new System.Windows.Forms.Padding(40, 32, 40, 0);
             this.btnVerbindungenAnzeigen.Name = "btnVerbindungenAnzeigen";
-            this.btnVerbindungenAnzeigen.Size = new System.Drawing.Size(464, 58);
+            this.btnVerbindungenAnzeigen.Size = new System.Drawing.Size(471, 58);
             this.btnVerbindungenAnzeigen.TabIndex = 3;
             this.btnVerbindungenAnzeigen.Text = "Fahrplan anzeigen";
             this.btnVerbindungenAnzeigen.UseVisualStyleBackColor = false;
@@ -235,42 +245,6 @@
             this.tbxNach.TextChanged += new System.EventHandler(this.TbxNach_TextChanged);
             this.tbxNach.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbxVonNach_KeyDown);
             // 
-            // btnNachStandortAnzeigen
-            // 
-            this.btnNachStandortAnzeigen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnNachStandortAnzeigen.BackColor = System.Drawing.Color.LightGray;
-            this.btnNachStandortAnzeigen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNachStandortAnzeigen.BackgroundImage")));
-            this.btnNachStandortAnzeigen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNachStandortAnzeigen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNachStandortAnzeigen.Enabled = false;
-            this.btnNachStandortAnzeigen.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowFrame;
-            this.btnNachStandortAnzeigen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNachStandortAnzeigen.Location = new System.Drawing.Point(438, 0);
-            this.btnNachStandortAnzeigen.Margin = new System.Windows.Forms.Padding(0);
-            this.btnNachStandortAnzeigen.Name = "btnNachStandortAnzeigen";
-            this.btnNachStandortAnzeigen.Size = new System.Drawing.Size(33, 34);
-            this.btnNachStandortAnzeigen.TabIndex = 7;
-            this.btnNachStandortAnzeigen.UseVisualStyleBackColor = false;
-            this.btnNachStandortAnzeigen.Click += new System.EventHandler(this.BtnNachStandortAnzeigen_Click);
-            // 
-            // btnNachDurchsuchen
-            // 
-            this.btnNachDurchsuchen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnNachDurchsuchen.BackColor = System.Drawing.Color.LightGray;
-            this.btnNachDurchsuchen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNachDurchsuchen.BackgroundImage")));
-            this.btnNachDurchsuchen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNachDurchsuchen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNachDurchsuchen.Enabled = false;
-            this.btnNachDurchsuchen.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowFrame;
-            this.btnNachDurchsuchen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNachDurchsuchen.Location = new System.Drawing.Point(405, 0);
-            this.btnNachDurchsuchen.Margin = new System.Windows.Forms.Padding(0);
-            this.btnNachDurchsuchen.Name = "btnNachDurchsuchen";
-            this.btnNachDurchsuchen.Size = new System.Drawing.Size(33, 34);
-            this.btnNachDurchsuchen.TabIndex = 5;
-            this.btnNachDurchsuchen.UseVisualStyleBackColor = false;
-            this.btnNachDurchsuchen.Click += new System.EventHandler(this.BtnNachDurchsuchen_Click);
-            // 
             // lbNach
             // 
             this.lbNach.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -305,24 +279,6 @@
             this.tlpVon.Size = new System.Drawing.Size(471, 34);
             this.tlpVon.TabIndex = 1;
             // 
-            // btnVonDurchsuchen
-            // 
-            this.btnVonDurchsuchen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnVonDurchsuchen.BackColor = System.Drawing.Color.LightGray;
-            this.btnVonDurchsuchen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVonDurchsuchen.BackgroundImage")));
-            this.btnVonDurchsuchen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVonDurchsuchen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnVonDurchsuchen.Enabled = false;
-            this.btnVonDurchsuchen.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowFrame;
-            this.btnVonDurchsuchen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVonDurchsuchen.Location = new System.Drawing.Point(405, 0);
-            this.btnVonDurchsuchen.Margin = new System.Windows.Forms.Padding(0);
-            this.btnVonDurchsuchen.Name = "btnVonDurchsuchen";
-            this.btnVonDurchsuchen.Size = new System.Drawing.Size(33, 34);
-            this.btnVonDurchsuchen.TabIndex = 5;
-            this.btnVonDurchsuchen.UseVisualStyleBackColor = false;
-            this.btnVonDurchsuchen.Click += new System.EventHandler(this.BtnVonDurchsuchen_Click);
-            // 
             // tbxVon
             // 
             this.tbxVon.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
@@ -336,24 +292,6 @@
             this.tbxVon.TabIndex = 1;
             this.tbxVon.TextChanged += new System.EventHandler(this.TbxVon_TextChanged);
             this.tbxVon.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbxVonNach_KeyDown);
-            // 
-            // btnVonStandortAnzeigen
-            // 
-            this.btnVonStandortAnzeigen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnVonStandortAnzeigen.BackColor = System.Drawing.Color.LightGray;
-            this.btnVonStandortAnzeigen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVonStandortAnzeigen.BackgroundImage")));
-            this.btnVonStandortAnzeigen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVonStandortAnzeigen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnVonStandortAnzeigen.Enabled = false;
-            this.btnVonStandortAnzeigen.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowFrame;
-            this.btnVonStandortAnzeigen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVonStandortAnzeigen.Location = new System.Drawing.Point(438, 0);
-            this.btnVonStandortAnzeigen.Margin = new System.Windows.Forms.Padding(0);
-            this.btnVonStandortAnzeigen.Name = "btnVonStandortAnzeigen";
-            this.btnVonStandortAnzeigen.Size = new System.Drawing.Size(33, 34);
-            this.btnVonStandortAnzeigen.TabIndex = 7;
-            this.btnVonStandortAnzeigen.UseVisualStyleBackColor = false;
-            this.btnVonStandortAnzeigen.Click += new System.EventHandler(this.BtnVonStandortAnzeigen_Click);
             // 
             // lbVon
             // 
@@ -374,10 +312,10 @@
             this.pnlFahrplan.Controls.Add(this.tlpConnectionTable);
             this.pnlFahrplan.Controls.Add(this.tlpConnectionTableHeader);
             this.pnlFahrplan.Controls.Add(this.lbVonNach);
-            this.pnlFahrplan.Location = new System.Drawing.Point(0, 314);
+            this.pnlFahrplan.Location = new System.Drawing.Point(0, 415);
             this.pnlFahrplan.Margin = new System.Windows.Forms.Padding(0);
             this.pnlFahrplan.Name = "pnlFahrplan";
-            this.pnlFahrplan.Size = new System.Drawing.Size(544, 444);
+            this.pnlFahrplan.Size = new System.Drawing.Size(544, 343);
             this.pnlFahrplan.TabIndex = 2;
             // 
             // btnStreckeEingeben
@@ -854,6 +792,187 @@
             this.pnlVerbindungen.Size = new System.Drawing.Size(491, 252);
             this.pnlVerbindungen.TabIndex = 2;
             // 
+            // datePicker
+            // 
+            this.datePicker.CalendarFont = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.datePicker.Font = new System.Drawing.Font("Calibri", 16F);
+            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datePicker.Location = new System.Drawing.Point(67, 0);
+            this.datePicker.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(232, 34);
+            this.datePicker.TabIndex = 4;
+            this.datePicker.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            // 
+            // timePicker
+            // 
+            this.timePicker.CalendarFont = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timePicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.timePicker.Font = new System.Drawing.Font("Calibri", 16F);
+            this.timePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.timePicker.Location = new System.Drawing.Point(305, 0);
+            this.timePicker.Margin = new System.Windows.Forms.Padding(3, 0, 6, 0);
+            this.timePicker.Name = "timePicker";
+            this.timePicker.Size = new System.Drawing.Size(92, 34);
+            this.timePicker.TabIndex = 5;
+            this.timePicker.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            // 
+            // tlpZeit
+            // 
+            this.tlpZeit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlpZeit.ColumnCount = 5;
+            this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tlpZeit.Controls.Add(this.btnAnkunftsZeit, 4, 0);
+            this.tlpZeit.Controls.Add(this.lbZeit, 0, 0);
+            this.tlpZeit.Controls.Add(this.datePicker, 1, 0);
+            this.tlpZeit.Controls.Add(this.timePicker, 2, 0);
+            this.tlpZeit.Controls.Add(this.btnAbfahrtsZeit, 3, 0);
+            this.tlpZeit.Location = new System.Drawing.Point(33, 165);
+            this.tlpZeit.Margin = new System.Windows.Forms.Padding(3, 32, 3, 3);
+            this.tlpZeit.Name = "tlpZeit";
+            this.tlpZeit.RowCount = 1;
+            this.tlpZeit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tlpZeit.Size = new System.Drawing.Size(471, 34);
+            this.tlpZeit.TabIndex = 6;
+            // 
+            // lbZeit
+            // 
+            this.lbZeit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbZeit.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbZeit.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lbZeit.Location = new System.Drawing.Point(0, 0);
+            this.lbZeit.Margin = new System.Windows.Forms.Padding(0);
+            this.lbZeit.Name = "lbZeit";
+            this.lbZeit.Size = new System.Drawing.Size(67, 34);
+            this.lbZeit.TabIndex = 6;
+            this.lbZeit.Text = "Zeit";
+            // 
+            // btnAnkunftsZeit
+            // 
+            this.btnAnkunftsZeit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAnkunftsZeit.BackColor = System.Drawing.Color.LightGreen;
+            this.btnAnkunftsZeit.BackgroundImage = global::Fahrplan.Properties.Resources.An;
+            this.btnAnkunftsZeit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAnkunftsZeit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAnkunftsZeit.FlatAppearance.BorderColor = System.Drawing.Color.LightGreen;
+            this.btnAnkunftsZeit.FlatAppearance.BorderSize = 2;
+            this.btnAnkunftsZeit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnkunftsZeit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnkunftsZeit.Location = new System.Drawing.Point(436, 0);
+            this.btnAnkunftsZeit.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAnkunftsZeit.Name = "btnAnkunftsZeit";
+            this.btnAnkunftsZeit.Size = new System.Drawing.Size(35, 34);
+            this.btnAnkunftsZeit.TabIndex = 8;
+            this.toolTip.SetToolTip(this.btnAnkunftsZeit, "Selekierte Zeit ist Ankunftszeit");
+            this.btnAnkunftsZeit.UseVisualStyleBackColor = false;
+            this.btnAnkunftsZeit.Click += new System.EventHandler(this.BtnAnkunftsZeit_Click);
+            // 
+            // btnAbfahrtsZeit
+            // 
+            this.btnAbfahrtsZeit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAbfahrtsZeit.BackColor = System.Drawing.Color.LightGreen;
+            this.btnAbfahrtsZeit.BackgroundImage = global::Fahrplan.Properties.Resources.Ab;
+            this.btnAbfahrtsZeit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAbfahrtsZeit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAbfahrtsZeit.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnAbfahrtsZeit.FlatAppearance.BorderSize = 2;
+            this.btnAbfahrtsZeit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbfahrtsZeit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbfahrtsZeit.Location = new System.Drawing.Point(403, 0);
+            this.btnAbfahrtsZeit.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAbfahrtsZeit.Name = "btnAbfahrtsZeit";
+            this.btnAbfahrtsZeit.Size = new System.Drawing.Size(33, 34);
+            this.btnAbfahrtsZeit.TabIndex = 7;
+            this.toolTip.SetToolTip(this.btnAbfahrtsZeit, "Selekierte Zeit ist Abfahrtszeit");
+            this.btnAbfahrtsZeit.UseVisualStyleBackColor = false;
+            this.btnAbfahrtsZeit.Click += new System.EventHandler(this.BtnAbfahrtsZeit_Click);
+            // 
+            // btnNachStandortAnzeigen
+            // 
+            this.btnNachStandortAnzeigen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnNachStandortAnzeigen.BackColor = System.Drawing.Color.LightGray;
+            this.btnNachStandortAnzeigen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNachStandortAnzeigen.BackgroundImage")));
+            this.btnNachStandortAnzeigen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNachStandortAnzeigen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNachStandortAnzeigen.Enabled = false;
+            this.btnNachStandortAnzeigen.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnNachStandortAnzeigen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNachStandortAnzeigen.Location = new System.Drawing.Point(438, 0);
+            this.btnNachStandortAnzeigen.Margin = new System.Windows.Forms.Padding(0);
+            this.btnNachStandortAnzeigen.Name = "btnNachStandortAnzeigen";
+            this.btnNachStandortAnzeigen.Size = new System.Drawing.Size(33, 34);
+            this.btnNachStandortAnzeigen.TabIndex = 7;
+            this.toolTip.SetToolTip(this.btnNachStandortAnzeigen, "Standort im Browser anzeigen");
+            this.btnNachStandortAnzeigen.UseVisualStyleBackColor = false;
+            this.btnNachStandortAnzeigen.Click += new System.EventHandler(this.BtnNachStandortAnzeigen_Click);
+            // 
+            // btnNachDurchsuchen
+            // 
+            this.btnNachDurchsuchen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnNachDurchsuchen.BackColor = System.Drawing.Color.LightGray;
+            this.btnNachDurchsuchen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNachDurchsuchen.BackgroundImage")));
+            this.btnNachDurchsuchen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNachDurchsuchen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNachDurchsuchen.Enabled = false;
+            this.btnNachDurchsuchen.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnNachDurchsuchen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNachDurchsuchen.Location = new System.Drawing.Point(405, 0);
+            this.btnNachDurchsuchen.Margin = new System.Windows.Forms.Padding(0);
+            this.btnNachDurchsuchen.Name = "btnNachDurchsuchen";
+            this.btnNachDurchsuchen.Size = new System.Drawing.Size(33, 34);
+            this.btnNachDurchsuchen.TabIndex = 5;
+            this.toolTip.SetToolTip(this.btnNachDurchsuchen, "nach Stationen suchen [Enter]");
+            this.btnNachDurchsuchen.UseVisualStyleBackColor = false;
+            this.btnNachDurchsuchen.Click += new System.EventHandler(this.BtnNachDurchsuchen_Click);
+            // 
+            // btnVonDurchsuchen
+            // 
+            this.btnVonDurchsuchen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnVonDurchsuchen.BackColor = System.Drawing.Color.LightGray;
+            this.btnVonDurchsuchen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVonDurchsuchen.BackgroundImage")));
+            this.btnVonDurchsuchen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVonDurchsuchen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnVonDurchsuchen.Enabled = false;
+            this.btnVonDurchsuchen.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnVonDurchsuchen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVonDurchsuchen.Location = new System.Drawing.Point(405, 0);
+            this.btnVonDurchsuchen.Margin = new System.Windows.Forms.Padding(0);
+            this.btnVonDurchsuchen.Name = "btnVonDurchsuchen";
+            this.btnVonDurchsuchen.Size = new System.Drawing.Size(33, 34);
+            this.btnVonDurchsuchen.TabIndex = 5;
+            this.toolTip.SetToolTip(this.btnVonDurchsuchen, "nach Stationen suchen [Enter]");
+            this.btnVonDurchsuchen.UseVisualStyleBackColor = false;
+            this.btnVonDurchsuchen.Click += new System.EventHandler(this.BtnVonDurchsuchen_Click);
+            // 
+            // btnVonStandortAnzeigen
+            // 
+            this.btnVonStandortAnzeigen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnVonStandortAnzeigen.BackColor = System.Drawing.Color.LightGray;
+            this.btnVonStandortAnzeigen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVonStandortAnzeigen.BackgroundImage")));
+            this.btnVonStandortAnzeigen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVonStandortAnzeigen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnVonStandortAnzeigen.Enabled = false;
+            this.btnVonStandortAnzeigen.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnVonStandortAnzeigen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVonStandortAnzeigen.Location = new System.Drawing.Point(438, 0);
+            this.btnVonStandortAnzeigen.Margin = new System.Windows.Forms.Padding(0);
+            this.btnVonStandortAnzeigen.Name = "btnVonStandortAnzeigen";
+            this.btnVonStandortAnzeigen.Size = new System.Drawing.Size(33, 34);
+            this.btnVonStandortAnzeigen.TabIndex = 7;
+            this.toolTip.SetToolTip(this.btnVonStandortAnzeigen, "Standort im Browser anzeigen");
+            this.btnVonStandortAnzeigen.UseVisualStyleBackColor = false;
+            this.btnVonStandortAnzeigen.Click += new System.EventHandler(this.BtnVonStandortAnzeigen_Click);
+            // 
+            // toolTip
+            // 
+            this.toolTip.IsBalloon = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -877,6 +996,7 @@
             this.pnlFahrplan.ResumeLayout(false);
             this.tlpConnectionTable.ResumeLayout(false);
             this.tlpConnectionTableHeader.ResumeLayout(false);
+            this.tlpZeit.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -933,6 +1053,13 @@
         private System.Windows.Forms.Label lb5B;
         private System.Windows.Forms.Label lb5A;
         private System.Windows.Forms.Button btnStreckeEingeben;
+        private System.Windows.Forms.DateTimePicker datePicker;
+        private System.Windows.Forms.DateTimePicker timePicker;
+        private System.Windows.Forms.TableLayoutPanel tlpZeit;
+        private System.Windows.Forms.Button btnAnkunftsZeit;
+        private System.Windows.Forms.Label lbZeit;
+        private System.Windows.Forms.Button btnAbfahrtsZeit;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }
 

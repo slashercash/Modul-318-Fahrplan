@@ -19,9 +19,9 @@ namespace Fahrplan
 
         public Strecke(Panel _pnlStrecke, TextBox _tbxVon, TextBox _tbxNach)
         {
-            pnlStrecke         = _pnlStrecke;
-            tbxVon             = _tbxVon;
-            tbxNach            = _tbxNach;
+            pnlStrecke = _pnlStrecke;
+            tbxVon     = _tbxVon;
+            tbxNach    = _tbxNach;
 
             pnlStrecke.Dock = DockStyle.Fill;
         }

@@ -23,6 +23,14 @@ namespace Fahrplan
             fahrplan = new Fahrplan(pnlFahrplan, tlpConnectionTable, tlpConnectionTableHeader, btnStreckeEingeben, lbVonNach, lbGleisKante, lbConnectionTable);
             verbindungen = new Verbindungen(pnlVerbindungen);
 
+            datePicker.CustomFormat = "ddd, dd. MMMM";
+            datePicker.Value = DateTime.Now;
+
+            timePicker.CustomFormat = "HH:mm";
+            timePicker.Value = DateTime.Now;
+            timePicker.ShowUpDown = true;
+
+
             HilightButton(btnStrecke);
             strecke.LoadPanel();
         }
@@ -48,7 +56,7 @@ namespace Fahrplan
         private void BtnVerbindungenAnzeigen_Click(object sender, EventArgs e)
         {
             HilightButton(btnFahrplan);
-            fahrplan.LoadConnections(tbxVon.Text, tbxNach.Text);
+            fahrplan.LoadConnections(tbxVon.Text, tbxNach.Text, datePicker.Value, timePicker.Value);
         }
 
         private void BtnVonDurchsuchen_Click(object sender, EventArgs e)
@@ -74,6 +82,16 @@ namespace Fahrplan
         private void TbxNach_TextChanged(object sender, EventArgs e)
         {
             strecke.VonNachTextChanged((TextBox)sender, btnNachDurchsuchen, btnNachStandortAnzeigen);
+        }
+
+        private void BtnAbfahrtsZeit_Click(object sender, EventArgs e)
+        {
+            fahrplan.SetArrivalDeparture(btnAbfahrtsZeit, btnAnkunftsZeit, false);
+        }
+
+        private void BtnAnkunftsZeit_Click(object sender, EventArgs e)
+        {
+            fahrplan.SetArrivalDeparture(btnAnkunftsZeit, btnAbfahrtsZeit, true);
         }
 
         private void BtnVonStandortAnzeigen_Click(object sender, EventArgs e)
