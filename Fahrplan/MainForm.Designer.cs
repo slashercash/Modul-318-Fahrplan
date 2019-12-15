@@ -102,7 +102,7 @@
             this.tlpHeadButtons.Name = "tlpHeadButtons";
             this.tlpHeadButtons.RowCount = 1;
             this.tlpHeadButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpHeadButtons.Size = new System.Drawing.Size(1173, 62);
+            this.tlpHeadButtons.Size = new System.Drawing.Size(1055, 62);
             this.tlpHeadButtons.TabIndex = 0;
             // 
             // btnVerbindung
@@ -117,10 +117,10 @@
             this.btnVerbindung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerbindung.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerbindung.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnVerbindung.Location = new System.Drawing.Point(782, 0);
+            this.btnVerbindung.Location = new System.Drawing.Point(702, 0);
             this.btnVerbindung.Margin = new System.Windows.Forms.Padding(0);
             this.btnVerbindung.Name = "btnVerbindung";
-            this.btnVerbindung.Size = new System.Drawing.Size(391, 62);
+            this.btnVerbindung.Size = new System.Drawing.Size(353, 62);
             this.btnVerbindung.TabIndex = 3;
             this.btnVerbindung.Text = "Verbindungen";
             this.btnVerbindung.UseVisualStyleBackColor = false;
@@ -141,7 +141,7 @@
             this.btnStrecke.Location = new System.Drawing.Point(0, 0);
             this.btnStrecke.Margin = new System.Windows.Forms.Padding(0);
             this.btnStrecke.Name = "btnStrecke";
-            this.btnStrecke.Size = new System.Drawing.Size(391, 62);
+            this.btnStrecke.Size = new System.Drawing.Size(351, 62);
             this.btnStrecke.TabIndex = 1;
             this.btnStrecke.Text = "Strecke";
             this.btnStrecke.UseVisualStyleBackColor = false;
@@ -159,10 +159,10 @@
             this.btnFahrplan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFahrplan.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFahrplan.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnFahrplan.Location = new System.Drawing.Point(391, 0);
+            this.btnFahrplan.Location = new System.Drawing.Point(351, 0);
             this.btnFahrplan.Margin = new System.Windows.Forms.Padding(0);
             this.btnFahrplan.Name = "btnFahrplan";
-            this.btnFahrplan.Size = new System.Drawing.Size(391, 62);
+            this.btnFahrplan.Size = new System.Drawing.Size(351, 62);
             this.btnFahrplan.TabIndex = 2;
             this.btnFahrplan.Text = "Fahrplan";
             this.btnFahrplan.UseVisualStyleBackColor = false;
@@ -194,7 +194,7 @@
             this.btnVerbindungenAnzeigen.Name = "btnVerbindungenAnzeigen";
             this.btnVerbindungenAnzeigen.Size = new System.Drawing.Size(464, 58);
             this.btnVerbindungenAnzeigen.TabIndex = 3;
-            this.btnVerbindungenAnzeigen.Text = "Verbindungen anzeigen";
+            this.btnVerbindungenAnzeigen.Text = "Fahrplan anzeigen";
             this.btnVerbindungenAnzeigen.UseVisualStyleBackColor = false;
             this.btnVerbindungenAnzeigen.Click += new System.EventHandler(this.BtnVerbindungenAnzeigen_Click);
             // 
@@ -232,6 +232,7 @@
             this.tbxNach.Size = new System.Drawing.Size(338, 34);
             this.tbxNach.TabIndex = 2;
             this.tbxNach.TextChanged += new System.EventHandler(this.TbxNach_TextChanged);
+            this.tbxNach.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbxVonNach_KeyDown);
             // 
             // btnNachStandortAnzeigen
             // 
@@ -307,6 +308,7 @@
             this.tbxVon.Size = new System.Drawing.Size(338, 34);
             this.tbxVon.TabIndex = 1;
             this.tbxVon.TextChanged += new System.EventHandler(this.TbxVon_TextChanged);
+            this.tbxVon.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbxVonNach_KeyDown);
             // 
             // btnVonStandortAnzeigen
             // 
@@ -370,7 +372,7 @@
             this.btnStreckeEingeben.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStreckeEingeben.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStreckeEingeben.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnStreckeEingeben.Location = new System.Drawing.Point(40, 179);
+            this.btnStreckeEingeben.Location = new System.Drawing.Point(40, 114);
             this.btnStreckeEingeben.Margin = new System.Windows.Forms.Padding(40, 39, 40, 0);
             this.btnStreckeEingeben.Name = "btnStreckeEingeben";
             this.btnStreckeEingeben.Size = new System.Drawing.Size(462, 58);
@@ -839,7 +841,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1173, 740);
+            this.ClientSize = new System.Drawing.Size(1055, 740);
             this.Controls.Add(this.pnlFahrplan);
             this.Controls.Add(this.pnlVerbindungen);
             this.Controls.Add(this.pnlStrecke);

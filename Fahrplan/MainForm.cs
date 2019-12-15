@@ -19,7 +19,7 @@ namespace Fahrplan
         {
             Label[] lbConnectionTable = new Label[] { lb1A, lb1B, lb1C, lb1D, lb2A, lb2B, lb2C, lb2D, lb3A, lb3B, lb3C, lb3D, lb4A, lb4B, lb4C, lb4D, lb5A, lb5B, lb5C, lb5D, lb6A, lb6B, lb6C, lb6D };
 
-            strecke = new Strecke(pnlStrecke, tbxVon, tbxNach, btnVonDurchsuchen, btnNachDurchsuchen);
+            strecke = new Strecke(pnlStrecke, tbxVon, tbxNach);
             fahrplan = new Fahrplan(pnlFahrplan, tlpConnectionTable, tlpConnectionTableHeader, btnStreckeEingeben, lbVonNach, lbGleisKante, lbConnectionTable);
             verbindungen = new Verbindungen(pnlVerbindungen);
 
@@ -61,14 +61,19 @@ namespace Fahrplan
             strecke.LoadStations(tbxNach);
         }
 
+        private void TbxVonNach_KeyDown(object sender, KeyEventArgs key)
+        {
+            strecke.VonNachKeyDown((TextBox)sender, key);
+        }
+
         private void TbxVon_TextChanged(object sender, EventArgs e)
         {
-            strecke.VonTextChanged((TextBox)sender);
+            strecke.VonNachTextChanged((TextBox)sender, btnVonDurchsuchen);
         }
 
         private void TbxNach_TextChanged(object sender, EventArgs e)
         {
-            strecke.NachTextChanged((TextBox)sender);
+            strecke.VonNachTextChanged((TextBox)sender, btnNachDurchsuchen);
         }
 
         private void HilightButton(Button hilightButton)

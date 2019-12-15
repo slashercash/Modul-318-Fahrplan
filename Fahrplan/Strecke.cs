@@ -15,16 +15,12 @@ namespace Fahrplan
         readonly Panel pnlStrecke;
         readonly TextBox tbxVon;
         readonly TextBox tbxNach;
-        readonly Button btnVonDurchsuchen;
-        readonly Button btnNachDurchsuchen;
 
-        public Strecke(Panel _pnlStrecke, TextBox _tbxVon, TextBox _tbxNach, Button _btnVonDurchsuchen, Button _btnNachDurchsuchen)
+        public Strecke(Panel _pnlStrecke, TextBox _tbxVon, TextBox _tbxNach)
         {
             pnlStrecke         = _pnlStrecke;
             tbxVon             = _tbxVon;
             tbxNach            = _tbxNach;
-            btnVonDurchsuchen  = _btnVonDurchsuchen;
-            btnNachDurchsuchen = _btnNachDurchsuchen;
 
             pnlStrecke.Dock = DockStyle.Fill;
         }
@@ -34,20 +30,17 @@ namespace Fahrplan
             pnlStrecke.BringToFront();
         }
 
-        public void VonTextChanged(TextBox textBox)
+        internal void VonNachKeyDown(TextBox textBox, KeyEventArgs key)
         {
-            if (textBox.TextLength > 0)
+            if(key.KeyCode == Keys.Enter && textBox.TextLength > 0)
             {
-                btnVonDurchsuchen.Enabled = true;
+                LoadStations(textBox);
             }
         }
 
-        public void NachTextChanged(TextBox textBox)
+        public void VonNachTextChanged(TextBox textBox, Button button)
         {
-            if (textBox.TextLength > 0)
-            {
-                btnNachDurchsuchen.Enabled = true;
-            }
+            button.Enabled = textBox.TextLength == 0 ? false : true;
         }
 
         public void LoadStations(TextBox textBox)
