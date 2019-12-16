@@ -57,6 +57,13 @@ namespace Fahrplan
             }
         }
 
+        internal void ChangeDirection()
+        {
+            string temp = tbxVon.Text;
+            tbxVon.Text = tbxNach.Text;
+            tbxNach.Text = temp;
+        }
+
         public void LoadStations(TextBox textBox)
         {
             stations.StationList = transport.GetStations(textBox.Text).StationList;

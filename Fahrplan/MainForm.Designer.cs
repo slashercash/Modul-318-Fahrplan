@@ -35,6 +35,10 @@
             this.btnStrecke = new System.Windows.Forms.Button();
             this.btnFahrplan = new System.Windows.Forms.Button();
             this.pnlStrecke = new System.Windows.Forms.Panel();
+            this.tlpZeit = new System.Windows.Forms.TableLayoutPanel();
+            this.lbZeit = new System.Windows.Forms.Label();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
+            this.timePicker = new System.Windows.Forms.DateTimePicker();
             this.btnVerbindungenAnzeigen = new System.Windows.Forms.Button();
             this.tlpNach = new System.Windows.Forms.TableLayoutPanel();
             this.tbxNach = new System.Windows.Forms.TextBox();
@@ -76,25 +80,24 @@
             this.lbGleisKante = new System.Windows.Forms.Label();
             this.lbVonNach = new System.Windows.Forms.Label();
             this.pnlVerbindungen = new System.Windows.Forms.Panel();
-            this.datePicker = new System.Windows.Forms.DateTimePicker();
-            this.timePicker = new System.Windows.Forms.DateTimePicker();
-            this.tlpZeit = new System.Windows.Forms.TableLayoutPanel();
-            this.lbZeit = new System.Windows.Forms.Label();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.btnChangeDirection = new System.Windows.Forms.Button();
             this.btnAnkunftsZeit = new System.Windows.Forms.Button();
             this.btnAbfahrtsZeit = new System.Windows.Forms.Button();
             this.btnNachStandortAnzeigen = new System.Windows.Forms.Button();
             this.btnNachDurchsuchen = new System.Windows.Forms.Button();
             this.btnVonDurchsuchen = new System.Windows.Forms.Button();
             this.btnVonStandortAnzeigen = new System.Windows.Forms.Button();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.tlpChangeDirection = new System.Windows.Forms.TableLayoutPanel();
             this.tlpHeadButtons.SuspendLayout();
             this.pnlStrecke.SuspendLayout();
+            this.tlpZeit.SuspendLayout();
             this.tlpNach.SuspendLayout();
             this.tlpVon.SuspendLayout();
             this.pnlFahrplan.SuspendLayout();
             this.tlpConnectionTable.SuspendLayout();
             this.tlpConnectionTableHeader.SuspendLayout();
-            this.tlpZeit.SuspendLayout();
+            this.tlpChangeDirection.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpHeadButtons
@@ -181,6 +184,7 @@
             // pnlStrecke
             // 
             this.pnlStrecke.BackColor = System.Drawing.Color.Honeydew;
+            this.pnlStrecke.Controls.Add(this.tlpChangeDirection);
             this.pnlStrecke.Controls.Add(this.tlpZeit);
             this.pnlStrecke.Controls.Add(this.btnVerbindungenAnzeigen);
             this.pnlStrecke.Controls.Add(this.tlpNach);
@@ -188,8 +192,69 @@
             this.pnlStrecke.Location = new System.Drawing.Point(0, 62);
             this.pnlStrecke.Margin = new System.Windows.Forms.Padding(0);
             this.pnlStrecke.Name = "pnlStrecke";
-            this.pnlStrecke.Size = new System.Drawing.Size(544, 339);
+            this.pnlStrecke.Size = new System.Drawing.Size(544, 407);
             this.pnlStrecke.TabIndex = 1;
+            // 
+            // tlpZeit
+            // 
+            this.tlpZeit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlpZeit.ColumnCount = 5;
+            this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tlpZeit.Controls.Add(this.btnAnkunftsZeit, 4, 0);
+            this.tlpZeit.Controls.Add(this.lbZeit, 0, 0);
+            this.tlpZeit.Controls.Add(this.datePicker, 1, 0);
+            this.tlpZeit.Controls.Add(this.timePicker, 2, 0);
+            this.tlpZeit.Controls.Add(this.btnAbfahrtsZeit, 3, 0);
+            this.tlpZeit.Location = new System.Drawing.Point(33, 192);
+            this.tlpZeit.Margin = new System.Windows.Forms.Padding(3, 32, 3, 3);
+            this.tlpZeit.Name = "tlpZeit";
+            this.tlpZeit.RowCount = 1;
+            this.tlpZeit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tlpZeit.Size = new System.Drawing.Size(471, 34);
+            this.tlpZeit.TabIndex = 6;
+            // 
+            // lbZeit
+            // 
+            this.lbZeit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbZeit.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbZeit.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lbZeit.Location = new System.Drawing.Point(0, 0);
+            this.lbZeit.Margin = new System.Windows.Forms.Padding(0);
+            this.lbZeit.Name = "lbZeit";
+            this.lbZeit.Size = new System.Drawing.Size(67, 34);
+            this.lbZeit.TabIndex = 6;
+            this.lbZeit.Text = "Zeit";
+            // 
+            // datePicker
+            // 
+            this.datePicker.CalendarFont = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.datePicker.Font = new System.Drawing.Font("Calibri", 16F);
+            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datePicker.Location = new System.Drawing.Point(67, 0);
+            this.datePicker.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(230, 34);
+            this.datePicker.TabIndex = 4;
+            this.datePicker.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            // 
+            // timePicker
+            // 
+            this.timePicker.CalendarFont = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timePicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.timePicker.Font = new System.Drawing.Font("Calibri", 16F);
+            this.timePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.timePicker.Location = new System.Drawing.Point(303, 0);
+            this.timePicker.Margin = new System.Windows.Forms.Padding(3, 0, 6, 0);
+            this.timePicker.Name = "timePicker";
+            this.timePicker.Size = new System.Drawing.Size(91, 34);
+            this.timePicker.TabIndex = 5;
+            this.timePicker.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // btnVerbindungenAnzeigen
             // 
@@ -200,7 +265,7 @@
             this.btnVerbindungenAnzeigen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerbindungenAnzeigen.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerbindungenAnzeigen.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnVerbindungenAnzeigen.Location = new System.Drawing.Point(33, 231);
+            this.btnVerbindungenAnzeigen.Location = new System.Drawing.Point(33, 261);
             this.btnVerbindungenAnzeigen.Margin = new System.Windows.Forms.Padding(40, 32, 40, 0);
             this.btnVerbindungenAnzeigen.Name = "btnVerbindungenAnzeigen";
             this.btnVerbindungenAnzeigen.Size = new System.Drawing.Size(471, 58);
@@ -223,8 +288,8 @@
             this.tlpNach.Controls.Add(this.btnNachStandortAnzeigen, 3, 0);
             this.tlpNach.Controls.Add(this.btnNachDurchsuchen, 2, 0);
             this.tlpNach.Controls.Add(this.lbNach, 0, 0);
-            this.tlpNach.Location = new System.Drawing.Point(33, 99);
-            this.tlpNach.Margin = new System.Windows.Forms.Padding(33, 32, 40, 0);
+            this.tlpNach.Location = new System.Drawing.Point(33, 126);
+            this.tlpNach.Margin = new System.Windows.Forms.Padding(33, 0, 40, 0);
             this.tlpNach.Name = "tlpNach";
             this.tlpNach.RowCount = 1;
             this.tlpNach.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
@@ -312,7 +377,7 @@
             this.pnlFahrplan.Controls.Add(this.tlpConnectionTable);
             this.pnlFahrplan.Controls.Add(this.tlpConnectionTableHeader);
             this.pnlFahrplan.Controls.Add(this.lbVonNach);
-            this.pnlFahrplan.Location = new System.Drawing.Point(0, 415);
+            this.pnlFahrplan.Location = new System.Drawing.Point(579, 350);
             this.pnlFahrplan.Margin = new System.Windows.Forms.Padding(0);
             this.pnlFahrplan.Name = "pnlFahrplan";
             this.pnlFahrplan.Size = new System.Drawing.Size(544, 343);
@@ -792,66 +857,26 @@
             this.pnlVerbindungen.Size = new System.Drawing.Size(491, 252);
             this.pnlVerbindungen.TabIndex = 2;
             // 
-            // datePicker
+            // toolTip
             // 
-            this.datePicker.CalendarFont = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datePicker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.datePicker.Font = new System.Drawing.Font("Calibri", 16F);
-            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datePicker.Location = new System.Drawing.Point(67, 0);
-            this.datePicker.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(232, 34);
-            this.datePicker.TabIndex = 4;
-            this.datePicker.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.toolTip.IsBalloon = true;
             // 
-            // timePicker
+            // btnChangeDirection
             // 
-            this.timePicker.CalendarFont = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timePicker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.timePicker.Font = new System.Drawing.Font("Calibri", 16F);
-            this.timePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.timePicker.Location = new System.Drawing.Point(305, 0);
-            this.timePicker.Margin = new System.Windows.Forms.Padding(3, 0, 6, 0);
-            this.timePicker.Name = "timePicker";
-            this.timePicker.Size = new System.Drawing.Size(92, 34);
-            this.timePicker.TabIndex = 5;
-            this.timePicker.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            // 
-            // tlpZeit
-            // 
-            this.tlpZeit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpZeit.ColumnCount = 5;
-            this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tlpZeit.Controls.Add(this.btnAnkunftsZeit, 4, 0);
-            this.tlpZeit.Controls.Add(this.lbZeit, 0, 0);
-            this.tlpZeit.Controls.Add(this.datePicker, 1, 0);
-            this.tlpZeit.Controls.Add(this.timePicker, 2, 0);
-            this.tlpZeit.Controls.Add(this.btnAbfahrtsZeit, 3, 0);
-            this.tlpZeit.Location = new System.Drawing.Point(33, 165);
-            this.tlpZeit.Margin = new System.Windows.Forms.Padding(3, 32, 3, 3);
-            this.tlpZeit.Name = "tlpZeit";
-            this.tlpZeit.RowCount = 1;
-            this.tlpZeit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tlpZeit.Size = new System.Drawing.Size(471, 34);
-            this.tlpZeit.TabIndex = 6;
-            // 
-            // lbZeit
-            // 
-            this.lbZeit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbZeit.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbZeit.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lbZeit.Location = new System.Drawing.Point(0, 0);
-            this.lbZeit.Margin = new System.Windows.Forms.Padding(0);
-            this.lbZeit.Name = "lbZeit";
-            this.lbZeit.Size = new System.Drawing.Size(67, 34);
-            this.lbZeit.TabIndex = 6;
-            this.lbZeit.Text = "Zeit";
+            this.btnChangeDirection.BackColor = System.Drawing.Color.LightGreen;
+            this.btnChangeDirection.BackgroundImage = global::Fahrplan.Properties.Resources.ChangeDirection;
+            this.btnChangeDirection.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnChangeDirection.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnChangeDirection.FlatAppearance.BorderSize = 0;
+            this.btnChangeDirection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeDirection.Location = new System.Drawing.Point(154, 0);
+            this.btnChangeDirection.Margin = new System.Windows.Forms.Padding(0);
+            this.btnChangeDirection.Name = "btnChangeDirection";
+            this.btnChangeDirection.Size = new System.Drawing.Size(30, 50);
+            this.btnChangeDirection.TabIndex = 7;
+            this.toolTip.SetToolTip(this.btnChangeDirection, "andere Richtung");
+            this.btnChangeDirection.UseVisualStyleBackColor = false;
+            this.btnChangeDirection.Click += new System.EventHandler(this.btnChangeDirection_Click);
             // 
             // btnAnkunftsZeit
             // 
@@ -864,10 +889,10 @@
             this.btnAnkunftsZeit.FlatAppearance.BorderSize = 2;
             this.btnAnkunftsZeit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnkunftsZeit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnkunftsZeit.Location = new System.Drawing.Point(436, 0);
+            this.btnAnkunftsZeit.Location = new System.Drawing.Point(433, 0);
             this.btnAnkunftsZeit.Margin = new System.Windows.Forms.Padding(0);
             this.btnAnkunftsZeit.Name = "btnAnkunftsZeit";
-            this.btnAnkunftsZeit.Size = new System.Drawing.Size(35, 34);
+            this.btnAnkunftsZeit.Size = new System.Drawing.Size(38, 34);
             this.btnAnkunftsZeit.TabIndex = 8;
             this.toolTip.SetToolTip(this.btnAnkunftsZeit, "Selekierte Zeit ist Ankunftszeit");
             this.btnAnkunftsZeit.UseVisualStyleBackColor = false;
@@ -884,7 +909,7 @@
             this.btnAbfahrtsZeit.FlatAppearance.BorderSize = 2;
             this.btnAbfahrtsZeit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbfahrtsZeit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAbfahrtsZeit.Location = new System.Drawing.Point(403, 0);
+            this.btnAbfahrtsZeit.Location = new System.Drawing.Point(400, 0);
             this.btnAbfahrtsZeit.Margin = new System.Windows.Forms.Padding(0);
             this.btnAbfahrtsZeit.Name = "btnAbfahrtsZeit";
             this.btnAbfahrtsZeit.Size = new System.Drawing.Size(33, 34);
@@ -969,26 +994,40 @@
             this.btnVonStandortAnzeigen.UseVisualStyleBackColor = false;
             this.btnVonStandortAnzeigen.Click += new System.EventHandler(this.BtnVonStandortAnzeigen_Click);
             // 
-            // toolTip
+            // tlpChangeDirection
             // 
-            this.toolTip.IsBalloon = true;
+            this.tlpChangeDirection.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlpChangeDirection.ColumnCount = 3;
+            this.tlpChangeDirection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpChangeDirection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tlpChangeDirection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpChangeDirection.Controls.Add(this.btnChangeDirection, 1, 0);
+            this.tlpChangeDirection.Location = new System.Drawing.Point(100, 71);
+            this.tlpChangeDirection.Margin = new System.Windows.Forms.Padding(5);
+            this.tlpChangeDirection.Name = "tlpChangeDirection";
+            this.tlpChangeDirection.RowCount = 1;
+            this.tlpChangeDirection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpChangeDirection.Size = new System.Drawing.Size(338, 50);
+            this.tlpChangeDirection.TabIndex = 8;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1055, 740);
+            this.ClientSize = new System.Drawing.Size(1055, 682);
             this.Controls.Add(this.pnlFahrplan);
             this.Controls.Add(this.pnlVerbindungen);
             this.Controls.Add(this.pnlStrecke);
             this.Controls.Add(this.tlpHeadButtons);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(560, 430);
+            this.MinimumSize = new System.Drawing.Size(558, 424);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tlpHeadButtons.ResumeLayout(false);
             this.pnlStrecke.ResumeLayout(false);
+            this.tlpZeit.ResumeLayout(false);
             this.tlpNach.ResumeLayout(false);
             this.tlpNach.PerformLayout();
             this.tlpVon.ResumeLayout(false);
@@ -996,7 +1035,7 @@
             this.pnlFahrplan.ResumeLayout(false);
             this.tlpConnectionTable.ResumeLayout(false);
             this.tlpConnectionTableHeader.ResumeLayout(false);
-            this.tlpZeit.ResumeLayout(false);
+            this.tlpChangeDirection.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1060,6 +1099,8 @@
         private System.Windows.Forms.Label lbZeit;
         private System.Windows.Forms.Button btnAbfahrtsZeit;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.Button btnChangeDirection;
+        private System.Windows.Forms.TableLayoutPanel tlpChangeDirection;
     }
 }
 

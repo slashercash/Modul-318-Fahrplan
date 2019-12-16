@@ -104,6 +104,11 @@ namespace Fahrplan
             strecke.LoadLocation(tbxNach);
         }
 
+        private void btnChangeDirection_Click(object sender, EventArgs e)
+        {
+            strecke.ChangeDirection();
+        }
+
         private void HilightButton(Button hilightButton)
         {
             foreach (Button button in tlpHeadButtons.Controls)
