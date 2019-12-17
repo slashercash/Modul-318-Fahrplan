@@ -18,27 +18,37 @@ namespace Fahrplan
         readonly TextBox tbxVon;
         readonly TextBox tbxNach;
         readonly TextBox tbxAb;
-        DateTimePicker datePicker;
-        DateTimePicker timePicker;
+        readonly DateTimePicker datePicker;
+        readonly DateTimePicker timePicker;
+        readonly Button btnFahrplanAnzeigen;
 
-        public Strecke(MainForm _mainForm, Panel _pnlStrecke, TextBox _tbxVon, TextBox _tbxNach, TextBox _tbxAb, DateTimePicker _datePicker, DateTimePicker _timePicker)
+        public Strecke(MainForm _mainForm, Panel _pnlStrecke, TextBox _tbxVon, TextBox _tbxNach, TextBox _tbxAb, DateTimePicker _datePicker, DateTimePicker _timePicker, Button _btnFahrplanAnzeigen)
         {
-            mainForm   = _mainForm;
-            pnlStrecke = _pnlStrecke;
-            tbxVon     = _tbxVon;
-            tbxNach    = _tbxNach;
-            tbxAb      = _tbxAb;
-            datePicker = _datePicker;
-            timePicker = _timePicker;
+            mainForm            = _mainForm;
+            pnlStrecke          = _pnlStrecke;
+            tbxVon              = _tbxVon;
+            tbxNach             = _tbxNach;
+            tbxAb               = _tbxAb;
+            datePicker          = _datePicker;
+            timePicker          = _timePicker;
+            btnFahrplanAnzeigen = _btnFahrplanAnzeigen;
 
             pnlStrecke.Dock = DockStyle.Fill;
         }
 
-        public void LoadPanel()
+        public void LoadPanel(bool focusToButton)
         {
             datePicker.Value = DateTime.Now;
             timePicker.Value = DateTime.Now;
             pnlStrecke.BringToFront();
+            if (focusToButton)
+            {
+                btnFahrplanAnzeigen.Focus();
+            }
+            else
+            {
+                tbxVon.Focus();
+            }
         }
 
         internal void VonNachAbKeyDown(TextBox textBox, KeyEventArgs key)
@@ -158,7 +168,7 @@ namespace Fahrplan
             if (transport.CheckForInternetConnection())
             {
                 mainForm.EnableHeaderButtons(true);
-                LoadPanel();
+                LoadPanel(false);
             }
         }
     }

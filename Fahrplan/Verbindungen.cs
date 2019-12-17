@@ -14,16 +14,18 @@ namespace Fahrplan
         readonly TableLayoutPanel tlpConnectionsHeader;
         readonly Transport transport = new Transport();
         readonly MainForm mainForm;
+        readonly TextBox tbxAb;
         private string connectionFrom;
 
 
 
-        public Verbindungen(Panel _pnlVerbindungen, TableLayoutPanel _tlpConnectionsTable, TableLayoutPanel _tlpConnectionsHeader, MainForm _mainForm)
+        public Verbindungen(Panel _pnlVerbindungen, TableLayoutPanel _tlpConnectionsTable, TableLayoutPanel _tlpConnectionsHeader, MainForm _mainForm, TextBox _tbxAb)
         {
             pnlVerbindungen      = _pnlVerbindungen;
             tlpConnectionsTable  = _tlpConnectionsTable;
             tlpConnectionsHeader = _tlpConnectionsHeader;
             mainForm             = _mainForm;
+            tbxAb                = _tbxAb;
 
             pnlVerbindungen.Dock = DockStyle.Fill;
         }
@@ -31,6 +33,7 @@ namespace Fahrplan
         public void LoadPanel()
         {
             pnlVerbindungen.BringToFront();
+            tbxAb.Focus();
         }
 
         public void LoadConnections(TextBox textBox)
@@ -43,12 +46,25 @@ namespace Fahrplan
                     return;
                 }
 
+                if (!transport.GetStations(textBox.Text).StationList.Any())
+                {
+                    MessageBox.Show("Es konnten keine Stationen mit den von Ihnen eingegebenen Suchkriterien gefunden werden", "Keine Treffer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
                 tlpConnectionsHeader.Visible = true;
                 tlpConnectionsTable.Controls.Clear();
 
                 Station station = transport.GetStations(textBox.Text).StationList.First();
                 connectionFrom = station.Name;
                 textBox.Text = connectionFrom;
+
+                if (station.Id == null)
+                {
+                    tlpConnectionsHeader.Visible = false;
+                    MessageBox.Show("Die ausgewählte Adresse ist keine Haltestelle", "Keine Haltestelle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
 
                 List<StationBoard> allStationBoards = transport.GetStationBoard(station.Name, station.Id).Entries;
                 List<StationBoard> uniqueStationBoards = new List<StationBoard>();

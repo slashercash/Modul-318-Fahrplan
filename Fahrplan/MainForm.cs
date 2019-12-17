@@ -19,9 +19,9 @@ namespace Fahrplan
         {
             Label[] lbTimeTable = new Label[] { lb1A, lb1B, lb1C, lb1D, lb2A, lb2B, lb2C, lb2D, lb3A, lb3B, lb3C, lb3D, lb4A, lb4B, lb4C, lb4D, lb5A, lb5B, lb5C, lb5D, lb6A, lb6B, lb6C, lb6D };
 
-            strecke = new Strecke(this, pnlStrecke, tbxVon, tbxNach, tbxAb, datePicker, timePicker);
+            strecke = new Strecke(this, pnlStrecke, tbxVon, tbxNach, tbxAb, datePicker, timePicker, btnFahrplanAnzeigen);
             fahrplan = new Fahrplan(this, pnlFahrplan, tlpTimeTable, tlpTimeTableHeader, btnStreckeEingeben, lbVonNach, lbGleisKante, lbTimeTable);
-            verbindungen = new Verbindungen(pnlVerbindungen, tlpConnectionsTable, tlpConnectionsHeader, this);
+            verbindungen = new Verbindungen(pnlVerbindungen, tlpConnectionsTable, tlpConnectionsHeader, this, tbxAb);
 
             pnlNoInternet.Dock = DockStyle.Fill;
 
@@ -34,13 +34,13 @@ namespace Fahrplan
             tlpConnectionsTable.AutoScroll = true;
 
             HilightButton(btnStrecke.Name);
-            strecke.LoadPanel();
+            strecke.LoadPanel(false);
         }
 
         private void BtnStrecke_Click(object sender, EventArgs e)
         {
             HilightButton(btnStrecke.Name);
-            strecke.LoadPanel();
+            strecke.LoadPanel(false);
         }
 
         private void BtnFahrplan_Click(object sender, EventArgs e)
@@ -135,7 +135,7 @@ namespace Fahrplan
         {
             strecke.SetFromTo(((Button)sender).Tag.ToString());
             HilightButton(btnStrecke.Name);
-            strecke.LoadPanel();
+            strecke.LoadPanel(true);
         }
 
         private void BtnErneutVersuchen_Click(object sender, EventArgs e)

@@ -152,7 +152,7 @@
             this.btnVerbindung.Margin = new System.Windows.Forms.Padding(0);
             this.btnVerbindung.Name = "btnVerbindung";
             this.btnVerbindung.Size = new System.Drawing.Size(353, 62);
-            this.btnVerbindung.TabIndex = 3;
+            this.btnVerbindung.TabIndex = 2;
             this.btnVerbindung.Text = "Verbindungen";
             this.btnVerbindung.UseVisualStyleBackColor = false;
             this.btnVerbindung.Click += new System.EventHandler(this.BtnVerbindung_Click);
@@ -173,7 +173,7 @@
             this.btnStrecke.Margin = new System.Windows.Forms.Padding(0);
             this.btnStrecke.Name = "btnStrecke";
             this.btnStrecke.Size = new System.Drawing.Size(351, 62);
-            this.btnStrecke.TabIndex = 1;
+            this.btnStrecke.TabIndex = 0;
             this.btnStrecke.Text = "Strecke";
             this.btnStrecke.UseVisualStyleBackColor = false;
             this.btnStrecke.Click += new System.EventHandler(this.BtnStrecke_Click);
@@ -194,7 +194,7 @@
             this.btnFahrplan.Margin = new System.Windows.Forms.Padding(0);
             this.btnFahrplan.Name = "btnFahrplan";
             this.btnFahrplan.Size = new System.Drawing.Size(351, 62);
-            this.btnFahrplan.TabIndex = 2;
+            this.btnFahrplan.TabIndex = 1;
             this.btnFahrplan.Text = "Fahrplan";
             this.btnFahrplan.UseVisualStyleBackColor = false;
             this.btnFahrplan.Click += new System.EventHandler(this.BtnFahrplan_Click);
@@ -225,7 +225,8 @@
             this.btnChangeDirection.Margin = new System.Windows.Forms.Padding(0);
             this.btnChangeDirection.Name = "btnChangeDirection";
             this.btnChangeDirection.Size = new System.Drawing.Size(33, 32);
-            this.btnChangeDirection.TabIndex = 7;
+            this.btnChangeDirection.TabIndex = 0;
+            this.btnChangeDirection.TabStop = false;
             this.toolTip.SetToolTip(this.btnChangeDirection, "andere Richtung");
             this.btnChangeDirection.UseVisualStyleBackColor = false;
             this.btnChangeDirection.Click += new System.EventHandler(this.BtnChangeDirection_Click);
@@ -268,7 +269,7 @@
             this.btnAnkunftsZeit.Margin = new System.Windows.Forms.Padding(0);
             this.btnAnkunftsZeit.Name = "btnAnkunftsZeit";
             this.btnAnkunftsZeit.Size = new System.Drawing.Size(37, 34);
-            this.btnAnkunftsZeit.TabIndex = 8;
+            this.btnAnkunftsZeit.TabIndex = 3;
             this.toolTip.SetToolTip(this.btnAnkunftsZeit, "Selekierte Zeit ist Ankunftszeit");
             this.btnAnkunftsZeit.UseVisualStyleBackColor = false;
             this.btnAnkunftsZeit.Click += new System.EventHandler(this.BtnAnkunftsZeit_Click);
@@ -295,7 +296,7 @@
             this.datePicker.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.datePicker.Name = "datePicker";
             this.datePicker.Size = new System.Drawing.Size(230, 34);
-            this.datePicker.TabIndex = 4;
+            this.datePicker.TabIndex = 2;
             this.datePicker.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // timePicker
@@ -308,7 +309,7 @@
             this.timePicker.Margin = new System.Windows.Forms.Padding(3, 0, 6, 0);
             this.timePicker.Name = "timePicker";
             this.timePicker.Size = new System.Drawing.Size(91, 34);
-            this.timePicker.TabIndex = 5;
+            this.timePicker.TabIndex = 1;
             this.timePicker.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // btnAbfahrtsZeit
@@ -326,7 +327,7 @@
             this.btnAbfahrtsZeit.Margin = new System.Windows.Forms.Padding(0);
             this.btnAbfahrtsZeit.Name = "btnAbfahrtsZeit";
             this.btnAbfahrtsZeit.Size = new System.Drawing.Size(34, 34);
-            this.btnAbfahrtsZeit.TabIndex = 7;
+            this.btnAbfahrtsZeit.TabIndex = 2;
             this.toolTip.SetToolTip(this.btnAbfahrtsZeit, "Selekierte Zeit ist Abfahrtszeit");
             this.btnAbfahrtsZeit.UseVisualStyleBackColor = false;
             this.btnAbfahrtsZeit.Click += new System.EventHandler(this.BtnAbfahrtsZeit_Click);
@@ -381,7 +382,7 @@
             this.tbxNach.Margin = new System.Windows.Forms.Padding(0);
             this.tbxNach.Name = "tbxNach";
             this.tbxNach.Size = new System.Drawing.Size(338, 34);
-            this.tbxNach.TabIndex = 2;
+            this.tbxNach.TabIndex = 1;
             this.tbxNach.TextChanged += new System.EventHandler(this.TbxNach_TextChanged);
             this.tbxNach.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbxVonNachAb_KeyDown);
             // 
@@ -399,7 +400,8 @@
             this.btnNachStandortAnzeigen.Margin = new System.Windows.Forms.Padding(0);
             this.btnNachStandortAnzeigen.Name = "btnNachStandortAnzeigen";
             this.btnNachStandortAnzeigen.Size = new System.Drawing.Size(33, 34);
-            this.btnNachStandortAnzeigen.TabIndex = 7;
+            this.btnNachStandortAnzeigen.TabIndex = 2;
+            this.btnNachStandortAnzeigen.TabStop = false;
             this.toolTip.SetToolTip(this.btnNachStandortAnzeigen, "Standort im Browser anzeigen");
             this.btnNachStandortAnzeigen.UseVisualStyleBackColor = false;
             this.btnNachStandortAnzeigen.Click += new System.EventHandler(this.BtnNachStandortAnzeigen_Click);
@@ -418,7 +420,8 @@
             this.btnNachDurchsuchen.Margin = new System.Windows.Forms.Padding(0);
             this.btnNachDurchsuchen.Name = "btnNachDurchsuchen";
             this.btnNachDurchsuchen.Size = new System.Drawing.Size(33, 34);
-            this.btnNachDurchsuchen.TabIndex = 5;
+            this.btnNachDurchsuchen.TabIndex = 1;
+            this.btnNachDurchsuchen.TabStop = false;
             this.toolTip.SetToolTip(this.btnNachDurchsuchen, "nach Stationen suchen [Enter]");
             this.btnNachDurchsuchen.UseVisualStyleBackColor = false;
             this.btnNachDurchsuchen.Click += new System.EventHandler(this.BtnNachDurchsuchen_Click);
@@ -471,7 +474,8 @@
             this.btnVonDurchsuchen.Margin = new System.Windows.Forms.Padding(0);
             this.btnVonDurchsuchen.Name = "btnVonDurchsuchen";
             this.btnVonDurchsuchen.Size = new System.Drawing.Size(33, 34);
-            this.btnVonDurchsuchen.TabIndex = 5;
+            this.btnVonDurchsuchen.TabIndex = 2;
+            this.btnVonDurchsuchen.TabStop = false;
             this.toolTip.SetToolTip(this.btnVonDurchsuchen, "nach Stationen suchen [Enter]");
             this.btnVonDurchsuchen.UseVisualStyleBackColor = false;
             this.btnVonDurchsuchen.Click += new System.EventHandler(this.BtnVonDurchsuchen_Click);
@@ -486,7 +490,7 @@
             this.tbxVon.Margin = new System.Windows.Forms.Padding(0);
             this.tbxVon.Name = "tbxVon";
             this.tbxVon.Size = new System.Drawing.Size(338, 34);
-            this.tbxVon.TabIndex = 1;
+            this.tbxVon.TabIndex = 0;
             this.tbxVon.TextChanged += new System.EventHandler(this.TbxVon_TextChanged);
             this.tbxVon.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbxVonNachAb_KeyDown);
             // 
@@ -504,7 +508,8 @@
             this.btnVonStandortAnzeigen.Margin = new System.Windows.Forms.Padding(0);
             this.btnVonStandortAnzeigen.Name = "btnVonStandortAnzeigen";
             this.btnVonStandortAnzeigen.Size = new System.Drawing.Size(33, 34);
-            this.btnVonStandortAnzeigen.TabIndex = 7;
+            this.btnVonStandortAnzeigen.TabIndex = 1;
+            this.btnVonStandortAnzeigen.TabStop = false;
             this.toolTip.SetToolTip(this.btnVonStandortAnzeigen, "Standort im Browser anzeigen");
             this.btnVonStandortAnzeigen.UseVisualStyleBackColor = false;
             this.btnVonStandortAnzeigen.Click += new System.EventHandler(this.BtnVonStandortAnzeigen_Click);
@@ -532,7 +537,7 @@
             this.pnlFahrplan.Margin = new System.Windows.Forms.Padding(0);
             this.pnlFahrplan.Name = "pnlFahrplan";
             this.pnlFahrplan.Size = new System.Drawing.Size(544, 382);
-            this.pnlFahrplan.TabIndex = 2;
+            this.pnlFahrplan.TabIndex = 3;
             // 
             // btnStreckeEingeben
             // 
@@ -547,7 +552,7 @@
             this.btnStreckeEingeben.Margin = new System.Windows.Forms.Padding(40, 39, 40, 0);
             this.btnStreckeEingeben.Name = "btnStreckeEingeben";
             this.btnStreckeEingeben.Size = new System.Drawing.Size(462, 58);
-            this.btnStreckeEingeben.TabIndex = 13;
+            this.btnStreckeEingeben.TabIndex = 1;
             this.btnStreckeEingeben.Text = "Strecke eingeben";
             this.btnStreckeEingeben.UseVisualStyleBackColor = false;
             this.btnStreckeEingeben.Click += new System.EventHandler(this.BtnStrecke_Click);
@@ -673,7 +678,7 @@
             this.lb1B.Margin = new System.Windows.Forms.Padding(3);
             this.lb1B.Name = "lb1B";
             this.lb1B.Size = new System.Drawing.Size(86, 24);
-            this.lb1B.TabIndex = 7;
+            this.lb1B.TabIndex = 0;
             this.lb1B.Text = "x";
             this.lb1B.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -968,7 +973,7 @@
             this.lbAbfahrt.Margin = new System.Windows.Forms.Padding(3);
             this.lbAbfahrt.Name = "lbAbfahrt";
             this.lbAbfahrt.Size = new System.Drawing.Size(95, 31);
-            this.lbAbfahrt.TabIndex = 5;
+            this.lbAbfahrt.TabIndex = 0;
             this.lbAbfahrt.Text = "Abfahrt";
             this.lbAbfahrt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -981,7 +986,7 @@
             this.lbGleisKante.Margin = new System.Windows.Forms.Padding(3);
             this.lbGleisKante.Name = "lbGleisKante";
             this.lbGleisKante.Size = new System.Drawing.Size(86, 31);
-            this.lbGleisKante.TabIndex = 6;
+            this.lbGleisKante.TabIndex = 1;
             this.lbGleisKante.Text = "Gleis - Kante";
             this.lbGleisKante.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -1010,7 +1015,7 @@
             this.pnlVerbindungen.Margin = new System.Windows.Forms.Padding(0);
             this.pnlVerbindungen.Name = "pnlVerbindungen";
             this.pnlVerbindungen.Size = new System.Drawing.Size(502, 356);
-            this.pnlVerbindungen.TabIndex = 2;
+            this.pnlVerbindungen.TabIndex = 0;
             // 
             // tlpConnectionsTable
             // 
@@ -1030,7 +1035,7 @@
             this.tlpConnectionsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tlpConnectionsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tlpConnectionsTable.Size = new System.Drawing.Size(458, 104);
-            this.tlpConnectionsTable.TabIndex = 8;
+            this.tlpConnectionsTable.TabIndex = 3;
             // 
             // tlpConnectionsHeader
             // 
@@ -1049,7 +1054,7 @@
             this.tlpConnectionsHeader.RowCount = 1;
             this.tlpConnectionsHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpConnectionsHeader.Size = new System.Drawing.Size(458, 37);
-            this.tlpConnectionsHeader.TabIndex = 7;
+            this.tlpConnectionsHeader.TabIndex = 2;
             this.tlpConnectionsHeader.Visible = false;
             // 
             // label3
@@ -1061,7 +1066,7 @@
             this.label3.Margin = new System.Windows.Forms.Padding(3);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 31);
-            this.label3.TabIndex = 5;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Nr";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -1074,7 +1079,7 @@
             this.label4.Margin = new System.Windows.Forms.Padding(3);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(192, 31);
-            this.label4.TabIndex = 6;
+            this.label4.TabIndex = 0;
             this.label4.Text = "Zielort";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -1091,7 +1096,7 @@
             this.btnVerbindungenAnzeigen.Margin = new System.Windows.Forms.Padding(40, 32, 40, 0);
             this.btnVerbindungenAnzeigen.Name = "btnVerbindungenAnzeigen";
             this.btnVerbindungenAnzeigen.Size = new System.Drawing.Size(429, 58);
-            this.btnVerbindungenAnzeigen.TabIndex = 6;
+            this.btnVerbindungenAnzeigen.TabIndex = 1;
             this.btnVerbindungenAnzeigen.Text = "Verbindungen anzeigen";
             this.btnVerbindungenAnzeigen.UseVisualStyleBackColor = false;
             this.btnVerbindungenAnzeigen.Click += new System.EventHandler(this.BtnVerbindungenAnzeigen_Click);
@@ -1116,7 +1121,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(429, 34);
-            this.tableLayoutPanel1.TabIndex = 5;
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // btnAbDurchsuchen
             // 
@@ -1133,6 +1138,7 @@
             this.btnAbDurchsuchen.Name = "btnAbDurchsuchen";
             this.btnAbDurchsuchen.Size = new System.Drawing.Size(33, 34);
             this.btnAbDurchsuchen.TabIndex = 6;
+            this.btnAbDurchsuchen.TabStop = false;
             this.toolTip.SetToolTip(this.btnAbDurchsuchen, "nach Stationen suchen [Enter]");
             this.btnAbDurchsuchen.UseVisualStyleBackColor = false;
             this.btnAbDurchsuchen.Click += new System.EventHandler(this.BtnAbDurchsuchen_Click);
@@ -1152,6 +1158,7 @@
             this.btnAbStandortAnzeigen.Name = "btnAbStandortAnzeigen";
             this.btnAbStandortAnzeigen.Size = new System.Drawing.Size(33, 34);
             this.btnAbStandortAnzeigen.TabIndex = 8;
+            this.btnAbStandortAnzeigen.TabStop = false;
             this.toolTip.SetToolTip(this.btnAbStandortAnzeigen, "Standort im Browser anzeigen");
             this.btnAbStandortAnzeigen.UseVisualStyleBackColor = false;
             this.btnAbStandortAnzeigen.Click += new System.EventHandler(this.BtnAbStandortAnzeigen_Click);
@@ -1166,7 +1173,7 @@
             this.tbxAb.Margin = new System.Windows.Forms.Padding(0);
             this.tbxAb.Name = "tbxAb";
             this.tbxAb.Size = new System.Drawing.Size(296, 34);
-            this.tbxAb.TabIndex = 5;
+            this.tbxAb.TabIndex = 0;
             this.tbxAb.TextChanged += new System.EventHandler(this.TbxAb_TextChanged);
             this.tbxAb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbxVonNachAb_KeyDown);
             // 
@@ -1179,7 +1186,7 @@
             this.lbVerbindungenAb.Margin = new System.Windows.Forms.Padding(0);
             this.lbVerbindungenAb.Name = "lbVerbindungenAb";
             this.lbVerbindungenAb.Size = new System.Drawing.Size(67, 34);
-            this.lbVerbindungenAb.TabIndex = 4;
+            this.lbVerbindungenAb.TabIndex = 0;
             this.lbVerbindungenAb.Text = "Ab";
             // 
             // toolTip
@@ -1197,7 +1204,7 @@
             this.pnlNoInternet.Margin = new System.Windows.Forms.Padding(0);
             this.pnlNoInternet.Name = "pnlNoInternet";
             this.pnlNoInternet.Size = new System.Drawing.Size(502, 382);
-            this.pnlNoInternet.TabIndex = 3;
+            this.pnlNoInternet.TabIndex = 4;
             // 
             // label1
             // 
