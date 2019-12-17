@@ -19,7 +19,7 @@ namespace Fahrplan
         {
             Label[] lbConnectionTable = new Label[] { lb1A, lb1B, lb1C, lb1D, lb2A, lb2B, lb2C, lb2D, lb3A, lb3B, lb3C, lb3D, lb4A, lb4B, lb4C, lb4D, lb5A, lb5B, lb5C, lb5D, lb6A, lb6B, lb6C, lb6D };
 
-            strecke = new Strecke(pnlStrecke, tbxVon, tbxNach);
+            strecke = new Strecke(pnlStrecke, tbxVon, tbxNach, tbxAb);
             fahrplan = new Fahrplan(pnlFahrplan, tlpConnectionTable, tlpConnectionTableHeader, btnStreckeEingeben, lbVonNach, lbGleisKante, lbConnectionTable);
             verbindungen = new Verbindungen(pnlVerbindungen);
 
@@ -53,10 +53,10 @@ namespace Fahrplan
             verbindungen.LoadPanel();
         }
 
-        private void BtnVerbindungenAnzeigen_Click(object sender, EventArgs e)
+        private void BtnFahrplanAnzeigen_Click(object sender, EventArgs e)
         {
             HilightButton(btnFahrplan);
-            fahrplan.LoadConnections(tbxVon.Text, tbxNach.Text, datePicker.Value, timePicker.Value);
+            fahrplan.LoadTimeTable(tbxVon.Text, tbxNach.Text, datePicker.Value, timePicker.Value);
         }
 
         private void BtnVonDurchsuchen_Click(object sender, EventArgs e)
@@ -69,9 +69,14 @@ namespace Fahrplan
             strecke.LoadStations(tbxNach);
         }
 
-        private void TbxVonNach_KeyDown(object sender, KeyEventArgs key)
+        private void BtnAbDurchsuchen_Click(object sender, EventArgs e)
         {
-            strecke.VonNachKeyDown((TextBox)sender, key);
+            strecke.LoadStations(tbxAb);
+        }
+
+        private void TbxVonNachAb_KeyDown(object sender, KeyEventArgs key)
+        {
+            strecke.VonNachAbKeyDown((TextBox)sender, key);
         }
 
         private void TbxVon_TextChanged(object sender, EventArgs e)
@@ -82,6 +87,11 @@ namespace Fahrplan
         private void TbxNach_TextChanged(object sender, EventArgs e)
         {
             strecke.VonNachTextChanged((TextBox)sender, btnNachDurchsuchen, btnNachStandortAnzeigen);
+        }
+
+        private void TbxAb_TextChanged(object sender, EventArgs e)
+        {
+            strecke.VonNachTextChanged((TextBox)sender, btnAbDurchsuchen, btnAbStandortAnzeigen);
         }
 
         private void BtnAbfahrtsZeit_Click(object sender, EventArgs e)
@@ -104,9 +114,19 @@ namespace Fahrplan
             strecke.LoadLocation(tbxNach);
         }
 
-        private void btnChangeDirection_Click(object sender, EventArgs e)
+        private void BtnAbStandortAnzeigen_Click(object sender, EventArgs e)
+        {
+            strecke.LoadLocation(tbxAb);
+        }
+
+        private void BtnChangeDirection_Click(object sender, EventArgs e)
         {
             strecke.ChangeDirection();
+        }
+
+        private void BtnVerbindungenAnzeigen_Click(object sender, EventArgs e)
+        {
+            verbindungen.LoadConnections(tbxAb);
         }
 
         private void HilightButton(Button hilightButton)

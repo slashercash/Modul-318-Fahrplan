@@ -16,12 +16,14 @@ namespace Fahrplan
         readonly Panel pnlStrecke;
         readonly TextBox tbxVon;
         readonly TextBox tbxNach;
+        readonly TextBox tbxAb;
 
-        public Strecke(Panel _pnlStrecke, TextBox _tbxVon, TextBox _tbxNach)
+        public Strecke(Panel _pnlStrecke, TextBox _tbxVon, TextBox _tbxNach, TextBox _tbxAb)
         {
             pnlStrecke = _pnlStrecke;
             tbxVon     = _tbxVon;
             tbxNach    = _tbxNach;
+            tbxAb      = _tbxAb;
 
             pnlStrecke.Dock = DockStyle.Fill;
         }
@@ -31,7 +33,7 @@ namespace Fahrplan
             pnlStrecke.BringToFront();
         }
 
-        internal void VonNachKeyDown(TextBox textBox, KeyEventArgs key)
+        internal void VonNachAbKeyDown(TextBox textBox, KeyEventArgs key)
         {
             if(key.KeyCode == Keys.Enter && textBox.TextLength > 0)
             {
@@ -74,6 +76,7 @@ namespace Fahrplan
             }
             tbxVon.AutoCompleteCustomSource.AddRange(stationNames.ToArray());
             tbxNach.AutoCompleteCustomSource.AddRange(stationNames.ToArray());
+            tbxAb.AutoCompleteCustomSource.AddRange(stationNames.ToArray());
 
             string text = textBox.Text;
             textBox.Text = "";

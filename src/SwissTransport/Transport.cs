@@ -25,6 +25,28 @@ namespace SwissTransport
             return null;
         }
 
+        public Stations GetStations(Coordinate coordinates)
+        {
+            if (coordinates != null)
+            {
+                var request = CreateWebRequest("http://transport.opendata.ch/v1/locations?" +
+                                               $"x={coordinates.XCoordinate}&" +
+                                               $"y={coordinates.YCoordinate}");
+                var response = request.GetResponse();
+                var responseStream = response.GetResponseStream();
+
+                var message = new StreamReader(responseStream).ReadToEnd();
+                var stations = JsonConvert.DeserializeObject<Stations>(message
+                    , new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+
+                return stations;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public StationBoardRoot GetStationBoard(string station, string id)
         {
             station = System.Uri.EscapeDataString(station);
@@ -87,11 +109,6 @@ namespace SwissTransport
             }
 
             return null;
-        }
-
-        public void GetStationBoard(object p)
-        {
-            throw new NotImplementedException();
         }
 
         private static WebRequest CreateWebRequest(string url)

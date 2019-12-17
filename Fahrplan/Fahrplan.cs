@@ -47,7 +47,7 @@ namespace Fahrplan
             btnDeactivate.FlatAppearance.BorderColor = Color.LightGreen;
         }
 
-        public void LoadConnections(string from, string to, DateTime date, DateTime time)
+        public void LoadTimeTable(string from, string to, DateTime date, DateTime time)
         {
             DateTime departureTime = new DateTime(date.Year, date.Month, date.Day, time.Hour, time.Minute, time.Second);
 
