@@ -14,6 +14,7 @@ namespace Fahrplan
         List<Connection> connections = new List<Connection>();
         bool isArivalTime = false;
 
+        readonly MainForm mainForm;
         readonly Panel pnlFahrplan;
         readonly TableLayoutPanel tlpConnectionTable;
         readonly TableLayoutPanel tlpConnectionTableHeader;
@@ -22,15 +23,16 @@ namespace Fahrplan
         readonly Label lbGleisKante;
         readonly Label[] lbTimeTable;
 
-        public Fahrplan(Panel _pnlFahrplan, TableLayoutPanel _tlpConnectionTable, TableLayoutPanel _tlpConnectionTableHeader, Button _btnStreckeEingeben, Label _lbFromTo, Label _lbGleisKante, Label[] _lbTimeTable)
+        public Fahrplan(MainForm _mainForm, Panel _pnlFahrplan, TableLayoutPanel _tlpConnectionTable, TableLayoutPanel _tlpConnectionTableHeader, Button _btnStreckeEingeben, Label _lbFromTo, Label _lbGleisKante, Label[] _lbTimeTable)
         {
+            mainForm                 = _mainForm;
             pnlFahrplan              = _pnlFahrplan;
             tlpConnectionTable       = _tlpConnectionTable;
             tlpConnectionTableHeader = _tlpConnectionTableHeader;
             btnStreckeEingeben       = _btnStreckeEingeben;
             lbFromTo                 = _lbFromTo;
             lbGleisKante             = _lbGleisKante;
-            lbTimeTable        = _lbTimeTable;
+            lbTimeTable              = _lbTimeTable;
 
             pnlFahrplan.Dock = DockStyle.Fill;
         }
@@ -49,50 +51,78 @@ namespace Fahrplan
 
         public void LoadTimeTable(string from, string to, DateTime date, DateTime time)
         {
-            DateTime departureTime = new DateTime(date.Year, date.Month, date.Day, time.Hour, time.Minute, time.Second);
-
-            connections = transport.GetConnections(from, to, 5, departureTime, isArivalTime).ConnectionList;
-
-            int pointer = 0;
-            foreach (Connection connection in connections)
+            try
             {
-                string departure = Convert.ToDateTime(connection.From.Departure).ToString("HH:mm");
-                string arival = Convert.ToDateTime(connection.To.Arrival).ToString("HH:mm");
-                string duration;
-                string durationUnformatted = connection.Duration.Substring(connection.Duration.IndexOf('d') + 1);
-                DateTime dtDuration = Convert.ToDateTime(durationUnformatted);
-                if (dtDuration.Hour == 0)
+                if (!transport.CheckForInternetConnection())
                 {
-                    duration = String.Format("{0} Min", dtDuration.Minute.ToString());
-                }
-                else
-                {
-                    duration = String.Format("{0} Std, {1} Min", dtDuration.Hour.ToString(), dtDuration.Minute.ToString());
+                    mainForm.LoadNoConnectionPanel();
+                    return;
                 }
 
-                lbTimeTable[pointer].Text = departure;
-                pointer++;
-                lbTimeTable[pointer].Text = String.IsNullOrEmpty(connection.From.Platform) ? "-" : connection.From.Platform;
-                pointer++;
-                lbTimeTable[pointer].Text = arival;
-                pointer++;
-                lbTimeTable[pointer].Text = duration;
-                pointer++;
-            }
+                DateTime departureTime = new DateTime(date.Year, date.Month, date.Day, time.Hour, time.Minute, time.Second);
 
-            for (int i = pointer; i < lbTimeTable.Length; i++)
+                Connections connectionToCheck = transport.GetConnections(from, to, 5, departureTime, isArivalTime);
+                bool validConnections = false;
+                if (connectionToCheck != null)
+                {
+                    if (connectionToCheck.ConnectionList.Any())
+                    {
+                        validConnections = true;
+                    }
+                }
+                if (!validConnections)
+                {
+                    MessageBox.Show("Es konnten keine Stationen mit den von Ihnen eingegebenen Suchkriterien gefunden werden", "Keine Treffer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                connections = connectionToCheck.ConnectionList;
+
+                int pointer = 0;
+                foreach (Connection connection in connections)
+                {
+                    string departure = Convert.ToDateTime(connection.From.Departure).ToString("HH:mm");
+                    string arival = Convert.ToDateTime(connection.To.Arrival).ToString("HH:mm");
+                    string duration;
+                    string durationUnformatted = connection.Duration.Substring(connection.Duration.IndexOf('d') + 1);
+                    DateTime dtDuration = Convert.ToDateTime(durationUnformatted);
+                    if (dtDuration.Hour == 0)
+                    {
+                        duration = String.Format("{0} Min", dtDuration.Minute.ToString());
+                    }
+                    else
+                    {
+                        duration = String.Format("{0} Std, {1} Min", dtDuration.Hour.ToString(), dtDuration.Minute.ToString());
+                    }
+
+                    lbTimeTable[pointer].Text = departure;
+                    pointer++;
+                    lbTimeTable[pointer].Text = String.IsNullOrEmpty(connection.From.Platform) ? "-" : connection.From.Platform;
+                    pointer++;
+                    lbTimeTable[pointer].Text = arival;
+                    pointer++;
+                    lbTimeTable[pointer].Text = duration;
+                    pointer++;
+                }
+
+                for (int i = pointer; i < lbTimeTable.Length; i++)
+                {
+                    lbTimeTable[i].Text = "";
+                }
+
+                Connection firstConnection = connections.First();
+                lbGleisKante.Text = int.TryParse(firstConnection.From.Platform, out _) ? "Gleis" : "Kante";
+                lbFromTo.Text = String.Format("{0}  🡺  {1}", firstConnection.From.Station.Name, firstConnection.To.Station.Name);
+                tlpConnectionTable.Visible = true;
+                tlpConnectionTableHeader.Visible = true;
+                btnStreckeEingeben.Visible = false;
+
+                LoadPanel();
+            }
+            catch (Exception exeption)
             {
-                lbTimeTable[i].Text = "";
+                throw new System.InvalidOperationException("\nThere was an exeption in Fahrplan LoadTimeTable() \nMessage: " + exeption.Message);
             }
-
-            Connection firstConnection = connections.First();
-            lbGleisKante.Text = int.TryParse(firstConnection.From.Platform, out _) ? "Gleis" : "Kante";
-            lbFromTo.Text = String.Format("{0}  🡺  {1}", firstConnection.From.Station.Name, firstConnection.To.Station.Name);
-            tlpConnectionTable.Visible = true;
-            tlpConnectionTableHeader.Visible = true;
-            btnStreckeEingeben.Visible = false;
-
-            LoadPanel();
         }
     }
 }

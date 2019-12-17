@@ -87,6 +87,10 @@
             this.lbGleisKante = new System.Windows.Forms.Label();
             this.lbVonNach = new System.Windows.Forms.Label();
             this.pnlVerbindungen = new System.Windows.Forms.Panel();
+            this.tlpConnectionsTable = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpConnectionsHeader = new System.Windows.Forms.TableLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnVerbindungenAnzeigen = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAbDurchsuchen = new System.Windows.Forms.Button();
@@ -94,10 +98,11 @@
             this.tbxAb = new System.Windows.Forms.TextBox();
             this.lbVerbindungenAb = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.label4 = new System.Windows.Forms.Label();
-            this.tlpConnectionsTable = new System.Windows.Forms.TableLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tlpConnectionsHeader = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlNoInternet = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnErneutVersuchen = new System.Windows.Forms.Button();
+            this.tlpNoInternet = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlNoInternetIcon = new System.Windows.Forms.Panel();
             this.tlpHeadButtons.SuspendLayout();
             this.pnlStrecke.SuspendLayout();
             this.tlpZeit.SuspendLayout();
@@ -107,8 +112,10 @@
             this.tlpTimeTable.SuspendLayout();
             this.tlpTimeTableHeader.SuspendLayout();
             this.pnlVerbindungen.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.tlpConnectionsHeader.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.pnlNoInternet.SuspendLayout();
+            this.tlpNoInternet.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpHeadButtons
@@ -126,7 +133,7 @@
             this.tlpHeadButtons.Name = "tlpHeadButtons";
             this.tlpHeadButtons.RowCount = 1;
             this.tlpHeadButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpHeadButtons.Size = new System.Drawing.Size(1110, 62);
+            this.tlpHeadButtons.Size = new System.Drawing.Size(1055, 62);
             this.tlpHeadButtons.TabIndex = 0;
             // 
             // btnVerbindung
@@ -141,10 +148,10 @@
             this.btnVerbindung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerbindung.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerbindung.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnVerbindung.Location = new System.Drawing.Point(740, 0);
+            this.btnVerbindung.Location = new System.Drawing.Point(702, 0);
             this.btnVerbindung.Margin = new System.Windows.Forms.Padding(0);
             this.btnVerbindung.Name = "btnVerbindung";
-            this.btnVerbindung.Size = new System.Drawing.Size(370, 62);
+            this.btnVerbindung.Size = new System.Drawing.Size(353, 62);
             this.btnVerbindung.TabIndex = 3;
             this.btnVerbindung.Text = "Verbindungen";
             this.btnVerbindung.UseVisualStyleBackColor = false;
@@ -165,7 +172,7 @@
             this.btnStrecke.Location = new System.Drawing.Point(0, 0);
             this.btnStrecke.Margin = new System.Windows.Forms.Padding(0);
             this.btnStrecke.Name = "btnStrecke";
-            this.btnStrecke.Size = new System.Drawing.Size(370, 62);
+            this.btnStrecke.Size = new System.Drawing.Size(351, 62);
             this.btnStrecke.TabIndex = 1;
             this.btnStrecke.Text = "Strecke";
             this.btnStrecke.UseVisualStyleBackColor = false;
@@ -183,10 +190,10 @@
             this.btnFahrplan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFahrplan.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFahrplan.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnFahrplan.Location = new System.Drawing.Point(370, 0);
+            this.btnFahrplan.Location = new System.Drawing.Point(351, 0);
             this.btnFahrplan.Margin = new System.Windows.Forms.Padding(0);
             this.btnFahrplan.Name = "btnFahrplan";
-            this.btnFahrplan.Size = new System.Drawing.Size(370, 62);
+            this.btnFahrplan.Size = new System.Drawing.Size(351, 62);
             this.btnFahrplan.TabIndex = 2;
             this.btnFahrplan.Text = "Fahrplan";
             this.btnFahrplan.UseVisualStyleBackColor = false;
@@ -232,7 +239,7 @@
             this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tlpZeit.Controls.Add(this.btnAnkunftsZeit, 4, 0);
             this.tlpZeit.Controls.Add(this.lbZeit, 0, 0);
             this.tlpZeit.Controls.Add(this.datePicker, 1, 0);
@@ -257,10 +264,10 @@
             this.btnAnkunftsZeit.FlatAppearance.BorderSize = 2;
             this.btnAnkunftsZeit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnkunftsZeit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnkunftsZeit.Location = new System.Drawing.Point(436, 0);
+            this.btnAnkunftsZeit.Location = new System.Drawing.Point(434, 0);
             this.btnAnkunftsZeit.Margin = new System.Windows.Forms.Padding(0);
             this.btnAnkunftsZeit.Name = "btnAnkunftsZeit";
-            this.btnAnkunftsZeit.Size = new System.Drawing.Size(35, 34);
+            this.btnAnkunftsZeit.Size = new System.Drawing.Size(37, 34);
             this.btnAnkunftsZeit.TabIndex = 8;
             this.toolTip.SetToolTip(this.btnAnkunftsZeit, "Selekierte Zeit ist Ankunftszeit");
             this.btnAnkunftsZeit.UseVisualStyleBackColor = false;
@@ -287,7 +294,7 @@
             this.datePicker.Location = new System.Drawing.Point(67, 0);
             this.datePicker.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(232, 34);
+            this.datePicker.Size = new System.Drawing.Size(230, 34);
             this.datePicker.TabIndex = 4;
             this.datePicker.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
@@ -297,7 +304,7 @@
             this.timePicker.Dock = System.Windows.Forms.DockStyle.Fill;
             this.timePicker.Font = new System.Drawing.Font("Calibri", 16F);
             this.timePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.timePicker.Location = new System.Drawing.Point(305, 0);
+            this.timePicker.Location = new System.Drawing.Point(303, 0);
             this.timePicker.Margin = new System.Windows.Forms.Padding(3, 0, 6, 0);
             this.timePicker.Name = "timePicker";
             this.timePicker.Size = new System.Drawing.Size(91, 34);
@@ -315,7 +322,7 @@
             this.btnAbfahrtsZeit.FlatAppearance.BorderSize = 2;
             this.btnAbfahrtsZeit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbfahrtsZeit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAbfahrtsZeit.Location = new System.Drawing.Point(402, 0);
+            this.btnAbfahrtsZeit.Location = new System.Drawing.Point(400, 0);
             this.btnAbfahrtsZeit.Margin = new System.Windows.Forms.Padding(0);
             this.btnAbfahrtsZeit.Name = "btnAbfahrtsZeit";
             this.btnAbfahrtsZeit.Size = new System.Drawing.Size(34, 34);
@@ -524,7 +531,7 @@
             this.pnlFahrplan.Location = new System.Drawing.Point(0, 418);
             this.pnlFahrplan.Margin = new System.Windows.Forms.Padding(0);
             this.pnlFahrplan.Name = "pnlFahrplan";
-            this.pnlFahrplan.Size = new System.Drawing.Size(544, 343);
+            this.pnlFahrplan.Size = new System.Drawing.Size(544, 382);
             this.pnlFahrplan.TabIndex = 2;
             // 
             // btnStreckeEingeben
@@ -536,7 +543,7 @@
             this.btnStreckeEingeben.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStreckeEingeben.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStreckeEingeben.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnStreckeEingeben.Location = new System.Drawing.Point(40, 114);
+            this.btnStreckeEingeben.Location = new System.Drawing.Point(40, 145);
             this.btnStreckeEingeben.Margin = new System.Windows.Forms.Padding(40, 39, 40, 0);
             this.btnStreckeEingeben.Name = "btnStreckeEingeben";
             this.btnStreckeEingeben.Size = new System.Drawing.Size(462, 58);
@@ -994,7 +1001,6 @@
             // 
             // pnlVerbindungen
             // 
-            this.pnlVerbindungen.AutoScroll = true;
             this.pnlVerbindungen.BackColor = System.Drawing.Color.Honeydew;
             this.pnlVerbindungen.Controls.Add(this.tlpConnectionsTable);
             this.pnlVerbindungen.Controls.Add(this.tlpConnectionsHeader);
@@ -1005,6 +1011,72 @@
             this.pnlVerbindungen.Name = "pnlVerbindungen";
             this.pnlVerbindungen.Size = new System.Drawing.Size(502, 356);
             this.pnlVerbindungen.TabIndex = 2;
+            // 
+            // tlpConnectionsTable
+            // 
+            this.tlpConnectionsTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlpConnectionsTable.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tlpConnectionsTable.ColumnCount = 4;
+            this.tlpConnectionsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tlpConnectionsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpConnectionsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tlpConnectionsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tlpConnectionsTable.Location = new System.Drawing.Point(33, 236);
+            this.tlpConnectionsTable.Margin = new System.Windows.Forms.Padding(40, 5, 35, 0);
+            this.tlpConnectionsTable.Name = "tlpConnectionsTable";
+            this.tlpConnectionsTable.RowCount = 2;
+            this.tlpConnectionsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tlpConnectionsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tlpConnectionsTable.Size = new System.Drawing.Size(458, 104);
+            this.tlpConnectionsTable.TabIndex = 8;
+            // 
+            // tlpConnectionsHeader
+            // 
+            this.tlpConnectionsHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlpConnectionsHeader.ColumnCount = 4;
+            this.tlpConnectionsHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tlpConnectionsHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpConnectionsHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tlpConnectionsHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tlpConnectionsHeader.Controls.Add(this.label3, 0, 0);
+            this.tlpConnectionsHeader.Controls.Add(this.label4, 1, 0);
+            this.tlpConnectionsHeader.Location = new System.Drawing.Point(33, 185);
+            this.tlpConnectionsHeader.Margin = new System.Windows.Forms.Padding(40, 0, 40, 0);
+            this.tlpConnectionsHeader.Name = "tlpConnectionsHeader";
+            this.tlpConnectionsHeader.RowCount = 1;
+            this.tlpConnectionsHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpConnectionsHeader.Size = new System.Drawing.Size(458, 37);
+            this.tlpConnectionsHeader.TabIndex = 7;
+            this.tlpConnectionsHeader.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label3.Location = new System.Drawing.Point(3, 3);
+            this.label3.Margin = new System.Windows.Forms.Padding(3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(94, 31);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Nr";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label4
+            // 
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label4.Location = new System.Drawing.Point(103, 3);
+            this.label4.Margin = new System.Windows.Forms.Padding(3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(192, 31);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Zielort";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnVerbindungenAnzeigen
             // 
@@ -1114,77 +1186,83 @@
             // 
             this.toolTip.IsBalloon = true;
             // 
-            // label4
+            // pnlNoInternet
             // 
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label4.Location = new System.Drawing.Point(103, 3);
-            this.label4.Margin = new System.Windows.Forms.Padding(3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(192, 31);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Zielort";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.pnlNoInternet.BackColor = System.Drawing.Color.Honeydew;
+            this.pnlNoInternet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlNoInternet.Controls.Add(this.label1);
+            this.pnlNoInternet.Controls.Add(this.btnErneutVersuchen);
+            this.pnlNoInternet.Controls.Add(this.tlpNoInternet);
+            this.pnlNoInternet.Location = new System.Drawing.Point(544, 418);
+            this.pnlNoInternet.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlNoInternet.Name = "pnlNoInternet";
+            this.pnlNoInternet.Size = new System.Drawing.Size(502, 382);
+            this.pnlNoInternet.TabIndex = 3;
             // 
-            // tlpConnectionsTable
+            // label1
             // 
-            this.tlpConnectionsTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpConnectionsTable.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tlpConnectionsTable.ColumnCount = 4;
-            this.tlpConnectionsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tlpConnectionsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpConnectionsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.tlpConnectionsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpConnectionsTable.Location = new System.Drawing.Point(33, 236);
-            this.tlpConnectionsTable.Margin = new System.Windows.Forms.Padding(40, 5, 35, 0);
-            this.tlpConnectionsTable.Name = "tlpConnectionsTable";
-            this.tlpConnectionsTable.RowCount = 2;
-            this.tlpConnectionsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tlpConnectionsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tlpConnectionsTable.Size = new System.Drawing.Size(458, 104);
-            this.tlpConnectionsTable.TabIndex = 8;
+            this.label1.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label1.Location = new System.Drawing.Point(4, 242);
+            this.label1.Margin = new System.Windows.Forms.Padding(40, 40, 40, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(495, 39);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Sie haben keine Verbindung zum Internet";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label3
+            // btnErneutVersuchen
             // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label3.Location = new System.Drawing.Point(3, 3);
-            this.label3.Margin = new System.Windows.Forms.Padding(3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 31);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Nr";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // tlpConnectionsHeader
-            // 
-            this.tlpConnectionsHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnErneutVersuchen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpConnectionsHeader.ColumnCount = 4;
-            this.tlpConnectionsHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tlpConnectionsHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpConnectionsHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.tlpConnectionsHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpConnectionsHeader.Controls.Add(this.label3, 0, 0);
-            this.tlpConnectionsHeader.Controls.Add(this.label4, 1, 0);
-            this.tlpConnectionsHeader.Location = new System.Drawing.Point(33, 185);
-            this.tlpConnectionsHeader.Margin = new System.Windows.Forms.Padding(40, 0, 40, 0);
-            this.tlpConnectionsHeader.Name = "tlpConnectionsHeader";
-            this.tlpConnectionsHeader.RowCount = 1;
-            this.tlpConnectionsHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpConnectionsHeader.Size = new System.Drawing.Size(458, 37);
-            this.tlpConnectionsHeader.TabIndex = 7;
-            this.tlpConnectionsHeader.Visible = false;
+            this.btnErneutVersuchen.BackColor = System.Drawing.Color.LightGreen;
+            this.btnErneutVersuchen.FlatAppearance.BorderSize = 0;
+            this.btnErneutVersuchen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnErneutVersuchen.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnErneutVersuchen.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnErneutVersuchen.Location = new System.Drawing.Point(38, 299);
+            this.btnErneutVersuchen.Margin = new System.Windows.Forms.Padding(40, 32, 40, 0);
+            this.btnErneutVersuchen.Name = "btnErneutVersuchen";
+            this.btnErneutVersuchen.Size = new System.Drawing.Size(424, 58);
+            this.btnErneutVersuchen.TabIndex = 4;
+            this.btnErneutVersuchen.Text = "erneut versuchen";
+            this.btnErneutVersuchen.UseVisualStyleBackColor = false;
+            this.btnErneutVersuchen.Click += new System.EventHandler(this.BtnErneutVersuchen_Click);
+            // 
+            // tlpNoInternet
+            // 
+            this.tlpNoInternet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlpNoInternet.ColumnCount = 3;
+            this.tlpNoInternet.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpNoInternet.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.tlpNoInternet.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpNoInternet.Controls.Add(this.pnlNoInternetIcon, 1, 0);
+            this.tlpNoInternet.Location = new System.Drawing.Point(3, 40);
+            this.tlpNoInternet.Name = "tlpNoInternet";
+            this.tlpNoInternet.RowCount = 1;
+            this.tlpNoInternet.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpNoInternet.Size = new System.Drawing.Size(496, 196);
+            this.tlpNoInternet.TabIndex = 0;
+            // 
+            // pnlNoInternetIcon
+            // 
+            this.pnlNoInternetIcon.BackgroundImage = global::Fahrplan.Properties.Resources.NoConnection;
+            this.pnlNoInternetIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlNoInternetIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlNoInternetIcon.Location = new System.Drawing.Point(101, 3);
+            this.pnlNoInternetIcon.Name = "pnlNoInternetIcon";
+            this.pnlNoInternetIcon.Size = new System.Drawing.Size(294, 190);
+            this.pnlNoInternetIcon.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1110, 752);
+            this.ClientSize = new System.Drawing.Size(1055, 806);
+            this.Controls.Add(this.pnlNoInternet);
             this.Controls.Add(this.pnlFahrplan);
             this.Controls.Add(this.pnlVerbindungen);
             this.Controls.Add(this.pnlStrecke);
@@ -1192,7 +1270,8 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(560, 560);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "OEV Fahrplan";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tlpHeadButtons.ResumeLayout(false);
             this.pnlStrecke.ResumeLayout(false);
@@ -1205,9 +1284,11 @@
             this.tlpTimeTable.ResumeLayout(false);
             this.tlpTimeTableHeader.ResumeLayout(false);
             this.pnlVerbindungen.ResumeLayout(false);
+            this.tlpConnectionsHeader.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.tlpConnectionsHeader.ResumeLayout(false);
+            this.pnlNoInternet.ResumeLayout(false);
+            this.tlpNoInternet.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1282,6 +1363,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TableLayoutPanel tlpConnectionsHeader;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel pnlNoInternet;
+        private System.Windows.Forms.TableLayoutPanel tlpNoInternet;
+        private System.Windows.Forms.Panel pnlNoInternetIcon;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnErneutVersuchen;
     }
 }
 

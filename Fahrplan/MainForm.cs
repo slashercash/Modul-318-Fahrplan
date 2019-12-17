@@ -19,10 +19,11 @@ namespace Fahrplan
         {
             Label[] lbTimeTable = new Label[] { lb1A, lb1B, lb1C, lb1D, lb2A, lb2B, lb2C, lb2D, lb3A, lb3B, lb3C, lb3D, lb4A, lb4B, lb4C, lb4D, lb5A, lb5B, lb5C, lb5D, lb6A, lb6B, lb6C, lb6D };
 
-            strecke = new Strecke(pnlStrecke, tbxVon, tbxNach, tbxAb, datePicker, timePicker);
-            fahrplan = new Fahrplan(pnlFahrplan, tlpTimeTable, tlpTimeTableHeader, btnStreckeEingeben, lbVonNach, lbGleisKante, lbTimeTable);
+            strecke = new Strecke(this, pnlStrecke, tbxVon, tbxNach, tbxAb, datePicker, timePicker);
+            fahrplan = new Fahrplan(this, pnlFahrplan, tlpTimeTable, tlpTimeTableHeader, btnStreckeEingeben, lbVonNach, lbGleisKante, lbTimeTable);
             verbindungen = new Verbindungen(pnlVerbindungen, tlpConnectionsTable, tlpConnectionsHeader, this);
 
+            pnlNoInternet.Dock = DockStyle.Fill;
 
             datePicker.CustomFormat = "ddd, dd. MMMM";
             timePicker.CustomFormat = "HH:mm";
@@ -32,31 +33,31 @@ namespace Fahrplan
             tlpConnectionsTable.HorizontalScroll.Enabled = false;
             tlpConnectionsTable.AutoScroll = true;
 
-            HilightButton(btnStrecke);
+            HilightButton(btnStrecke.Name);
             strecke.LoadPanel();
         }
 
         private void BtnStrecke_Click(object sender, EventArgs e)
         {
-            HilightButton(btnStrecke);
+            HilightButton(btnStrecke.Name);
             strecke.LoadPanel();
         }
 
         private void BtnFahrplan_Click(object sender, EventArgs e)
         {
-            HilightButton(btnFahrplan);
+            HilightButton(btnFahrplan.Name);
             fahrplan.LoadPanel();
         }
 
         private void BtnVerbindung_Click(object sender, EventArgs e)
         {
-            HilightButton(btnVerbindung);
+            HilightButton(btnVerbindung.Name);
             verbindungen.LoadPanel();
         }
 
         private void BtnFahrplanAnzeigen_Click(object sender, EventArgs e)
         {
-            HilightButton(btnFahrplan);
+            HilightButton(btnFahrplan.Name);
             fahrplan.LoadTimeTable(tbxVon.Text, tbxNach.Text, datePicker.Value, timePicker.Value);
         }
 
@@ -133,15 +134,46 @@ namespace Fahrplan
         public void BtnSelectConnection_Click(object sender, EventArgs e)
         {
             strecke.SetFromTo(((Button)sender).Tag.ToString());
-            HilightButton(btnStrecke);
+            HilightButton(btnStrecke.Name);
             strecke.LoadPanel();
         }
 
-        private void HilightButton(Button hilightButton)
+        private void BtnErneutVersuchen_Click(object sender, EventArgs e)
+        {
+            strecke.CheckInternetConnection();
+        }
+
+        public void LoadNoConnectionPanel()
+        {
+            EnableHeaderButtons(false);
+            pnlNoInternet.BringToFront();
+        }
+
+        public void EnableHeaderButtons(bool enable)
+        {
+            if(enable)
+            {
+                foreach (Button button in tlpHeadButtons.Controls)
+                {
+                    button.Enabled = true;
+                }
+            }
+            else
+            {
+                foreach (Button button in tlpHeadButtons.Controls)
+                {
+                    button.Enabled = false;
+                    button.BackColor = Color.LightGreen;
+                    button.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 255, 192);
+                }
+            }
+        }
+
+        private void HilightButton(string hilightButton)
         {
             foreach (Button button in tlpHeadButtons.Controls)
             {
-                if (button.Name.Equals(hilightButton.Name))
+                if (button.Name.Equals(hilightButton))
                 {
                     button.BackColor = Color.Honeydew;
                     button.FlatAppearance.MouseOverBackColor = Color.Honeydew;
