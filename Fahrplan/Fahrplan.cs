@@ -20,9 +20,9 @@ namespace Fahrplan
         readonly Button btnStreckeEingeben;
         readonly Label lbFromTo;
         readonly Label lbGleisKante;
-        readonly Label[] lbConnectionTable;
+        readonly Label[] lbTimeTable;
 
-        public Fahrplan(Panel _pnlFahrplan, TableLayoutPanel _tlpConnectionTable, TableLayoutPanel _tlpConnectionTableHeader, Button _btnStreckeEingeben, Label _lbFromTo, Label _lbGleisKante, Label[] _lbConnectionTable)
+        public Fahrplan(Panel _pnlFahrplan, TableLayoutPanel _tlpConnectionTable, TableLayoutPanel _tlpConnectionTableHeader, Button _btnStreckeEingeben, Label _lbFromTo, Label _lbGleisKante, Label[] _lbTimeTable)
         {
             pnlFahrplan              = _pnlFahrplan;
             tlpConnectionTable       = _tlpConnectionTable;
@@ -30,7 +30,7 @@ namespace Fahrplan
             btnStreckeEingeben       = _btnStreckeEingeben;
             lbFromTo                 = _lbFromTo;
             lbGleisKante             = _lbGleisKante;
-            lbConnectionTable        = _lbConnectionTable;
+            lbTimeTable        = _lbTimeTable;
 
             pnlFahrplan.Dock = DockStyle.Fill;
         }
@@ -70,19 +70,19 @@ namespace Fahrplan
                     duration = String.Format("{0} Std, {1} Min", dtDuration.Hour.ToString(), dtDuration.Minute.ToString());
                 }
 
-                lbConnectionTable[pointer].Text = departure;
+                lbTimeTable[pointer].Text = departure;
                 pointer++;
-                lbConnectionTable[pointer].Text = String.IsNullOrEmpty(connection.From.Platform) ? "-" : connection.From.Platform;
+                lbTimeTable[pointer].Text = String.IsNullOrEmpty(connection.From.Platform) ? "-" : connection.From.Platform;
                 pointer++;
-                lbConnectionTable[pointer].Text = arival;
+                lbTimeTable[pointer].Text = arival;
                 pointer++;
-                lbConnectionTable[pointer].Text = duration;
+                lbTimeTable[pointer].Text = duration;
                 pointer++;
             }
 
-            for (int i = pointer; i < lbConnectionTable.Length; i++)
+            for (int i = pointer; i < lbTimeTable.Length; i++)
             {
-                lbConnectionTable[i].Text = "";
+                lbTimeTable[i].Text = "";
             }
 
             Connection firstConnection = connections.First();

@@ -35,7 +35,6 @@
             this.btnStrecke = new System.Windows.Forms.Button();
             this.btnFahrplan = new System.Windows.Forms.Button();
             this.pnlStrecke = new System.Windows.Forms.Panel();
-            this.tlpChangeDirection = new System.Windows.Forms.TableLayoutPanel();
             this.btnChangeDirection = new System.Windows.Forms.Button();
             this.tlpZeit = new System.Windows.Forms.TableLayoutPanel();
             this.btnAnkunftsZeit = new System.Windows.Forms.Button();
@@ -101,7 +100,6 @@
             this.tlpConnectionsHeader = new System.Windows.Forms.TableLayoutPanel();
             this.tlpHeadButtons.SuspendLayout();
             this.pnlStrecke.SuspendLayout();
-            this.tlpChangeDirection.SuspendLayout();
             this.tlpZeit.SuspendLayout();
             this.tlpNach.SuspendLayout();
             this.tlpVon.SuspendLayout();
@@ -128,7 +126,7 @@
             this.tlpHeadButtons.Name = "tlpHeadButtons";
             this.tlpHeadButtons.RowCount = 1;
             this.tlpHeadButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpHeadButtons.Size = new System.Drawing.Size(1055, 62);
+            this.tlpHeadButtons.Size = new System.Drawing.Size(1110, 62);
             this.tlpHeadButtons.TabIndex = 0;
             // 
             // btnVerbindung
@@ -143,10 +141,10 @@
             this.btnVerbindung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerbindung.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerbindung.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnVerbindung.Location = new System.Drawing.Point(702, 0);
+            this.btnVerbindung.Location = new System.Drawing.Point(740, 0);
             this.btnVerbindung.Margin = new System.Windows.Forms.Padding(0);
             this.btnVerbindung.Name = "btnVerbindung";
-            this.btnVerbindung.Size = new System.Drawing.Size(353, 62);
+            this.btnVerbindung.Size = new System.Drawing.Size(370, 62);
             this.btnVerbindung.TabIndex = 3;
             this.btnVerbindung.Text = "Verbindungen";
             this.btnVerbindung.UseVisualStyleBackColor = false;
@@ -167,7 +165,7 @@
             this.btnStrecke.Location = new System.Drawing.Point(0, 0);
             this.btnStrecke.Margin = new System.Windows.Forms.Padding(0);
             this.btnStrecke.Name = "btnStrecke";
-            this.btnStrecke.Size = new System.Drawing.Size(351, 62);
+            this.btnStrecke.Size = new System.Drawing.Size(370, 62);
             this.btnStrecke.TabIndex = 1;
             this.btnStrecke.Text = "Strecke";
             this.btnStrecke.UseVisualStyleBackColor = false;
@@ -185,10 +183,10 @@
             this.btnFahrplan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFahrplan.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFahrplan.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnFahrplan.Location = new System.Drawing.Point(351, 0);
+            this.btnFahrplan.Location = new System.Drawing.Point(370, 0);
             this.btnFahrplan.Margin = new System.Windows.Forms.Padding(0);
             this.btnFahrplan.Name = "btnFahrplan";
-            this.btnFahrplan.Size = new System.Drawing.Size(351, 62);
+            this.btnFahrplan.Size = new System.Drawing.Size(370, 62);
             this.btnFahrplan.TabIndex = 2;
             this.btnFahrplan.Text = "Fahrplan";
             this.btnFahrplan.UseVisualStyleBackColor = false;
@@ -197,7 +195,7 @@
             // pnlStrecke
             // 
             this.pnlStrecke.BackColor = System.Drawing.Color.Honeydew;
-            this.pnlStrecke.Controls.Add(this.tlpChangeDirection);
+            this.pnlStrecke.Controls.Add(this.btnChangeDirection);
             this.pnlStrecke.Controls.Add(this.tlpZeit);
             this.pnlStrecke.Controls.Add(this.btnFahrplanAnzeigen);
             this.pnlStrecke.Controls.Add(this.tlpNach);
@@ -205,38 +203,21 @@
             this.pnlStrecke.Location = new System.Drawing.Point(0, 62);
             this.pnlStrecke.Margin = new System.Windows.Forms.Padding(0);
             this.pnlStrecke.Name = "pnlStrecke";
-            this.pnlStrecke.Size = new System.Drawing.Size(544, 407);
+            this.pnlStrecke.Size = new System.Drawing.Size(544, 356);
             this.pnlStrecke.TabIndex = 1;
-            // 
-            // tlpChangeDirection
-            // 
-            this.tlpChangeDirection.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpChangeDirection.ColumnCount = 3;
-            this.tlpChangeDirection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpChangeDirection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpChangeDirection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpChangeDirection.Controls.Add(this.btnChangeDirection, 1, 0);
-            this.tlpChangeDirection.Location = new System.Drawing.Point(100, 71);
-            this.tlpChangeDirection.Margin = new System.Windows.Forms.Padding(5);
-            this.tlpChangeDirection.Name = "tlpChangeDirection";
-            this.tlpChangeDirection.RowCount = 1;
-            this.tlpChangeDirection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpChangeDirection.Size = new System.Drawing.Size(338, 50);
-            this.tlpChangeDirection.TabIndex = 8;
             // 
             // btnChangeDirection
             // 
+            this.btnChangeDirection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnChangeDirection.BackColor = System.Drawing.Color.LightGreen;
             this.btnChangeDirection.BackgroundImage = global::Fahrplan.Properties.Resources.ChangeDirection;
             this.btnChangeDirection.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnChangeDirection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnChangeDirection.FlatAppearance.BorderSize = 0;
+            this.btnChangeDirection.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.btnChangeDirection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeDirection.Location = new System.Drawing.Point(154, 0);
+            this.btnChangeDirection.Location = new System.Drawing.Point(454, 71);
             this.btnChangeDirection.Margin = new System.Windows.Forms.Padding(0);
             this.btnChangeDirection.Name = "btnChangeDirection";
-            this.btnChangeDirection.Size = new System.Drawing.Size(30, 50);
+            this.btnChangeDirection.Size = new System.Drawing.Size(33, 32);
             this.btnChangeDirection.TabIndex = 7;
             this.toolTip.SetToolTip(this.btnChangeDirection, "andere Richtung");
             this.btnChangeDirection.UseVisualStyleBackColor = false;
@@ -250,14 +231,14 @@
             this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
             this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tlpZeit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tlpZeit.Controls.Add(this.btnAnkunftsZeit, 4, 0);
             this.tlpZeit.Controls.Add(this.lbZeit, 0, 0);
             this.tlpZeit.Controls.Add(this.datePicker, 1, 0);
             this.tlpZeit.Controls.Add(this.timePicker, 2, 0);
             this.tlpZeit.Controls.Add(this.btnAbfahrtsZeit, 3, 0);
-            this.tlpZeit.Location = new System.Drawing.Point(33, 192);
+            this.tlpZeit.Location = new System.Drawing.Point(33, 183);
             this.tlpZeit.Margin = new System.Windows.Forms.Padding(3, 32, 3, 3);
             this.tlpZeit.Name = "tlpZeit";
             this.tlpZeit.RowCount = 1;
@@ -276,10 +257,10 @@
             this.btnAnkunftsZeit.FlatAppearance.BorderSize = 2;
             this.btnAnkunftsZeit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnkunftsZeit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnkunftsZeit.Location = new System.Drawing.Point(430, 0);
+            this.btnAnkunftsZeit.Location = new System.Drawing.Point(436, 0);
             this.btnAnkunftsZeit.Margin = new System.Windows.Forms.Padding(0);
             this.btnAnkunftsZeit.Name = "btnAnkunftsZeit";
-            this.btnAnkunftsZeit.Size = new System.Drawing.Size(41, 34);
+            this.btnAnkunftsZeit.Size = new System.Drawing.Size(35, 34);
             this.btnAnkunftsZeit.TabIndex = 8;
             this.toolTip.SetToolTip(this.btnAnkunftsZeit, "Selekierte Zeit ist Ankunftszeit");
             this.btnAnkunftsZeit.UseVisualStyleBackColor = false;
@@ -306,7 +287,7 @@
             this.datePicker.Location = new System.Drawing.Point(67, 0);
             this.datePicker.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(228, 34);
+            this.datePicker.Size = new System.Drawing.Size(232, 34);
             this.datePicker.TabIndex = 4;
             this.datePicker.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
@@ -316,10 +297,10 @@
             this.timePicker.Dock = System.Windows.Forms.DockStyle.Fill;
             this.timePicker.Font = new System.Drawing.Font("Calibri", 16F);
             this.timePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.timePicker.Location = new System.Drawing.Point(301, 0);
+            this.timePicker.Location = new System.Drawing.Point(305, 0);
             this.timePicker.Margin = new System.Windows.Forms.Padding(3, 0, 6, 0);
             this.timePicker.Name = "timePicker";
-            this.timePicker.Size = new System.Drawing.Size(90, 34);
+            this.timePicker.Size = new System.Drawing.Size(91, 34);
             this.timePicker.TabIndex = 5;
             this.timePicker.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
@@ -334,10 +315,10 @@
             this.btnAbfahrtsZeit.FlatAppearance.BorderSize = 2;
             this.btnAbfahrtsZeit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbfahrtsZeit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAbfahrtsZeit.Location = new System.Drawing.Point(397, 0);
+            this.btnAbfahrtsZeit.Location = new System.Drawing.Point(402, 0);
             this.btnAbfahrtsZeit.Margin = new System.Windows.Forms.Padding(0);
             this.btnAbfahrtsZeit.Name = "btnAbfahrtsZeit";
-            this.btnAbfahrtsZeit.Size = new System.Drawing.Size(33, 34);
+            this.btnAbfahrtsZeit.Size = new System.Drawing.Size(34, 34);
             this.btnAbfahrtsZeit.TabIndex = 7;
             this.toolTip.SetToolTip(this.btnAbfahrtsZeit, "Selekierte Zeit ist Abfahrtszeit");
             this.btnAbfahrtsZeit.UseVisualStyleBackColor = false;
@@ -352,7 +333,7 @@
             this.btnFahrplanAnzeigen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFahrplanAnzeigen.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFahrplanAnzeigen.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnFahrplanAnzeigen.Location = new System.Drawing.Point(33, 261);
+            this.btnFahrplanAnzeigen.Location = new System.Drawing.Point(33, 257);
             this.btnFahrplanAnzeigen.Margin = new System.Windows.Forms.Padding(40, 32, 40, 0);
             this.btnFahrplanAnzeigen.Name = "btnFahrplanAnzeigen";
             this.btnFahrplanAnzeigen.Size = new System.Drawing.Size(471, 58);
@@ -375,8 +356,8 @@
             this.tlpNach.Controls.Add(this.btnNachStandortAnzeigen, 3, 0);
             this.tlpNach.Controls.Add(this.btnNachDurchsuchen, 2, 0);
             this.tlpNach.Controls.Add(this.lbNach, 0, 0);
-            this.tlpNach.Location = new System.Drawing.Point(33, 126);
-            this.tlpNach.Margin = new System.Windows.Forms.Padding(33, 0, 40, 0);
+            this.tlpNach.Location = new System.Drawing.Point(33, 108);
+            this.tlpNach.Margin = new System.Windows.Forms.Padding(33, 5, 40, 0);
             this.tlpNach.Name = "tlpNach";
             this.tlpNach.RowCount = 1;
             this.tlpNach.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
@@ -540,7 +521,7 @@
             this.pnlFahrplan.Controls.Add(this.tlpTimeTable);
             this.pnlFahrplan.Controls.Add(this.tlpTimeTableHeader);
             this.pnlFahrplan.Controls.Add(this.lbVonNach);
-            this.pnlFahrplan.Location = new System.Drawing.Point(0, 571);
+            this.pnlFahrplan.Location = new System.Drawing.Point(0, 418);
             this.pnlFahrplan.Margin = new System.Windows.Forms.Padding(0);
             this.pnlFahrplan.Name = "pnlFahrplan";
             this.pnlFahrplan.Size = new System.Drawing.Size(544, 343);
@@ -948,7 +929,7 @@
             // lbDauer
             // 
             this.lbDauer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbDauer.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDauer.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDauer.ForeColor = System.Drawing.Color.DarkGreen;
             this.lbDauer.Location = new System.Drawing.Point(297, 3);
             this.lbDauer.Margin = new System.Windows.Forms.Padding(3);
@@ -961,7 +942,7 @@
             // lbAnkunft
             // 
             this.lbAnkunft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbAnkunft.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAnkunft.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAnkunft.ForeColor = System.Drawing.Color.DarkGreen;
             this.lbAnkunft.Location = new System.Drawing.Point(196, 3);
             this.lbAnkunft.Margin = new System.Windows.Forms.Padding(3);
@@ -974,7 +955,7 @@
             // lbAbfahrt
             // 
             this.lbAbfahrt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbAbfahrt.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAbfahrt.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAbfahrt.ForeColor = System.Drawing.Color.DarkGreen;
             this.lbAbfahrt.Location = new System.Drawing.Point(3, 3);
             this.lbAbfahrt.Margin = new System.Windows.Forms.Padding(3);
@@ -987,7 +968,7 @@
             // lbGleisKante
             // 
             this.lbGleisKante.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbGleisKante.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGleisKante.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGleisKante.ForeColor = System.Drawing.Color.DarkGreen;
             this.lbGleisKante.Location = new System.Drawing.Point(104, 3);
             this.lbGleisKante.Margin = new System.Windows.Forms.Padding(3);
@@ -1022,7 +1003,7 @@
             this.pnlVerbindungen.Location = new System.Drawing.Point(544, 62);
             this.pnlVerbindungen.Margin = new System.Windows.Forms.Padding(0);
             this.pnlVerbindungen.Name = "pnlVerbindungen";
-            this.pnlVerbindungen.Size = new System.Drawing.Size(502, 453);
+            this.pnlVerbindungen.Size = new System.Drawing.Size(502, 356);
             this.pnlVerbindungen.TabIndex = 2;
             // 
             // btnVerbindungenAnzeigen
@@ -1047,10 +1028,9 @@
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 5;
+            this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -1076,7 +1056,7 @@
             this.btnAbDurchsuchen.Enabled = false;
             this.btnAbDurchsuchen.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.btnAbDurchsuchen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAbDurchsuchen.Location = new System.Drawing.Point(330, 0);
+            this.btnAbDurchsuchen.Location = new System.Drawing.Point(363, 0);
             this.btnAbDurchsuchen.Margin = new System.Windows.Forms.Padding(0);
             this.btnAbDurchsuchen.Name = "btnAbDurchsuchen";
             this.btnAbDurchsuchen.Size = new System.Drawing.Size(33, 34);
@@ -1095,7 +1075,7 @@
             this.btnAbStandortAnzeigen.Enabled = false;
             this.btnAbStandortAnzeigen.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.btnAbStandortAnzeigen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAbStandortAnzeigen.Location = new System.Drawing.Point(363, 0);
+            this.btnAbStandortAnzeigen.Location = new System.Drawing.Point(396, 0);
             this.btnAbStandortAnzeigen.Margin = new System.Windows.Forms.Padding(0);
             this.btnAbStandortAnzeigen.Name = "btnAbStandortAnzeigen";
             this.btnAbStandortAnzeigen.Size = new System.Drawing.Size(33, 34);
@@ -1113,7 +1093,7 @@
             this.tbxAb.Location = new System.Drawing.Point(67, 0);
             this.tbxAb.Margin = new System.Windows.Forms.Padding(0);
             this.tbxAb.Name = "tbxAb";
-            this.tbxAb.Size = new System.Drawing.Size(263, 34);
+            this.tbxAb.Size = new System.Drawing.Size(296, 34);
             this.tbxAb.TabIndex = 5;
             this.tbxAb.TextChanged += new System.EventHandler(this.TbxAb_TextChanged);
             this.tbxAb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbxVonNachAb_KeyDown);
@@ -1139,10 +1119,10 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label4.Location = new System.Drawing.Point(73, 3);
+            this.label4.Location = new System.Drawing.Point(103, 3);
             this.label4.Margin = new System.Windows.Forms.Padding(3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(222, 31);
+            this.label4.Size = new System.Drawing.Size(192, 31);
             this.label4.TabIndex = 6;
             this.label4.Text = "Zielort";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1154,17 +1134,17 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpConnectionsTable.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tlpConnectionsTable.ColumnCount = 4;
-            this.tlpConnectionsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tlpConnectionsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tlpConnectionsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpConnectionsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tlpConnectionsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpConnectionsTable.Location = new System.Drawing.Point(33, 227);
+            this.tlpConnectionsTable.Location = new System.Drawing.Point(33, 236);
             this.tlpConnectionsTable.Margin = new System.Windows.Forms.Padding(40, 5, 35, 0);
             this.tlpConnectionsTable.Name = "tlpConnectionsTable";
             this.tlpConnectionsTable.RowCount = 2;
             this.tlpConnectionsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tlpConnectionsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tlpConnectionsTable.Size = new System.Drawing.Size(458, 210);
+            this.tlpConnectionsTable.Size = new System.Drawing.Size(458, 104);
             this.tlpConnectionsTable.TabIndex = 8;
             // 
             // label3
@@ -1175,7 +1155,7 @@
             this.label3.Location = new System.Drawing.Point(3, 3);
             this.label3.Margin = new System.Windows.Forms.Padding(3);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 31);
+            this.label3.Size = new System.Drawing.Size(94, 31);
             this.label3.TabIndex = 5;
             this.label3.Text = "Nr";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1185,7 +1165,7 @@
             this.tlpConnectionsHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpConnectionsHeader.ColumnCount = 4;
-            this.tlpConnectionsHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tlpConnectionsHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tlpConnectionsHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpConnectionsHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tlpConnectionsHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -1198,24 +1178,24 @@
             this.tlpConnectionsHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpConnectionsHeader.Size = new System.Drawing.Size(458, 37);
             this.tlpConnectionsHeader.TabIndex = 7;
+            this.tlpConnectionsHeader.Visible = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1055, 778);
+            this.ClientSize = new System.Drawing.Size(1110, 752);
             this.Controls.Add(this.pnlFahrplan);
             this.Controls.Add(this.pnlVerbindungen);
             this.Controls.Add(this.pnlStrecke);
             this.Controls.Add(this.tlpHeadButtons);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(558, 424);
+            this.MinimumSize = new System.Drawing.Size(560, 560);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tlpHeadButtons.ResumeLayout(false);
             this.pnlStrecke.ResumeLayout(false);
-            this.tlpChangeDirection.ResumeLayout(false);
             this.tlpZeit.ResumeLayout(false);
             this.tlpNach.ResumeLayout(false);
             this.tlpNach.PerformLayout();
@@ -1292,7 +1272,6 @@
         private System.Windows.Forms.Button btnAbfahrtsZeit;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.Button btnChangeDirection;
-        private System.Windows.Forms.TableLayoutPanel tlpChangeDirection;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox tbxAb;
         private System.Windows.Forms.Label lbVerbindungenAb;

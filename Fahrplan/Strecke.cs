@@ -17,19 +17,25 @@ namespace Fahrplan
         readonly TextBox tbxVon;
         readonly TextBox tbxNach;
         readonly TextBox tbxAb;
+        DateTimePicker datePicker;
+        DateTimePicker timePicker;
 
-        public Strecke(Panel _pnlStrecke, TextBox _tbxVon, TextBox _tbxNach, TextBox _tbxAb)
+        public Strecke(Panel _pnlStrecke, TextBox _tbxVon, TextBox _tbxNach, TextBox _tbxAb, DateTimePicker _datePicker, DateTimePicker _timePicker)
         {
             pnlStrecke = _pnlStrecke;
             tbxVon     = _tbxVon;
             tbxNach    = _tbxNach;
             tbxAb      = _tbxAb;
+            datePicker = _datePicker;
+            timePicker = _timePicker;
 
             pnlStrecke.Dock = DockStyle.Fill;
         }
 
         public void LoadPanel()
         {
+            datePicker.Value = DateTime.Now;
+            timePicker.Value = DateTime.Now;
             pnlStrecke.BringToFront();
         }
 
@@ -64,6 +70,13 @@ namespace Fahrplan
             string temp = tbxVon.Text;
             tbxVon.Text = tbxNach.Text;
             tbxNach.Text = temp;
+        }
+
+        internal void SetFromTo(string fromTo)
+        {
+            string[] fromToSplitted = fromTo.Split(';');
+            tbxVon.Text = fromToSplitted[0];
+            tbxNach.Text = fromToSplitted[1];
         }
 
         public void LoadStations(TextBox textBox)

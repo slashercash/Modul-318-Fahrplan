@@ -9,27 +9,38 @@ namespace Fahrplan
 {
     class Verbindungen
     {
-        readonly Panel verbindungenPanel;
+        readonly Panel pnlVerbindungen;
         readonly TableLayoutPanel tlpConnectionsTable;
+        readonly TableLayoutPanel tlpConnectionsHeader;
         readonly Transport transport = new Transport();
+        readonly MainForm mainForm;
+        private string connectionFrom;
 
-        public Verbindungen(Panel panel, TableLayoutPanel _tlpConnectionsTable)
+
+
+        public Verbindungen(Panel _pnlVerbindungen, TableLayoutPanel _tlpConnectionsTable, TableLayoutPanel _tlpConnectionsHeader, MainForm _mainForm)
         {
-            verbindungenPanel = panel;
-            tlpConnectionsTable = _tlpConnectionsTable;
+            pnlVerbindungen      = _pnlVerbindungen;
+            tlpConnectionsTable  = _tlpConnectionsTable;
+            tlpConnectionsHeader = _tlpConnectionsHeader;
+            mainForm             = _mainForm;
 
-            verbindungenPanel.Dock = DockStyle.Fill;
+            pnlVerbindungen.Dock = DockStyle.Fill;
         }
 
         public void LoadPanel()
         {
-            verbindungenPanel.BringToFront();
+            pnlVerbindungen.BringToFront();
         }
 
-        internal void LoadConnections(TextBox textBox)
+        public void LoadConnections(TextBox textBox)
         {
+            tlpConnectionsHeader.Visible = true;
+            tlpConnectionsTable.Controls.Clear();
+
             Station station = transport.GetStations(textBox.Text).StationList.First();
-            textBox.Text = station.Name;
+            connectionFrom = station.Name;
+            textBox.Text = connectionFrom;
 
             List<StationBoard> allStationBoards = transport.GetStationBoard(station.Name, station.Id).Entries;
             List<StationBoard> uniqueStationBoards = new List<StationBoard>();
@@ -43,19 +54,13 @@ namespace Fahrplan
 
             uniqueStationBoards = uniqueStationBoards.OrderBy(o => o.Number).ToList();
 
-            Label template = new Label()
-            {
-                Dock = DockStyle.Fill,
-                Font = new Font("Calibri", 16),
-                ForeColor = Color.DarkGreen,
-                Margin = new Padding(0, 0, 0, 0),
-            };
-
             for (int i = 0; i < uniqueStationBoards.Count(); i++)
             {
+                string tag = string.Format("{0};{1}", connectionFrom, uniqueStationBoards.ElementAt(i).To);
+
                 Label number = new LabelTemplate { Text = uniqueStationBoards.ElementAt(i).Number };
                 Label destination = new LabelTemplate { Text = uniqueStationBoards.ElementAt(i).To };
-                Button route = new ButtonTemplate { Tag = uniqueStationBoards.ElementAt(i).To };
+                Button route = new ButtonTemplate(mainForm) { Tag = tag };
 
                 tlpConnectionsTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
                 tlpConnectionsTable.Controls.Add(number, 0, i);
@@ -66,7 +71,7 @@ namespace Fahrplan
         }
     }
 
-    internal class LabelTemplate : Label
+    public class LabelTemplate : Label
     {
         public LabelTemplate()
         {
@@ -78,9 +83,9 @@ namespace Fahrplan
         }
     }
 
-    internal class ButtonTemplate : Button
+    public class ButtonTemplate : Button
     {
-        public ButtonTemplate()
+        public ButtonTemplate(MainForm mainForm)
         {
             Text = "Fahrplan";
             Dock = DockStyle.Fill;
@@ -90,6 +95,7 @@ namespace Fahrplan
             FlatStyle = FlatStyle.Flat;
             FlatAppearance.BorderSize = 0;
             Margin = new Padding(0, 3, 0, 3);
+            Click += mainForm.BtnSelectConnection_Click;
         }
     }
 }
