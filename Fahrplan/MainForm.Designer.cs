@@ -56,7 +56,7 @@
             this.lbVon = new System.Windows.Forms.Label();
             this.pnlFahrplan = new System.Windows.Forms.Panel();
             this.btnStreckeEingeben = new System.Windows.Forms.Button();
-            this.tlpConnectionTable = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpTimeTable = new System.Windows.Forms.TableLayoutPanel();
             this.lb6A = new System.Windows.Forms.Label();
             this.lb6D = new System.Windows.Forms.Label();
             this.lb6C = new System.Windows.Forms.Label();
@@ -81,7 +81,7 @@
             this.lb5C = new System.Windows.Forms.Label();
             this.lb5B = new System.Windows.Forms.Label();
             this.lb5A = new System.Windows.Forms.Label();
-            this.tlpConnectionTableHeader = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpTimeTableHeader = new System.Windows.Forms.TableLayoutPanel();
             this.lbDauer = new System.Windows.Forms.Label();
             this.lbAnkunft = new System.Windows.Forms.Label();
             this.lbAbfahrt = new System.Windows.Forms.Label();
@@ -95,6 +95,10 @@
             this.tbxAb = new System.Windows.Forms.TextBox();
             this.lbVerbindungenAb = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.tlpConnectionsTable = new System.Windows.Forms.TableLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tlpConnectionsHeader = new System.Windows.Forms.TableLayoutPanel();
             this.tlpHeadButtons.SuspendLayout();
             this.pnlStrecke.SuspendLayout();
             this.tlpChangeDirection.SuspendLayout();
@@ -102,10 +106,11 @@
             this.tlpNach.SuspendLayout();
             this.tlpVon.SuspendLayout();
             this.pnlFahrplan.SuspendLayout();
-            this.tlpConnectionTable.SuspendLayout();
-            this.tlpConnectionTableHeader.SuspendLayout();
+            this.tlpTimeTable.SuspendLayout();
+            this.tlpTimeTableHeader.SuspendLayout();
             this.pnlVerbindungen.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tlpConnectionsHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpHeadButtons
@@ -532,8 +537,8 @@
             // 
             this.pnlFahrplan.BackColor = System.Drawing.Color.Honeydew;
             this.pnlFahrplan.Controls.Add(this.btnStreckeEingeben);
-            this.pnlFahrplan.Controls.Add(this.tlpConnectionTable);
-            this.pnlFahrplan.Controls.Add(this.tlpConnectionTableHeader);
+            this.pnlFahrplan.Controls.Add(this.tlpTimeTable);
+            this.pnlFahrplan.Controls.Add(this.tlpTimeTableHeader);
             this.pnlFahrplan.Controls.Add(this.lbVonNach);
             this.pnlFahrplan.Location = new System.Drawing.Point(0, 571);
             this.pnlFahrplan.Margin = new System.Windows.Forms.Padding(0);
@@ -559,52 +564,52 @@
             this.btnStreckeEingeben.UseVisualStyleBackColor = false;
             this.btnStreckeEingeben.Click += new System.EventHandler(this.BtnStrecke_Click);
             // 
-            // tlpConnectionTable
+            // tlpTimeTable
             // 
-            this.tlpConnectionTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tlpTimeTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpConnectionTable.ColumnCount = 4;
-            this.tlpConnectionTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22F));
-            this.tlpConnectionTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpConnectionTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22F));
-            this.tlpConnectionTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36F));
-            this.tlpConnectionTable.Controls.Add(this.lb6A, 0, 5);
-            this.tlpConnectionTable.Controls.Add(this.lb6D, 0, 5);
-            this.tlpConnectionTable.Controls.Add(this.lb6C, 0, 5);
-            this.tlpConnectionTable.Controls.Add(this.lb6B, 0, 5);
-            this.tlpConnectionTable.Controls.Add(this.lb1A, 0, 0);
-            this.tlpConnectionTable.Controls.Add(this.lb1B, 1, 0);
-            this.tlpConnectionTable.Controls.Add(this.lb1C, 2, 0);
-            this.tlpConnectionTable.Controls.Add(this.lb1D, 3, 0);
-            this.tlpConnectionTable.Controls.Add(this.lb2A, 0, 1);
-            this.tlpConnectionTable.Controls.Add(this.lb2B, 1, 1);
-            this.tlpConnectionTable.Controls.Add(this.lb2C, 2, 1);
-            this.tlpConnectionTable.Controls.Add(this.lb2D, 3, 1);
-            this.tlpConnectionTable.Controls.Add(this.lb3A, 0, 2);
-            this.tlpConnectionTable.Controls.Add(this.lb3B, 1, 2);
-            this.tlpConnectionTable.Controls.Add(this.lb3C, 2, 2);
-            this.tlpConnectionTable.Controls.Add(this.lb3D, 3, 2);
-            this.tlpConnectionTable.Controls.Add(this.lb4D, 3, 3);
-            this.tlpConnectionTable.Controls.Add(this.lb4C, 2, 3);
-            this.tlpConnectionTable.Controls.Add(this.lb4B, 1, 3);
-            this.tlpConnectionTable.Controls.Add(this.lb4A, 0, 3);
-            this.tlpConnectionTable.Controls.Add(this.lb5D, 3, 4);
-            this.tlpConnectionTable.Controls.Add(this.lb5C, 2, 4);
-            this.tlpConnectionTable.Controls.Add(this.lb5B, 1, 4);
-            this.tlpConnectionTable.Controls.Add(this.lb5A, 0, 4);
-            this.tlpConnectionTable.Location = new System.Drawing.Point(40, 143);
-            this.tlpConnectionTable.Margin = new System.Windows.Forms.Padding(40, 5, 40, 0);
-            this.tlpConnectionTable.Name = "tlpConnectionTable";
-            this.tlpConnectionTable.RowCount = 6;
-            this.tlpConnectionTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlpConnectionTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlpConnectionTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlpConnectionTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlpConnectionTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlpConnectionTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlpConnectionTable.Size = new System.Drawing.Size(462, 181);
-            this.tlpConnectionTable.TabIndex = 5;
-            this.tlpConnectionTable.Visible = false;
+            this.tlpTimeTable.ColumnCount = 4;
+            this.tlpTimeTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22F));
+            this.tlpTimeTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpTimeTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22F));
+            this.tlpTimeTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36F));
+            this.tlpTimeTable.Controls.Add(this.lb6A, 0, 5);
+            this.tlpTimeTable.Controls.Add(this.lb6D, 0, 5);
+            this.tlpTimeTable.Controls.Add(this.lb6C, 0, 5);
+            this.tlpTimeTable.Controls.Add(this.lb6B, 0, 5);
+            this.tlpTimeTable.Controls.Add(this.lb1A, 0, 0);
+            this.tlpTimeTable.Controls.Add(this.lb1B, 1, 0);
+            this.tlpTimeTable.Controls.Add(this.lb1C, 2, 0);
+            this.tlpTimeTable.Controls.Add(this.lb1D, 3, 0);
+            this.tlpTimeTable.Controls.Add(this.lb2A, 0, 1);
+            this.tlpTimeTable.Controls.Add(this.lb2B, 1, 1);
+            this.tlpTimeTable.Controls.Add(this.lb2C, 2, 1);
+            this.tlpTimeTable.Controls.Add(this.lb2D, 3, 1);
+            this.tlpTimeTable.Controls.Add(this.lb3A, 0, 2);
+            this.tlpTimeTable.Controls.Add(this.lb3B, 1, 2);
+            this.tlpTimeTable.Controls.Add(this.lb3C, 2, 2);
+            this.tlpTimeTable.Controls.Add(this.lb3D, 3, 2);
+            this.tlpTimeTable.Controls.Add(this.lb4D, 3, 3);
+            this.tlpTimeTable.Controls.Add(this.lb4C, 2, 3);
+            this.tlpTimeTable.Controls.Add(this.lb4B, 1, 3);
+            this.tlpTimeTable.Controls.Add(this.lb4A, 0, 3);
+            this.tlpTimeTable.Controls.Add(this.lb5D, 3, 4);
+            this.tlpTimeTable.Controls.Add(this.lb5C, 2, 4);
+            this.tlpTimeTable.Controls.Add(this.lb5B, 1, 4);
+            this.tlpTimeTable.Controls.Add(this.lb5A, 0, 4);
+            this.tlpTimeTable.Location = new System.Drawing.Point(40, 143);
+            this.tlpTimeTable.Margin = new System.Windows.Forms.Padding(40, 5, 40, 0);
+            this.tlpTimeTable.Name = "tlpTimeTable";
+            this.tlpTimeTable.RowCount = 6;
+            this.tlpTimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tlpTimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tlpTimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tlpTimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tlpTimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tlpTimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tlpTimeTable.Size = new System.Drawing.Size(462, 181);
+            this.tlpTimeTable.TabIndex = 5;
+            this.tlpTimeTable.Visible = false;
             // 
             // lb6A
             // 
@@ -918,27 +923,27 @@
             this.lb5A.Text = "x";
             this.lb5A.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tlpConnectionTableHeader
+            // tlpTimeTableHeader
             // 
-            this.tlpConnectionTableHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tlpTimeTableHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpConnectionTableHeader.ColumnCount = 4;
-            this.tlpConnectionTableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22F));
-            this.tlpConnectionTableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpConnectionTableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22F));
-            this.tlpConnectionTableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36F));
-            this.tlpConnectionTableHeader.Controls.Add(this.lbDauer, 3, 0);
-            this.tlpConnectionTableHeader.Controls.Add(this.lbAnkunft, 2, 0);
-            this.tlpConnectionTableHeader.Controls.Add(this.lbAbfahrt, 0, 0);
-            this.tlpConnectionTableHeader.Controls.Add(this.lbGleisKante, 1, 0);
-            this.tlpConnectionTableHeader.Location = new System.Drawing.Point(40, 101);
-            this.tlpConnectionTableHeader.Margin = new System.Windows.Forms.Padding(40, 0, 40, 0);
-            this.tlpConnectionTableHeader.Name = "tlpConnectionTableHeader";
-            this.tlpConnectionTableHeader.RowCount = 1;
-            this.tlpConnectionTableHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpConnectionTableHeader.Size = new System.Drawing.Size(462, 37);
-            this.tlpConnectionTableHeader.TabIndex = 4;
-            this.tlpConnectionTableHeader.Visible = false;
+            this.tlpTimeTableHeader.ColumnCount = 4;
+            this.tlpTimeTableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22F));
+            this.tlpTimeTableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpTimeTableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22F));
+            this.tlpTimeTableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36F));
+            this.tlpTimeTableHeader.Controls.Add(this.lbDauer, 3, 0);
+            this.tlpTimeTableHeader.Controls.Add(this.lbAnkunft, 2, 0);
+            this.tlpTimeTableHeader.Controls.Add(this.lbAbfahrt, 0, 0);
+            this.tlpTimeTableHeader.Controls.Add(this.lbGleisKante, 1, 0);
+            this.tlpTimeTableHeader.Location = new System.Drawing.Point(40, 101);
+            this.tlpTimeTableHeader.Margin = new System.Windows.Forms.Padding(40, 0, 40, 0);
+            this.tlpTimeTableHeader.Name = "tlpTimeTableHeader";
+            this.tlpTimeTableHeader.RowCount = 1;
+            this.tlpTimeTableHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpTimeTableHeader.Size = new System.Drawing.Size(462, 37);
+            this.tlpTimeTableHeader.TabIndex = 4;
+            this.tlpTimeTableHeader.Visible = false;
             // 
             // lbDauer
             // 
@@ -1008,13 +1013,16 @@
             // 
             // pnlVerbindungen
             // 
+            this.pnlVerbindungen.AutoScroll = true;
             this.pnlVerbindungen.BackColor = System.Drawing.Color.Honeydew;
+            this.pnlVerbindungen.Controls.Add(this.tlpConnectionsTable);
+            this.pnlVerbindungen.Controls.Add(this.tlpConnectionsHeader);
             this.pnlVerbindungen.Controls.Add(this.btnVerbindungenAnzeigen);
             this.pnlVerbindungen.Controls.Add(this.tableLayoutPanel1);
             this.pnlVerbindungen.Location = new System.Drawing.Point(544, 62);
             this.pnlVerbindungen.Margin = new System.Windows.Forms.Padding(0);
             this.pnlVerbindungen.Name = "pnlVerbindungen";
-            this.pnlVerbindungen.Size = new System.Drawing.Size(502, 407);
+            this.pnlVerbindungen.Size = new System.Drawing.Size(502, 453);
             this.pnlVerbindungen.TabIndex = 2;
             // 
             // btnVerbindungenAnzeigen
@@ -1026,7 +1034,7 @@
             this.btnVerbindungenAnzeigen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerbindungenAnzeigen.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerbindungenAnzeigen.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnVerbindungenAnzeigen.Location = new System.Drawing.Point(33, 109);
+            this.btnVerbindungenAnzeigen.Location = new System.Drawing.Point(33, 98);
             this.btnVerbindungenAnzeigen.Margin = new System.Windows.Forms.Padding(40, 32, 40, 0);
             this.btnVerbindungenAnzeigen.Name = "btnVerbindungenAnzeigen";
             this.btnVerbindungenAnzeigen.Size = new System.Drawing.Size(429, 58);
@@ -1126,11 +1134,76 @@
             // 
             this.toolTip.IsBalloon = true;
             // 
+            // label4
+            // 
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label4.Location = new System.Drawing.Point(73, 3);
+            this.label4.Margin = new System.Windows.Forms.Padding(3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(222, 31);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Zielort";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tlpConnectionsTable
+            // 
+            this.tlpConnectionsTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlpConnectionsTable.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tlpConnectionsTable.ColumnCount = 4;
+            this.tlpConnectionsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tlpConnectionsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpConnectionsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tlpConnectionsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tlpConnectionsTable.Location = new System.Drawing.Point(33, 227);
+            this.tlpConnectionsTable.Margin = new System.Windows.Forms.Padding(40, 5, 35, 0);
+            this.tlpConnectionsTable.Name = "tlpConnectionsTable";
+            this.tlpConnectionsTable.RowCount = 2;
+            this.tlpConnectionsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tlpConnectionsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tlpConnectionsTable.Size = new System.Drawing.Size(458, 210);
+            this.tlpConnectionsTable.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label3.Location = new System.Drawing.Point(3, 3);
+            this.label3.Margin = new System.Windows.Forms.Padding(3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 31);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Nr";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tlpConnectionsHeader
+            // 
+            this.tlpConnectionsHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlpConnectionsHeader.ColumnCount = 4;
+            this.tlpConnectionsHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tlpConnectionsHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpConnectionsHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tlpConnectionsHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tlpConnectionsHeader.Controls.Add(this.label3, 0, 0);
+            this.tlpConnectionsHeader.Controls.Add(this.label4, 1, 0);
+            this.tlpConnectionsHeader.Location = new System.Drawing.Point(33, 185);
+            this.tlpConnectionsHeader.Margin = new System.Windows.Forms.Padding(40, 0, 40, 0);
+            this.tlpConnectionsHeader.Name = "tlpConnectionsHeader";
+            this.tlpConnectionsHeader.RowCount = 1;
+            this.tlpConnectionsHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpConnectionsHeader.Size = new System.Drawing.Size(458, 37);
+            this.tlpConnectionsHeader.TabIndex = 7;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1055, 972);
+            this.ClientSize = new System.Drawing.Size(1055, 778);
             this.Controls.Add(this.pnlFahrplan);
             this.Controls.Add(this.pnlVerbindungen);
             this.Controls.Add(this.pnlStrecke);
@@ -1149,11 +1222,12 @@
             this.tlpVon.ResumeLayout(false);
             this.tlpVon.PerformLayout();
             this.pnlFahrplan.ResumeLayout(false);
-            this.tlpConnectionTable.ResumeLayout(false);
-            this.tlpConnectionTableHeader.ResumeLayout(false);
+            this.tlpTimeTable.ResumeLayout(false);
+            this.tlpTimeTableHeader.ResumeLayout(false);
             this.pnlVerbindungen.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tlpConnectionsHeader.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1179,12 +1253,12 @@
         private System.Windows.Forms.Label lbNach;
         private System.Windows.Forms.Button btnFahrplanAnzeigen;
         private System.Windows.Forms.Label lbVonNach;
-        private System.Windows.Forms.TableLayoutPanel tlpConnectionTableHeader;
+        private System.Windows.Forms.TableLayoutPanel tlpTimeTableHeader;
         private System.Windows.Forms.Label lbDauer;
         private System.Windows.Forms.Label lbAnkunft;
         private System.Windows.Forms.Label lbAbfahrt;
         private System.Windows.Forms.Label lbGleisKante;
-        private System.Windows.Forms.TableLayoutPanel tlpConnectionTable;
+        private System.Windows.Forms.TableLayoutPanel tlpTimeTable;
         private System.Windows.Forms.Label lb1A;
         private System.Windows.Forms.Label lb6A;
         private System.Windows.Forms.Label lb6D;
@@ -1225,6 +1299,10 @@
         private System.Windows.Forms.Button btnVerbindungenAnzeigen;
         private System.Windows.Forms.Button btnAbDurchsuchen;
         private System.Windows.Forms.Button btnAbStandortAnzeigen;
+        private System.Windows.Forms.TableLayoutPanel tlpConnectionsTable;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TableLayoutPanel tlpConnectionsHeader;
+        private System.Windows.Forms.Label label3;
     }
 }
 
