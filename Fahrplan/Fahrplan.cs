@@ -10,10 +10,9 @@ namespace Fahrplan
 {
     class Fahrplan
     {
-        readonly Transport transport = new Transport();
-        List<Connection> connections = new List<Connection>();
         bool isArivalTime = false;
 
+        readonly Transport transport = new Transport();
         readonly MainForm mainForm;
         readonly Panel pnlFahrplan;
         readonly TableLayoutPanel tlpConnectionTable;
@@ -37,11 +36,13 @@ namespace Fahrplan
             pnlFahrplan.Dock = DockStyle.Fill;
         }
 
+        // Panel Fahrplan anzeigen
         public void LoadPanel()
         {
             pnlFahrplan.BringToFront();
         }
 
+        // Trigger der An/Ab Buttons 
         internal void SetArrivalDeparture(Button btnActivate, Button btnDeactivate, bool _isArivalTime)
         {
             isArivalTime = _isArivalTime;
@@ -49,23 +50,26 @@ namespace Fahrplan
             btnDeactivate.FlatAppearance.BorderColor = Color.LightGreen;
         }
 
-        public void LoadTimeTable(string from, string to, DateTime date, DateTime time)
+        // Die nächsten 5 Verbindungen einer bestimmten Strecke in einer Tabelle anzeigen.
+        public bool LoadTimeTable(string from, string to, DateTime date, DateTime time)
         {
             try
             {
+                // Internet Verbindung Prüfen
                 if (!transport.CheckForInternetConnection())
                 {
                     mainForm.LoadNoConnectionPanel();
-                    return;
+                    return false;
                 }
 
                 DateTime departureTime = new DateTime(date.Year, date.Month, date.Day, time.Hour, time.Minute, time.Second);
 
-                Connections connectionToCheck = transport.GetConnections(from, to, 5, departureTime, isArivalTime);
+                // Überprüfen ob eine gültige Verbindung zwischen Start und Ziel existiert.
+                Connections connectionsToCheck = transport.GetConnections(from, to, 5, departureTime, isArivalTime);
                 bool validConnections = false;
-                if (connectionToCheck != null)
+                if (connectionsToCheck != null)
                 {
-                    if (connectionToCheck.ConnectionList.Any())
+                    if (connectionsToCheck.ConnectionList.Any())
                     {
                         validConnections = true;
                     }
@@ -73,14 +77,17 @@ namespace Fahrplan
                 if (!validConnections)
                 {
                     MessageBox.Show("Es konnten keine Stationen mit den von Ihnen eingegebenen Suchkriterien gefunden werden", "Keine Treffer", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
+                    return false;
                 }
 
-                connections = connectionToCheck.ConnectionList;
+                List<Connection> connections = new List<Connection>();
+                connections = connectionsToCheck.ConnectionList;
 
+                // Die ausgelesenen Verbindungen in der Tabelle anzeigen
                 int pointer = 0;
                 foreach (Connection connection in connections)
                 {
+                    // Daten aus den Verbindungen in angenehm zu lesendes Format umwandeln
                     string departure = Convert.ToDateTime(connection.From.Departure).ToString("HH:mm");
                     string arival = Convert.ToDateTime(connection.To.Arrival).ToString("HH:mm");
                     string duration;
@@ -95,6 +102,7 @@ namespace Fahrplan
                         duration = String.Format("{0} Std, {1} Min", dtDuration.Hour.ToString(), dtDuration.Minute.ToString());
                     }
 
+                    // Daten der Tabelle hinzufügen
                     lbTimeTable[pointer].Text = departure;
                     pointer++;
                     lbTimeTable[pointer].Text = String.IsNullOrEmpty(connection.From.Platform) ? "-" : connection.From.Platform;
@@ -105,19 +113,24 @@ namespace Fahrplan
                     pointer++;
                 }
 
+                // Text aus den übrigen Feldern löschen
                 for (int i = pointer; i < lbTimeTable.Length; i++)
                 {
                     lbTimeTable[i].Text = "";
                 }
 
+                // Start und Ziel für die Ansicht im UI zusammensetzen
                 Connection firstConnection = connections.First();
                 lbGleisKante.Text = int.TryParse(firstConnection.From.Platform, out _) ? "Gleis" : "Kante";
                 lbFromTo.Text = String.Format("{0}  🡺  {1}", firstConnection.From.Station.Name, firstConnection.To.Station.Name);
+
+                // Tabelle Anzeigen und Button Verbergen
                 tlpConnectionTable.Visible = true;
                 tlpConnectionTableHeader.Visible = true;
                 btnStreckeEingeben.Visible = false;
-
                 LoadPanel();
+
+                return true;
             }
             catch (Exception exeption)
             {

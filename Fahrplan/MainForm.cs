@@ -17,18 +17,22 @@ namespace Fahrplan
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // Labels für Fahrplan Tabelle arangieren
             Label[] lbTimeTable = new Label[] { lb1A, lb1B, lb1C, lb1D, lb2A, lb2B, lb2C, lb2D, lb3A, lb3B, lb3C, lb3D, lb4A, lb4B, lb4C, lb4D, lb5A, lb5B, lb5C, lb5D, lb6A, lb6B, lb6C, lb6D };
 
+            // Die drei Hauptpanels definieren.
             strecke = new Strecke(this, pnlStrecke, tbxVon, tbxNach, tbxAb, datePicker, timePicker, btnFahrplanAnzeigen);
             fahrplan = new Fahrplan(this, pnlFahrplan, tlpTimeTable, tlpTimeTableHeader, btnStreckeEingeben, lbVonNach, lbGleisKante, lbTimeTable);
-            verbindungen = new Verbindungen(pnlVerbindungen, tlpConnectionsTable, tlpConnectionsHeader, this, tbxAb);
+            verbindungen = new Verbindungen(this, pnlVerbindungen, tlpConnectionsTable, tlpConnectionsHeader, tbxAb);
 
             pnlNoInternet.Dock = DockStyle.Fill;
 
+            // Datepicker Anzeigeformate zuweisen
             datePicker.CustomFormat = "ddd, dd. MMMM";
             timePicker.CustomFormat = "HH:mm";
             timePicker.ShowUpDown = true;
 
+            // Scrolleinstellungen für Verbindungen Ansicht
             tlpConnectionsTable.HorizontalScroll.Maximum = 0;
             tlpConnectionsTable.HorizontalScroll.Enabled = false;
             tlpConnectionsTable.AutoScroll = true;
@@ -57,8 +61,8 @@ namespace Fahrplan
 
         private void BtnFahrplanAnzeigen_Click(object sender, EventArgs e)
         {
-            HilightButton(btnFahrplan.Name);
-            fahrplan.LoadTimeTable(tbxVon.Text, tbxNach.Text, datePicker.Value, timePicker.Value);
+            if(fahrplan.LoadTimeTable(tbxVon.Text, tbxNach.Text, datePicker.Value, timePicker.Value))
+                HilightButton(btnFahrplan.Name);
         }
 
         private void BtnVonDurchsuchen_Click(object sender, EventArgs e)
@@ -131,13 +135,6 @@ namespace Fahrplan
             verbindungen.LoadConnections(tbxAb);
         }
 
-        public void BtnSelectConnection_Click(object sender, EventArgs e)
-        {
-            strecke.SetFromTo(((Button)sender).Tag.ToString());
-            HilightButton(btnStrecke.Name);
-            strecke.LoadPanel(true);
-        }
-
         private void BtnErneutVersuchen_Click(object sender, EventArgs e)
         {
             strecke.CheckInternetConnection();
@@ -149,6 +146,14 @@ namespace Fahrplan
             pnlNoInternet.BringToFront();
         }
 
+        public void BtnSelectConnection_Click(object sender, EventArgs e)
+        {
+            strecke.SetFromTo(((Button)sender).Tag.ToString());
+            HilightButton(btnStrecke.Name);
+            strecke.LoadPanel(true);
+        }
+
+        // Header Buttons aktivieren/deaktivieren
         public void EnableHeaderButtons(bool enable)
         {
             if(enable)
@@ -169,6 +174,7 @@ namespace Fahrplan
             }
         }
 
+        // Headerbutton optisch hervorheben
         private void HilightButton(string hilightButton)
         {
             foreach (Button button in tlpHeadButtons.Controls)

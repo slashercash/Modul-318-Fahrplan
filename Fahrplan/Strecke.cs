@@ -10,9 +10,6 @@ namespace Fahrplan
     class Strecke
     {
         readonly Transport transport = new Transport();
-        readonly Stations stations = new Stations();
-        readonly List<string> stationNames = new List<string>();
-
         readonly MainForm mainForm;
         readonly Panel pnlStrecke;
         readonly TextBox tbxVon;
@@ -36,6 +33,7 @@ namespace Fahrplan
             pnlStrecke.Dock = DockStyle.Fill;
         }
 
+        // Panel Strecke anzeigen, Fokus über Parameter definiert
         public void LoadPanel(bool focusToButton)
         {
             datePicker.Value = DateTime.Now;
@@ -51,6 +49,7 @@ namespace Fahrplan
             }
         }
 
+        // Bei Enter Stationen laden
         internal void VonNachAbKeyDown(TextBox textBox, KeyEventArgs key)
         {
             if(key.KeyCode == Keys.Enter && textBox.TextLength > 0)
@@ -59,6 +58,7 @@ namespace Fahrplan
             }
         }
 
+        // Buttons zu Textboxen aktivieren sobald mind. ein Zeichen enthalten ist.
         public void VonNachTextChanged(TextBox textBox, Button btnDurchsuchen, Button btnStandortAnzeigen)
         {
             if (textBox.TextLength == 0)
@@ -77,6 +77,7 @@ namespace Fahrplan
             }
         }
 
+        // Inhalt der Textboxen "Von" und "Nach" tauschen.
         internal void ChangeDirection()
         {
             string temp = tbxVon.Text;
@@ -84,6 +85,7 @@ namespace Fahrplan
             tbxNach.Text = temp;
         }
 
+        // Parameter Spliten und in die Textboxen "Von" und "Nach" einfügen.
         internal void SetFromTo(string fromTo)
         {
             string[] fromToSplitted = fromTo.Split(';');
@@ -91,32 +93,44 @@ namespace Fahrplan
             tbxNach.Text = fromToSplitted[1];
         }
 
+        // Nach Stationen suchen und der Autocompletesource hinzufügen.
         public void LoadStations(TextBox textBox)
         {
             try
             {
+                // Internet Verbindung Prüfen
                 if(!transport.CheckForInternetConnection())
                 {
                     mainForm.LoadNoConnectionPanel();
                     return;
                 }
 
+                // Fehler abfangen, falls keine Stationen gefunden werden
                 if (!transport.GetStations(textBox.Text).StationList.Any())
                 {
                     MessageBox.Show("Es konnten keine Stationen mit den von Ihnen eingegebenen Suchkriterien gefunden werden", "Keine Treffer", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
-                stations.StationList = transport.GetStations(textBox.Text).StationList;
+                // Stationen in Liste abfüllen
+                Stations stations = new Stations
+                {
+                    StationList = transport.GetStations(textBox.Text).StationList
+                };
 
+                // Namen der Stationen in Liste abfüllen
+                List<string> stationNames = new List<string>();
                 foreach (Station station in stations.StationList)
                 {
                     stationNames.Add(station.Name);
                 }
+
+                // Namen der Stationen allen drei Textboxen hinzufügen
                 tbxVon.AutoCompleteCustomSource.AddRange(stationNames.ToArray());
                 tbxNach.AutoCompleteCustomSource.AddRange(stationNames.ToArray());
                 tbxAb.AutoCompleteCustomSource.AddRange(stationNames.ToArray());
 
+                // Text aus der Textbox über Sendkeys neu einspielen, damit das Dropdown aktiviert wird.
                 string text = textBox.Text;
                 textBox.Text = "";
                 textBox.Focus();
@@ -128,22 +142,26 @@ namespace Fahrplan
             }
         }
 
+        // Station aus Textbox via Koordinaten in GoogleMaps anzeigen
         internal void LoadLocation(TextBox textBox)
         {
             try
             {
+                // Internet Verbindung Prüfen
                 if (!transport.CheckForInternetConnection())
                 {
                     mainForm.LoadNoConnectionPanel();
                     return;
                 }
 
+                // Fehler abfangen, falls keine Stationen gefunden werden
                 if (!transport.GetStations(textBox.Text).StationList.Any())
                 {
                     MessageBox.Show("Es konnten keine Stationen mit den von Ihnen eingegebenen Suchkriterien gefunden werden", "Keine Treffer", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
+                // Fehler abfangen, falls Station keine Koordinaten enthält
                 Station station = transport.GetStations(textBox.Text).StationList.First();
                 if (station.Coordinate.XCoordinate == 0 && station.Coordinate.YCoordinate == 0)
                 {
@@ -151,6 +169,7 @@ namespace Fahrplan
                     return;
                 }
 
+                // Mit den Koordinaten die URL für Google Maps zusammensetzen und aufrufen.
                 textBox.Text = station.Name;
                 string xCoordinate = station.Coordinate.XCoordinate.ToString().Replace(",", ".");
                 string yCoordinate = station.Coordinate.YCoordinate.ToString().Replace(",", ".");
@@ -165,6 +184,7 @@ namespace Fahrplan
 
         internal void CheckInternetConnection()
         {
+            // Internet Verbindung Prüfen
             if (transport.CheckForInternetConnection())
             {
                 mainForm.EnableHeaderButtons(true);

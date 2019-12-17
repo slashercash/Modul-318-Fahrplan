@@ -133,7 +133,7 @@
             this.tlpHeadButtons.Name = "tlpHeadButtons";
             this.tlpHeadButtons.RowCount = 1;
             this.tlpHeadButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpHeadButtons.Size = new System.Drawing.Size(1055, 62);
+            this.tlpHeadButtons.Size = new System.Drawing.Size(784, 62);
             this.tlpHeadButtons.TabIndex = 0;
             // 
             // btnVerbindung
@@ -148,10 +148,10 @@
             this.btnVerbindung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerbindung.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerbindung.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnVerbindung.Location = new System.Drawing.Point(702, 0);
+            this.btnVerbindung.Location = new System.Drawing.Point(522, 0);
             this.btnVerbindung.Margin = new System.Windows.Forms.Padding(0);
             this.btnVerbindung.Name = "btnVerbindung";
-            this.btnVerbindung.Size = new System.Drawing.Size(353, 62);
+            this.btnVerbindung.Size = new System.Drawing.Size(262, 62);
             this.btnVerbindung.TabIndex = 2;
             this.btnVerbindung.Text = "Verbindungen";
             this.btnVerbindung.UseVisualStyleBackColor = false;
@@ -172,7 +172,7 @@
             this.btnStrecke.Location = new System.Drawing.Point(0, 0);
             this.btnStrecke.Margin = new System.Windows.Forms.Padding(0);
             this.btnStrecke.Name = "btnStrecke";
-            this.btnStrecke.Size = new System.Drawing.Size(351, 62);
+            this.btnStrecke.Size = new System.Drawing.Size(261, 62);
             this.btnStrecke.TabIndex = 0;
             this.btnStrecke.Text = "Strecke";
             this.btnStrecke.UseVisualStyleBackColor = false;
@@ -190,10 +190,10 @@
             this.btnFahrplan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFahrplan.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFahrplan.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnFahrplan.Location = new System.Drawing.Point(351, 0);
+            this.btnFahrplan.Location = new System.Drawing.Point(261, 0);
             this.btnFahrplan.Margin = new System.Windows.Forms.Padding(0);
             this.btnFahrplan.Name = "btnFahrplan";
-            this.btnFahrplan.Size = new System.Drawing.Size(351, 62);
+            this.btnFahrplan.Size = new System.Drawing.Size(261, 62);
             this.btnFahrplan.TabIndex = 1;
             this.btnFahrplan.Text = "Fahrplan";
             this.btnFahrplan.UseVisualStyleBackColor = false;
@@ -1268,7 +1268,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1055, 806);
+            this.ClientSize = new System.Drawing.Size(784, 521);
             this.Controls.Add(this.pnlNoInternet);
             this.Controls.Add(this.pnlFahrplan);
             this.Controls.Add(this.pnlVerbindungen);
