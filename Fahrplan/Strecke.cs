@@ -122,7 +122,10 @@ namespace Fahrplan
                 List<string> stationNames = new List<string>();
                 foreach (Station station in stations.StationList)
                 {
-                    stationNames.Add(station.Name);
+                    if(station.Name != null)
+                    {
+                        stationNames.Add(station.Name);
+                    }
                 }
 
                 // Namen der Stationen allen drei Textboxen hinzufügen
