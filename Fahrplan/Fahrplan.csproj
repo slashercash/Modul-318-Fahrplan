@@ -108,5 +108,8 @@
   <ItemGroup>
     <None Include="Resources\NoConnection.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\bus.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
