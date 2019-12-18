@@ -15,12 +15,6 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_12C84EDC6F0AA05D138D259C15D80EC6"
-        "OwnerKey" = "8:_8DE57E26A92D421A93DEE54F7D25D573"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_413D84D18F82E51D2244916F4B751F53"
         "OwnerKey" = "8:_8DE57E26A92D421A93DEE54F7D25D573"
         "MsmSig" = "8:_UNDEFINED"
@@ -33,44 +27,50 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_BB6DD069C74942AE9E3907615411E68D"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_EB8AF21E1FA28BD4155E9FF9A2C19979"
+        "MsmKey" = "8:_8F5A7BB743FF257DC06DDDBC122660E2"
         "OwnerKey" = "8:_8DE57E26A92D421A93DEE54F7D25D573"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_EB8AF21E1FA28BD4155E9FF9A2C19979"
-        "OwnerKey" = "8:_12C84EDC6F0AA05D138D259C15D80EC6"
+        "MsmKey" = "8:_8F5A7BB743FF257DC06DDDBC122660E2"
+        "OwnerKey" = "8:_D0ABDECC0D23DB34121C51D910BEB38B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A5ED3712CDFC446AB50AFB352A147E68"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D0ABDECC0D23DB34121C51D910BEB38B"
+        "OwnerKey" = "8:_8DE57E26A92D421A93DEE54F7D25D573"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_8DE57E26A92D421A93DEE54F7D25D573"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_D0ABDECC0D23DB34121C51D910BEB38B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_8F5A7BB743FF257DC06DDDBC122660E2"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_413D84D18F82E51D2244916F4B751F53"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8DE57E26A92D421A93DEE54F7D25D573"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_12C84EDC6F0AA05D138D259C15D80EC6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_EB8AF21E1FA28BD4155E9FF9A2C19979"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -91,6 +91,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -107,6 +115,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -136,37 +152,6 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_12C84EDC6F0AA05D138D259C15D80EC6"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:SwissTransport, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_12C84EDC6F0AA05D138D259C15D80EC6"
-                    {
-                    "Name" = "8:SwissTransport.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:SwissTransport.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_3F855BAC8C4B434D8D41B6CB8E8832C0"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_413D84D18F82E51D2244916F4B751F53"
             {
             "AssemblyRegister" = "3:1"
@@ -198,9 +183,40 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BB6DD069C74942AE9E3907615411E68D"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8F5A7BB743FF257DC06DDDBC122660E2"
             {
-            "SourcePath" = "8:..\\..\\..\\bus.ico"
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_8F5A7BB743FF257DC06DDDBC122660E2"
+                    {
+                    "Name" = "8:Newtonsoft.Json.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Newtonsoft.Json.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_3F855BAC8C4B434D8D41B6CB8E8832C0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A5ED3712CDFC446AB50AFB352A147E68"
+            {
+            "SourcePath" = "8:C:\\Users\\david\\Desktop\\bus.ico"
             "TargetName" = "8:bus.ico"
             "Tag" = "8:"
             "Folder" = "8:_3F855BAC8C4B434D8D41B6CB8E8832C0"
@@ -218,20 +234,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_EB8AF21E1FA28BD4155E9FF9A2C19979"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D0ABDECC0D23DB34121C51D910BEB38B"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:SwissTransport, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_EB8AF21E1FA28BD4155E9FF9A2C19979"
+                    "_D0ABDECC0D23DB34121C51D910BEB38B"
                     {
-                    "Name" = "8:Newtonsoft.Json.dll"
+                    "Name" = "8:SwissTransport.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Newtonsoft.Json.dll"
+            "SourcePath" = "8:SwissTransport.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3F855BAC8C4B434D8D41B6CB8E8832C0"
@@ -426,7 +442,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_66F7C2C6B16D488EBA46829367FB241B"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_71C382B5E1DA4F6CAD203D14D0122707"
             {
             "Name" = "8:OEV-Fahrplan"
             "Arguments" = "8:"
@@ -437,10 +453,10 @@
             "Target" = "8:_8DE57E26A92D421A93DEE54F7D25D573"
             "Folder" = "8:_2A4F98D15C75496B9FAAFFB6434AD668"
             "WorkingFolder" = "8:_3F855BAC8C4B434D8D41B6CB8E8832C0"
-            "Icon" = "8:_BB6DD069C74942AE9E3907615411E68D"
+            "Icon" = "8:_A5ED3712CDFC446AB50AFB352A147E68"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_B4582E8129DB4BF1B4FE46969A4E485E"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_EC2A932146D14076BD0D511825BE5432"
             {
             "Name" = "8:OEV-Fahrplan"
             "Arguments" = "8:"
@@ -451,7 +467,7 @@
             "Target" = "8:_8DE57E26A92D421A93DEE54F7D25D573"
             "Folder" = "8:_987ADF70B13243ABBCC9623BA2E7513A"
             "WorkingFolder" = "8:_3F855BAC8C4B434D8D41B6CB8E8832C0"
-            "Icon" = "8:_BB6DD069C74942AE9E3907615411E68D"
+            "Icon" = "8:_A5ED3712CDFC446AB50AFB352A147E68"
             "Feature" = "8:"
             }
         }
